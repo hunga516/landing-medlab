@@ -19,6 +19,11 @@ body {
     line-height: 1.5;
     text-rendering: optimizeSpeed;
     color: var(--text-color);
+    scrollbar-width: 1px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 body .tippy-box {
@@ -41,12 +46,6 @@ body .tippy-box {
 .default {
     height: 60px;
 }
-
-// input,
-// button {
-//     outline: none;
-//     border: none;
-// }
 
 a[href] {
     color: var(--text-color);

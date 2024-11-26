@@ -20,7 +20,7 @@ module.exports = {
       },
       textColor: {
         "bluePrimary": "#007FFF"
-      }
+      },
     },
   },
   plugins: [],
