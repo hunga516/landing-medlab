@@ -22,12 +22,12 @@ function HomePage() {
             >
                 <div className="grid grid-cols-2 p-4 lg:p-8 h-full">
                     <div className="flex flex-col justify-between">
-                        <h1 className="text-sky-600 font-bold max-h-[110px] md:max-h-screen text-4xl md:text-6xl lg:text-9xl leading-9 md:leading-[70px] lg:leading-[90px] text-left">xét
+                        <h1 className="text-sky-600 font-bold lg:font-medium lg:tracking-tight max-h-[110px] md:max-h-screen text-2xl md:text-6xl lg:text-8xl leading-7 md:leading-[70px] lg:leading-[90px] xl:leading-[100px] text-left">xét
                             nghiệm chính xác, sức khoẻ an tâm
                         </h1>
-                        <div className="flex items-center gap-8 -mt-12 md:-mt-80 lg:-mt-32">
+                        <div className="flex items-center gap-8">
                             <button
-                                className="flex items-center gap-2 bg-sky-600 px-4 py-2 text-white text-xs text-nowrap md:text-lg rounded-md text-[14px]">
+                                className="flex items-center gap-1 bg-sky-600 px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-[10px] text-nowrap md:text-lg rounded-md text-[14px]">
                                 <MdOutlineSearch />
                                 Xem kết quả xét nghiệm
                             </button>
@@ -37,7 +37,7 @@ function HomePage() {
                             </button>
                         </div>
 
-                        <div className="w-full md:w-72 flex items-center gap-x-4 md:gap-x-6">
+                        <div className="w-full md:w-72 hidden md:flex items-center gap-x-4 md:gap-x-6">
                             <div className="flex flex-col items-center gap-2">
                                 <p className="text-xs md:text-2xl text-nowrap font-medium">35.5k</p>
                                 <p className="text-sky-600 text-xs md:text-lg tracking-wide text-nowrap">Khách
@@ -55,13 +55,13 @@ function HomePage() {
                         </div>
                     </div>
                     <div className="hero-show relative">
-                        <div className="absolute top-1/3 lg:left-1/2 lg:top-16 bg-white px-4 py-2 rounded-lg drop-shadow-md">
-                            <Rating className="w-3 h-3 md:w-4 md:h-4 lg:text-lg text-orange-300" />
+                        <div className="absolute top-1/3 lg:left-2/3 lg:top-16 bg-white px-2 py-1 md:px-4 md:py-2 rounded-md md:rounded-lg drop-shadow-md">
+                            <Rating className="w-2 h-2 md:w-4 md:h-4 lg:text-lg text-orange-300" />
                         </div>
                         <div
-                            className="absolute text-nowrap bottom-0 right-0 lg:left-4 lg:bottom-36 bg-white px-4 py-1 rounded-lg drop-shadow-md flex items-center gap-2 max-w-max">
-                            <FaCheck className="text-green-500 text-xl" />
-                            <p className="text-slate-800 text-base sm:text-xl font-medium">Dịch vụ tận tâm</p>
+                            className="absolute text-nowrap bottom-0 right-0 lg:left-2/3 lg:bottom-96 bg-white px-2 py-0.5 sm:px-2 sm:py-1 md:px-4 md:py-1 rounded-md md:rounded-lg drop-shadow-md flex items-center gap-2 max-w-max">
+                            <FaCheck className="text-green-500 text-[10px] md:text-base" />
+                            <p className="text-slate-800 text-[10px] md:text-base font-medium">Dịch vụ tận tâm</p>
                         </div>
 
                     </div>
@@ -77,50 +77,50 @@ function HomePage() {
                         Medlab</p>
                 </div>
 
-                <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-2 md:gap-6 mt-8 md:mt-16">
-                    <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 rounded-2xl">
-                        <img src={images.huyethoc} alt="" className="p-4 md:p-8 lg:px-12 lg:py-12" />
-                        <p className="text-sky-700 text-base md:text-2xl text-center mt-2 md:mt-4 overflow-hidden text-ellipsis text-nowrap w-full">Huyết
+                <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-2 md:gap-4 mt-8 md:mt-16">
+                    <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 lg:p-6 rounded-2xl">
+                        <img src={images.huyethoc} alt="" className="p-2 lg:p-4" />
+                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl text-center overflow-hidden text-ellipsis text-nowrap w-full">Huyết
                             học</p>
                     </div>
                     <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 rounded-2xl">
-                        <img src={images.sinhhoamiendich} alt="" className="p-4 md:p-8 lg:px-12 lg:py-12" />
-                        <p className="text-sky-700 text-base md:text-2xl  text-center mt-2 md:mt-4 overflow-hidden text-ellipsis text-nowrap w-full">Sinh
+                        <img src={images.sinhhoamiendich} alt="" className="p-2 lg:p-4" />
+                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Sinh
                             hoá - Miễn dịch</p>
                     </div>
                     <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 rounded-2xl">
-                        <img src={images.sinhhoa} alt="" className="p-4 md:p-8 lg:px-12 lg:py-12" />
-                        <p className="text-sky-700 text-base md:text-2xl  text-center mt-2 md:mt-4 overflow-hidden text-ellipsis text-nowrap w-full">Sinh
+                        <img src={images.sinhhoa} alt="" className="p-2 lg:p-4" />
+                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Sinh
                             hoá</p>
                     </div>
                     <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 rounded-2xl">
-                        <img src={images.nuoctieu} alt="" className="p-4 md:p-8 lg:px-12 lg:py-12" />
-                        <p className="text-sky-700 text-base md:text-2xl  text-center mt-2 md:mt-4 overflow-hidden text-ellipsis text-nowrap w-full">Nước
+                        <img src={images.nuoctieu} alt="" className="p-2 lg:p-4" />
+                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Nước
                             tiểu</p>
                     </div>
                     <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 rounded-2xl">
-                        <img src={images.xetnghiemdich} alt="" className="p-4 md:p-8 lg:px-12 lg:py-12" />
-                        <p className="text-sky-700 text-base md:text-2xl  text-center mt-2 md:mt-4 overflow-hidden text-ellipsis text-nowrap w-full">Xét
+                        <img src={images.xetnghiemdich} alt="" className="p-2 lg:p-4" />
+                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Xét
                             nghiệm dịch</p>
                     </div>
                     <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 rounded-2xl">
-                        <img src={images.vitrung} alt="" className="p-4 md:p-8 lg:px-12 lg:py-12" />
-                        <p className="text-sky-700 text-base md:text-2xl  text-center mt-2 md:mt-4 overflow-hidden text-ellipsis text-nowrap w-full">Vi
+                        <img src={images.vitrung} alt="" className="p-2 lg:p-4" />
+                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Vi
                             trùng</p>
                     </div>
                     <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 rounded-2xl">
-                        <img src={images.sinhhocphantu} alt="" className="p-4 md:p-8 lg:px-12 lg:py-12" />
-                        <p className="text-sky-700 text-base md:text-2xl  text-center mt-2 md:mt-4 overflow-hidden text-ellipsis text-nowrap w-full">Sinh
+                        <img src={images.sinhhocphantu} alt="" className="p-2 lg:p-4" />
+                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Sinh
                             học phân tử</p>
                     </div>
                     <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 rounded-2xl">
-                        <img src={images.chuandoan} alt="" className="p-4 md:p-8 lg:px-12 lg:py-12" />
-                        <p className="text-sky-700 text-base md:text-2xl  text-center mt-2 md:mt-4 overflow-hidden text-ellipsis text-nowrap w-full">Chuẩn
+                        <img src={images.chuandoan} alt="" className="p-2 lg:p-4" />
+                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Chuẩn
                             đoán</p>
                     </div>
                     <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 rounded-2xl">
-                        <img src={images.visinh} alt="" className="p-4 md:p-8 lg:px-12 lg:py-12" />
-                        <p className="text-sky-700 text-base md:text-2xl  text-center mt-2 md:mt-4 overflow-hidden text-ellipsis text-nowrap w-full">Vi
+                        <img src={images.visinh} alt="" className="p-2 lg:p-4" />
+                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Vi
                             sinh</p>
                     </div>
                 </div>
@@ -229,8 +229,8 @@ function HomePage() {
             {/*Đánh giá section*/}
                 <div className="w-full mt-16 md:mt-48">
 
-                <div className="grid grid-cols-3 gap-4">
-                    <div className="col-span-3 sm:col-span-1">
+                <div className="grid grid-cols-3 gap-2 md:gap-4">
+                    <div className="col-span-3 md:col-span-1">
                         <h2 className="text-slate-800 text-3xl leading-snug">Khách hàng nói gì về <span
                             className="bg-clip-text text-transparent bg-gradient-to-br from-sky-900 to-sky-400">Medlab Vĩnh Viễn</span>
                         </h2>
@@ -244,7 +244,7 @@ function HomePage() {
                             <button className="text-sm text-slate-600">Xem tất cả</button>
                         </div>
                     </div>
-                    <div className="col-span-3 sm:col-span-2 grid grid-cols-2 gap-4">
+                    <div className="col-span-3 md:col-span-2 grid grid-cols-2 gap-4">
                         <div className="bg-slate-100 p-4 rounded-lg ">
                             <div className="flex items-start justify-between">
                                 <p className="text-black text-sm md:text-lg">Khách hàng mới</p>
@@ -258,11 +258,11 @@ function HomePage() {
                                         src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
                                         alt="" />
                                     <img
-                                        className="hidden sm:block  object-cover cover w-8 h-8 sm:w-10 sm:h-10 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
+                                        className="hidden lg:block  object-cover cover w-8 h-8 sm:w-10 sm:h-10 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
                                         src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1256&q=80"
                                         alt="" />
                                     <img
-                                        className="hidden sm:block object-cover cover w-8 h-8 sm:w-10 sm:h-10 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
+                                        className="hidden lg:block object-cover cover w-8 h-8 sm:w-10 sm:h-10 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
                                         src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
                                         alt="" />
                                     <p className="flex items-center justify-center cover w- h-8 sm:w-10 sm:h-10 -mx-1 text-xs text-blue-600 bg-blue-100 border-2 border-white rounded-full">+4</p>
@@ -275,7 +275,7 @@ function HomePage() {
                                     <p className="text-xs md:text-base text-slate-600 font-medium">Khách hàng hài lòng</p>
                                 </div>
 
-                                <button className="hidden md:flex text-nowrap text-sm md:text-base items-center gap-2">
+                                <button className="hidden lg:flex text-nowrap text-xs items-center gap-2">
                                     Đặt lịch ngay để nhận ưu đãi
                                     <FaRegCircleCheck />
                                 </button>
@@ -284,7 +284,7 @@ function HomePage() {
 
                         <div className="bg-slate-100 rounded-lg overflow-hidden grid grid-rows-2">
                             <div
-                                className="border-b-[1px] bg-gradient-to-r p-4 w-full flex justify-center items-center from-green-400 to-blue-500 text-base md:text-2xl font-semibold text-transparent bg-clip-text">93%
+                                className="border-b-[1px] bg-gradient-to-r p-4 w-full flex justify-center items-center from-green-400 to-blue-500 text-base md:text-sm font-semibold text-transparent bg-clip-text">93%
                                 khách hàng hài lòng
                             </div>
                             <div
@@ -297,7 +297,7 @@ function HomePage() {
                     {/*Thẻ đệm*/}
                     <div></div>
                     {/*/Rating item*/}
-                    <div className="col-span-3 sm:col-span-2 bg-slate-100 p-4 rounded-lg">
+                    <div className="col-span-3 md:col-span-2 bg-slate-100 p-4 rounded-lg">
                         <div className="flex flex-row gap-1">
                             <div className="flex items-center justify-between w-full">
                                 <div className="flex items-center gap-4">
@@ -321,7 +321,7 @@ function HomePage() {
                     {/*Thẻ đệm*/}
                     <div></div>
                     {/*/Rating item*/}
-                    <div className="col-span-3 sm:col-span-2 bg-slate-100 p-4 rounded-lg">
+                    <div className="col-span-3 md:col-span-2 bg-slate-100 p-4 rounded-lg">
                         <div className="flex flex-row gap-1">
                             <div className="flex items-center justify-between w-full">
                                 <div className="flex items-center gap-4">
@@ -345,7 +345,7 @@ function HomePage() {
                     {/*Thẻ đệm*/}
                     <div></div>
                     {/*/Rating item*/}
-                    <div className="col-span-3 sm:col-span-2 bg-slate-100 p-4 rounded-lg">
+                    <div className="col-span-3 md:col-span-2 bg-slate-100 p-4 rounded-lg">
                         <div className="flex flex-row gap-1">
                             <div className="flex items-center justify-between w-full">
                                 <div className="flex items-center gap-4">
