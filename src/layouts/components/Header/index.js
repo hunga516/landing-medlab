@@ -1,6 +1,7 @@
 
 import { SlMenu } from "react-icons/sl";
 import { CgCalendarDates } from 'react-icons/cg';
+import { Link } from 'react-router-dom';
 
 function Header() {
 
@@ -20,16 +21,16 @@ function Header() {
                         <p className="hidden md:block bg-gradient-to-br from-sky-900 to-sky-500 text-transparent bg-clip-text text-xl font-semibold font-sans">Medlab Vĩnh Viễn</p>
                     </div>
 
-                    <div className="hidden lg:flex gap-6 items-center">
-                        <button className="text-slate-800 font-semibold">Trang chủ</button>
-                        <button className="text-slate-800/60  font-thin">Bảng giá</button>
-                        <button className="text-slate-800/60  font-thin">Về chúng tôi</button>
-                        <button className="text-slate-800/60  font-thin">Tư vấn</button>
+                    <div className="hidden lg:flex gap-8 items-center">
+                        <Link to={"/"} className="text-slate-800/60 text-xl">Trang chủ</Link>
+                        <Link to="/price" className="text-slate-800/60  text-xl">Dịch vụ</Link>
+                        <Link to={"/about"} className="text-slate-800/60  text-xl">Về chúng tôi</Link>
+                        <Link to={"/support"} className="text-slate-800/60  text-xl">Tư vấn</Link>
                     </div>
 
                     <div className="hidden md:block action ]">
                         <button
-                            className="hidden lg:block bg-sky-600 px-4 py-2 text-white rounded-lg drop-shadow-[0_1px_35px_rgba(44,132,241,0.8)]">
+                            className="hidden lg:block text-base md:text-lg bg-sky-600 px-4 py-2 text-white rounded-lg drop-shadow-[0_1px_35px_rgba(44,132,241,0.8)]">
                             Đặt lịch xét nghiệm
                         </button>
                         <button

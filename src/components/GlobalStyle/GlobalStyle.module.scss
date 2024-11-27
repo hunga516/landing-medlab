@@ -1,5 +1,6 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap');
 
 :root {
     --primary: rgb(254, 44, 85);
@@ -15,11 +16,10 @@
 
 
 body {
-    font-family: 'TiktokFront', 'Roboto';
+    font-family: 'Nunito', 'Roboto';
     line-height: 1.5;
     text-rendering: optimizeSpeed;
     color: var(--text-color);
-    scrollbar-width: 1px;
 }
 
 body::-webkit-scrollbar {
@@ -42,6 +42,8 @@ body .tippy-box {
     src: url('../../assets/font/TikTokFont-Semibold.woff2');
     font-weight: 600;
 }
+
+
 
 .default {
     height: 60px;
