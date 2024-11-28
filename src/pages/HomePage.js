@@ -25,6 +25,13 @@ function HomePage() {
                         <h1 className="text-sky-600 font-bold lg:font-medium lg:tracking-tight max-h-[110px] md:max-h-screen text-2xl md:text-6xl lg:text-8xl leading-7 md:leading-[70px] lg:leading-[90px] xl:leading-[100px] text-left">xét
                             nghiệm chính xác, sức khoẻ an tâm
                         </h1>
+                        <p className="hidden md:block text-slate-600 text-sm mt-2 max-h-20 overflow-hidden">
+                            Medlab là trung tâm xét nghiệm hàng đầu, cung cấp dịch vụ chính xác, nhanh chóng với đội ngũ
+                            chuyên gia giàu kinh nghiệm và trang thiết bị hiện đại.
+                        </p>
+                        <p className="block md:hidden text-slate-600 text-xs mt-4 max-h-12 overflow-hidden">
+                            Medlab cung cấp dịch vụ xét nghiệm nhanh, chính xác.
+                        </p>
                         <div className="flex items-center gap-8">
                             <button
                                 className="flex items-center gap-1 bg-sky-600 px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-[10px] text-nowrap md:text-lg rounded-md text-[14px]">
@@ -55,7 +62,8 @@ function HomePage() {
                         </div>
                     </div>
                     <div className="hero-show relative">
-                        <div className="absolute top-1/3 lg:left-2/3 lg:top-16 bg-white px-2 py-1 md:px-4 md:py-2 rounded-md md:rounded-lg drop-shadow-md">
+                        <div
+                            className="absolute top-1/3 lg:left-2/3 lg:top-16 bg-white px-2 py-1 md:px-4 md:py-2 rounded-md md:rounded-lg drop-shadow-md">
                             <Rating className="w-2 h-2 md:w-4 md:h-4 lg:text-lg text-orange-300" />
                         </div>
                         <div
@@ -73,8 +81,9 @@ function HomePage() {
                 <div className="">
                     <p className="text-sky-500 text-sm md:text-2xl font-medium mx-auto font-sans">Dịch Vụ</p>
                     <p className="text-slate-800 text-lg md:text-3xl mx-auto mt-2">Doanh mục <span
-                        className="underline underline-offset-8 decoration-2 decoration-sky-500">xét nghiệm</span> của
+                        className="underline underline-offset-8 decoration-2 decoration-sky-500">Xét nghiệm</span> của
                         Medlab</p>
+
                 </div>
 
                 <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-2 md:gap-4 mt-8 md:mt-16">
@@ -137,8 +146,8 @@ function HomePage() {
             {/*Quy trình section*/}
             <div className="w-full mt-16 md:mt-48">
                 <div className="">
-                    <h1 className="text-3xl leading-10">Quy trình <span
-                        className="underline underline-offset-8 decoration-2 decoration-yellow-400">xét nghiệm</span>
+                    <h1 className="text-xl md:text-3xl leading-10">Quy trình <span
+                        className="underline underline-offset-8 decoration-2 decoration-yellow-400">Xét nghiệm</span>
                     </h1>
                 </div>
 
@@ -154,7 +163,7 @@ function HomePage() {
                         <div className="grid grid-cols-3">
                             <div className="col-span-3 sm:col-span-2">
                                 <h1 className="text-lg leading-8">Bước 1</h1>
-                                <p className="text-slate-900 text-lg md:text-xl leading-8">Tếp nhận và đăng ký thông
+                                <p className="text-slate-900 text-lg md:text-xl leading-8">̀Đăng ký thông
                                     tin</p>
                                 <p className="text-slate-800 text-sm mt-2 tracking-wide h-[40px] md:max-h-full">Bệnh
                                     nhân cung cấp thông tin cá
@@ -173,13 +182,9 @@ function HomePage() {
                     >
                         <div className="grid grid-cols-3">
                             <div className="col-span-3 sm:col-span-2">
-                                <h1 className="text-lg leading-8">Bước 1</h1>
-                                <p className="text-slate-900 text-lg md:text-xl leading-8">Tếp nhận và đăng ký thông
-                                    tin</p>
-                                <p className="text-slate-800 text-sm mt-2 tracking-wide h-[40px] md:max-h-full">Bệnh
-                                    nhân cung cấp thông tin cá
-                                    nhân và lịch sử
-                                    bệnh tại quầy tiếp nhận.</p>
+                                <h1 className="text-lg leading-8">Bước 2</h1>
+                                <p className="text-slate-900 text-lg md:text-xl leading-8">Tiếp nhận và hẹn ngày</p>
+                                <p className="text-slate-800 text-sm mt-2 tracking-wide h-[40px] md:max-h-full">Nhân viên tiếp nhận thông tin từ bệnh nhân, kiểm tra đầy đủ giấy tờ cần thiết và sắp xếp lịch hẹn khám hoặc xét nghiệm. Bệnh nhân được thông báo ngày giờ cụ thể.</p>
                             </div>
                         </div>
                     </div>
@@ -193,13 +198,9 @@ function HomePage() {
                     >
                         <div className="grid grid-cols-3">
                             <div className="col-span-3 sm:col-span-2">
-                                <h1 className="text-lg leading-8">Bước 1</h1>
-                                <p className="text-slate-900 text-lg md:text-xl leading-8">Tếp nhận và đăng ký thông
-                                    tin</p>
-                                <p className="text-slate-800 text-sm mt-2 tracking-wide h-[40px] md:max-h-full">Bệnh
-                                    nhân cung cấp thông tin cá
-                                    nhân và lịch sử
-                                    bệnh tại quầy tiếp nhận.</p>
+                                <h1 className="text-lg leading-8">Bước 3</h1>
+                                <p className="text-slate-900 text-lg md:text-xl leading-8">Tiến hành xét nghiệm</p>
+                                <p className="text-slate-800 text-sm mt-2 tracking-wide h-[40px] md:max-h-full">Bệnh nhân đến đúng lịch hẹn, thực hiện các xét nghiệm theo chỉ định của bác sĩ. Quá trình xét nghiệm được nhân viên y tế hướng dẫn chi tiết để đảm bảo độ chính xác.</p>
                             </div>
                         </div>
                     </div>
@@ -213,13 +214,9 @@ function HomePage() {
                     >
                         <div className="grid grid-cols-3">
                             <div className="col-span-3 sm:col-span-2">
-                                <h1 className="text-lg leading-8">Bước 1</h1>
-                                <p className="text-slate-900 text-lg md:text-xl leading-8">Tếp nhận và đăng ký thông
-                                    tin</p>
-                                <p className="text-slate-800 text-sm mt-2 tracking-wide h-[40px] md:max-h-full">Bệnh
-                                    nhân cung cấp thông tin cá
-                                    nhân và lịch sử
-                                    bệnh tại quầy tiếp nhận.</p>
+                                <h1 className="text-lg leading-8">Bước 4</h1>
+                                <p className="text-slate-900 text-lg md:text-xl leading-8">Tra cứu kết quả</p>
+                                <p className="text-slate-800 text-sm mt-2 tracking-wide h-[40px] md:max-h-full">Bệnh nhân nhận kết quả xét nghiệm trực tiếp tại bệnh viện hoặc tra cứu qua hệ thống trực tuyến. Nhân viên y tế hoặc bác sĩ sẽ giải thích kết quả và đưa ra hướng điều trị phù hợp nếu cần.</p>
                             </div>
                         </div>
                     </div>
@@ -237,7 +234,7 @@ function HomePage() {
 
                         <div className="flex flex-row items-center gap-6 mt-4 md:mt-8">
                             <button
-                                className="flex items-center gap-2 px-4 py-1 text-white rounded-lg text-sm bg-gradient-to-tl from-amber-500 to-yellow-400">
+                                className="flex items-center gap-2 px-4 py-1 text-white font-semibold rounded-lg text-sm bg-gradient-to-tl from-amber-500 to-yellow-400/70">
                                 Để lại đánh giá
                                 <RxPencil1 />
                             </button>
@@ -302,7 +299,7 @@ function HomePage() {
                             <div className="flex items-center justify-between w-full">
                                 <div className="flex items-center gap-4">
                                     <img
-                                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+                                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
                                         alt="avatar-customer"
                                         className="w-8 h-8 rounded-full object-cover"
                                     />
@@ -326,7 +323,7 @@ function HomePage() {
                             <div className="flex items-center justify-between w-full">
                                 <div className="flex items-center gap-4">
                                     <img
-                                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+                                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
                                         alt="avatar-customer"
                                         className="w-8 h-8 rounded-full object-cover"
                                     />
