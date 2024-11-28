@@ -59,7 +59,7 @@ function HomePage() {
                             <Rating className="w-2 h-2 md:w-4 md:h-4 lg:text-lg text-orange-300" />
                         </div>
                         <div
-                            className="absolute text-nowrap bottom-0 right-0 lg:left-2/3 lg:bottom-96 bg-white px-2 py-0.5 sm:px-2 sm:py-1 md:px-4 md:py-1 rounded-md md:rounded-lg drop-shadow-md flex items-center gap-2 max-w-max">
+                            className="absolute text-nowrap top-2/3 lg:left-2/3 lg:top-28 bg-white px-2 py-0.5 sm:px-2 sm:py-1 md:px-4 md:py-1 rounded-md md:rounded-lg drop-shadow-md flex items-center gap-2 max-w-max">
                             <FaCheck className="text-green-500 text-[10px] md:text-base" />
                             <p className="text-slate-800 text-[10px] md:text-base font-medium">Dịch vụ tận tâm</p>
                         </div>
@@ -130,7 +130,7 @@ function HomePage() {
                         Xem bảng giá dịch vụ
                         <TbCash />
                     </div>
-                    <p className="text-slate-600 text-sm md:text-lg">Cập nhật 1 ngày trước</p>
+                    <p className="hidden md:block text-slate-600 text-sm md:text-lg">Cập nhật 1 ngày trước</p>
                 </div>
             </div>
 
@@ -246,15 +246,15 @@ function HomePage() {
                     </div>
                     <div className="col-span-3 md:col-span-2 grid grid-cols-2 gap-4">
                         <div className="bg-slate-100 p-4 rounded-lg ">
-                            <div className="flex items-start justify-between">
+                            <div className="flex items-start justify-between gap-4">
                                 <p className="text-black text-sm md:text-lg">Khách hàng mới</p>
                                 <div className="flex items-center">
                                     <img
-                                        className="object-cover w-8 h-8 sm:w-10 sm:h-10 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
+                                        className="object-cover w-5 h-5 md:w-8 md:h-8 sm:w-10 sm:h-10 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
                                         src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
                                         alt="" />
                                     <img
-                                        className="object-cover cover w-8 h-8 sm:w-10 sm:h-10 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
+                                        className="object-cover cover  w-5 h-5 md:w-8 md:h-8 sm:w-10 sm:h-10 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
                                         src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
                                         alt="" />
                                     <img
@@ -265,7 +265,7 @@ function HomePage() {
                                         className="hidden lg:block object-cover cover w-8 h-8 sm:w-10 sm:h-10 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
                                         src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
                                         alt="" />
-                                    <p className="flex items-center justify-center cover w- h-8 sm:w-10 sm:h-10 -mx-1 text-xs text-blue-600 bg-blue-100 border-2 border-white rounded-full">+4</p>
+                                    <p className="flex items-center justify-center cover  w-5 h-5 md:w-8 md:h-8 sm:w-10 sm:h-10 -mx-1 text-xs text-blue-600 bg-blue-100 border-2 border-white rounded-full">+4</p>
                                 </div>
                             </div>
 
@@ -284,7 +284,7 @@ function HomePage() {
 
                         <div className="bg-slate-100 rounded-lg overflow-hidden grid grid-rows-2">
                             <div
-                                className="border-b-[1px] bg-gradient-to-r p-4 w-full flex justify-center items-center from-green-400 to-blue-500 text-base md:text-sm font-semibold text-transparent bg-clip-text">93%
+                                className="border-b-[1px] bg-gradient-to-r p-4 w-full flex justify-center items-center from-green-400 to-blue-500 text-base md:text-sm font-semibold text-transparent bg-clip-text text-nowrap">93%
                                 khách hàng hài lòng
                             </div>
                             <div
