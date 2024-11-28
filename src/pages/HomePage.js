@@ -22,10 +22,10 @@ function HomePage() {
             >
                 <div className="grid grid-cols-2 p-4 lg:p-8 h-full">
                     <div className="flex flex-col justify-between">
-                        <h1 className="text-sky-600 font-bold lg:font-medium lg:tracking-tight max-h-[110px] md:max-h-screen text-2xl md:text-6xl lg:text-7xl leading-7 md:leading-[70px] lg:leading-[70px] xl:leading-[70px] text-left">xét
+                        <h1 className="text-sky-600 font-bold lg:font-medium lg:tracking-tight max-h-[110px] md:max-h-screen text-2xl md:text-6xl lg:text-7xl leading-7 md:leading-[70px] lg:leading-[70px] xl:leading-[70px] text-left">Xét
                             nghiệm chính xác, sức khoẻ an tâm
                         </h1>
-                        <p className="hidden md:block text-slate-600 text-sm mt-2 max-h-20 overflow-hidden">
+                        <p className="hidden md:block text-slate-600 text-sm md:text-base mt-2 max-h-20 overflow-hidden">
                            Tự hào là trung tâm xét nghiệm hàng đầu, cung cấp dịch vụ chính xác, nhanh chóng với đội ngũ
                             chuyên gia giàu kinh nghiệm và trang thiết bị hiện đại.
                         </p>
