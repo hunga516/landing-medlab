@@ -26,17 +26,17 @@ function HomePage() {
                             nghiệm chính xác, sức khoẻ an tâm
                         </h1>
                         <p className="hidden md:block text-slate-600 text-sm md:text-base mt-2 max-h-20 overflow-hidden">
-                           Tự hào là trung tâm xét nghiệm hàng đầu, cung cấp dịch vụ chính xác, nhanh chóng với đội ngũ
+                           Medlab ự hào là trung tâm xét nghiệm hàng đầu, cung cấp dịch vụ chính xác, nhanh chóng với đội ngũ
                             chuyên gia giàu kinh nghiệm và trang thiết bị hiện đại.
                         </p>
                         <p className="block md:hidden text-slate-600 text-xs">
-                            Tự hào là một trong top trung tâm xét nghiệm nhanh, chính xác.
+                           Medlab tự hào là một trong top trung tâm xét nghiệm nhanh, chính xác.
                         </p>
                         <div className="flex items-center gap-8">
                             <button
                                 className="flex items-center gap-1 bg-sky-600 px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-[10px] text-nowrap md:text-lg rounded-md text-[14px]">
                                 <MdOutlineSearch />
-                                Xem kết quả xét nghiệm
+                                Tra cứu kết quả xét nghiệm
                             </button>
                             <button className="hidden md:block md:flex items-center gap-2 text-[14px]">
                                 Tìm hiểu thêm
