@@ -22,15 +22,15 @@ function HomePage() {
             >
                 <div className="grid grid-cols-2 p-4 lg:p-8 h-full">
                     <div className="flex flex-col justify-between">
-                        <h1 className="text-sky-600 font-bold lg:font-medium lg:tracking-tight max-h-[110px] md:max-h-screen text-2xl md:text-6xl lg:text-8xl leading-7 md:leading-[70px] lg:leading-[90px] xl:leading-[100px] text-left">xét
+                        <h1 className="text-sky-600 font-bold lg:font-medium lg:tracking-tight max-h-[110px] md:max-h-screen text-2xl md:text-6xl lg:text-7xl leading-7 md:leading-[70px] lg:leading-[70px] xl:leading-[70px] text-left">xét
                             nghiệm chính xác, sức khoẻ an tâm
                         </h1>
                         <p className="hidden md:block text-slate-600 text-sm mt-2 max-h-20 overflow-hidden">
-                            Medlab là trung tâm xét nghiệm hàng đầu, cung cấp dịch vụ chính xác, nhanh chóng với đội ngũ
+                           Tự hào là trung tâm xét nghiệm hàng đầu, cung cấp dịch vụ chính xác, nhanh chóng với đội ngũ
                             chuyên gia giàu kinh nghiệm và trang thiết bị hiện đại.
                         </p>
-                        <p className="block md:hidden text-slate-600 text-xs mt-4 max-h-12 overflow-hidden">
-                            Medlab cung cấp dịch vụ xét nghiệm nhanh, chính xác.
+                        <p className="block md:hidden text-slate-600 text-xs">
+                            Tự hào là một trong top trung tâm xét nghiệm nhanh, chính xác.
                         </p>
                         <div className="flex items-center gap-8">
                             <button
@@ -63,13 +63,13 @@ function HomePage() {
                     </div>
                     <div className="hero-show relative">
                         <div
-                            className="absolute top-1/3 lg:left-2/3 lg:top-16 bg-white px-2 py-1 md:px-4 md:py-2 rounded-md md:rounded-lg drop-shadow-md">
+                            className="absolute top-28 right-0 md:top-28 lg:top-16 bg-white px-2 py-1 md:px-4 md:py-2 rounded-md md:rounded-lg drop-shadow-md">
                             <Rating className="w-2 h-2 md:w-4 md:h-4 lg:text-lg text-orange-300" />
                         </div>
                         <div
-                            className="absolute text-nowrap top-2/3 lg:left-2/3 lg:top-28 bg-white px-2 py-0.5 sm:px-2 sm:py-1 md:px-4 md:py-1 rounded-md md:rounded-lg drop-shadow-md flex items-center gap-2 max-w-max">
+                            className="absolute text-nowrap mt-0.5 top-32 right-0 md:top-40 lg:top-28 bg-white px-2 py-0.5 sm:px-2 sm:py-0.5 md:px-4 md:py-1 rounded-md md:rounded-lg drop-shadow-md flex items-center gap-2 max-w-max">
                             <FaCheck className="text-green-500 text-[10px] md:text-base" />
-                            <p className="text-slate-800 text-[10px] md:text-base font-medium">Dịch vụ tận tâm</p>
+                            <p className="text-slate-800 text-[8px] md:text-sm lg:text-base font-medium">Dịch vụ tận tâm</p>
                         </div>
 
                     </div>
