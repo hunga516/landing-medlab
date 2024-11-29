@@ -21,9 +21,9 @@ function HomePage() {
                 }}
             >
                 <div className="grid grid-cols-2 p-4 lg:p-8 h-full">
-                    <div className="flex flex-col justify-between">
+                    <div className="flex flex-col justify-between h-full">
                         <div className="title">
-                            <h1 className="text-sky-600 font-bold max-h-[110px] md:max-h-screen text-3xl md:text-8xl lg:text-8xl leading-7 md:leading-[70px] lg:leading-[70px] xl:leading-[70px] text-left">Xét
+                            <h1 className="text-sky-600 font-bold max-h-[110px] md:max-h-screen text-xl md:text-6xl lg:text-6xl leading-5 md:leading-[60px] lg:leading-[60px] xl:leading-[60px] text-left">Xét
                                 nghiệm chính xác, sức khoẻ an tâm
                             </h1>
                             <p className="hidden md:block text-slate-600 text-sm md:text-xl mt-12 max-h-20 overflow-hidden">
@@ -32,20 +32,20 @@ function HomePage() {
                                 với đội ngũ
                                 chuyên gia giàu kinh nghiệm và trang thiết bị hiện đại.
                             </p>
-                            <p className="block md:hidden text-slate-600 text-base mt-4">
+                            <p className="block md:hidden text-slate-600 text-xs mt-4">
                                 Medlab tự hào là một trong top trung tâm xét nghiệm nhanh, chính xác.
                             </p>
-                            <div className="flex items-center gap-8 mt-16">
-                                <button
-                                    className="hidden md:flex items-center gap-1 bg-sky-600 px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-[10px] text-nowrap md:text-lg rounded-md text-[14px]">
-                                    <MdOutlineSearch />
-                                    Tra cứu kết quả xét nghiệm
-                                </button>
-                                <button className="hidden md:block md:flex items-center gap-2 text-[14px]">
-                                    Tìm hiểu thêm
-                                    <FaArrowRightLong className="text-xs" />
-                                </button>
-                            </div>
+                        </div>
+                        <div className="flex items-center gap-8 mt-16">
+                            <button
+                                className="hidden md:flex items-center gap-1 bg-sky-600 px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-[10px] text-nowrap md:text-lg rounded-md text-[14px]">
+                                <MdOutlineSearch />
+                                Tra cứu kết quả xét nghiệm
+                            </button>
+                            <button className="hidden md:block md:flex items-center gap-2 text-[14px]">
+                                Tìm hiểu thêm
+                                <FaArrowRightLong className="text-xs" />
+                            </button>
                         </div>
                         <div className="search-mobile">
                             <button
@@ -169,9 +169,9 @@ function HomePage() {
                     >
                         <div className="md:grid md:grid-cols-3 -scale-x-100">
                             <div className="col-span-3 sm:col-span-2">
-                                <h1 className="text-lg md:text-2xl font-medium leading-8">Bước 1: Đăng ký <span className="hidden sm:inline">thông
+                                <h1 className="text-sm md:text-lg font-medium leading-8">Bước 1: Đăng ký <span className="hidden sm:inline">thông
                                     tin</span></h1>
-                                <p className="text-slate-800 text-base md:text-xl  mt-2 tracking-wide">Bệnh
+                                <p className="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Bệnh
                                     nhân cung cấp thông tin cá
                                     nhân và lịch sử
                                     bệnh tại quầy tiếp nhận.</p>
@@ -187,8 +187,8 @@ function HomePage() {
                     >
                         <div className="md:grid md:grid-cols-3 -scale-x-100">
                             <div className="col-span-3 sm:col-span-2">
-                                <h1 className="text-lg md:text-2xl font-medium leading-8">Bước 2: Tiếp nhận</h1>
-                                <p className="text-slate-800 text-base md:text-xl  mt-2 tracking-wide">Nhân viên tiếp nhận thông tin, kiểm tra giấy tờ và sắp xếp lịch khám hoặc xét nghiệm, sau đó thông báo ngày giờ cho bệnh nhân.</p>
+                                <h1 className="text-sm md:text-lg font-medium leading-8">Bước 2: Tiếp nhận</h1>
+                                <p className="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Nhân viên tiếp nhận thông tin, kiểm tra giấy tờ và sắp xếp lịch khám hoặc xét nghiệm, sau đó thông báo ngày giờ cho bệnh nhân.</p>
                             </div>
                         </div>
                     </div>
@@ -201,8 +201,8 @@ function HomePage() {
                     >
                         <div className="md:grid md:grid-cols-3 -scale-x-100">
                             <div className="col-span-3 sm:col-span-2">
-                                <h1 className="text-lg md:text-2xl font-medium leading-8">Bước 3: Xét nghiệm</h1>
-                                <p className="text-slate-800 text-base md:text-xl  mt-2 tracking-wide">Bệnh nhân đến theo lịch hẹn, thực hiện xét nghiệm dưới sự hướng dẫn chi tiết của nhân viên y tế.</p>
+                                <h1 className="text-sm md:text-lg font-medium leading-8">Bước 3: Xét nghiệm</h1>
+                                <p className="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Bệnh nhân đến theo lịch hẹn, thực hiện xét nghiệm dưới sự hướng dẫn chi tiết của nhân viên y tế.</p>
                             </div>
                         </div>
                     </div>
@@ -215,8 +215,8 @@ function HomePage() {
                     >
                         <div className="md:grid md:grid-cols-3 -scale-x-100">
                             <div className="col-span-3 sm:col-span-2">
-                                <h1 className="text-lg md:text-2xl font-medium leading-8">Bước 4: Tra cứu <p className="hidden sm:inline">kết quả</p></h1>
-                                <p className="text-slate-800 text-base md:text-xl  mt-2 tracking-wide">Bệnh nhân nhận kết quả tại bệnh viện hoặc tra cứu trực tuyến, bác sĩ sẽ giải thích và tư vấn điều trị nếu cần.</p>
+                                <h1 className="text-sm md:text-lg font-medium leading-8">Bước 4: Tra cứu <p className="hidden sm:inline">kết quả</p></h1>
+                                <p className="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Bệnh nhân nhận kết quả tại bệnh viện hoặc tra cứu trực tuyến, bác sĩ sẽ giải thích và tư vấn điều trị nếu cần.</p>
                             </div>
                         </div>
                     </div>
@@ -374,9 +374,9 @@ function HomePage() {
                 <div className="flex flex-col md:grid md:grid-cols-2 gap-2 mt-4 md:mt-6">
                     <div className="bg-slate-100 p-4 rounded-md flex items-center gap-4">
                         <div className="content col-span-2 flex flex-col">
-                            <h2 className="text-lg font-medium">Gói xét nghiệm tổng quát</h2>
-                            <p className="text-lg text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
-                            <p className="text-slate-600 text-base max-h-12 overflow-x-hidden mt-2">Gói xét nghiệm tổng
+                            <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tổng quát</h2>
+                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
+                            <p className="text-slate-600 text-sm md:text-base max-h-12 overflow-x-hidden mt-2">Gói xét nghiệm tổng
                                 quát giúp kiểm tra sức khỏe toàn diện, bao gồm các xét nghiệm máu, nước tiểu và chỉ số
                                 sinh hóa. Kết quả hỗ trợ phát hiện sớm các bệnh lý tiềm ẩn.</p>
                         </div>
@@ -384,9 +384,9 @@ function HomePage() {
                     </div>
                     <div className="bg-slate-100 p-4 rounded-md flex items-center gap-4">
                         <div className="content col-span-2 flex flex-col">
-                            <h2 className="text-lg font-medium">Gói xét nghiệm tổng quát</h2>
-                            <p className="text-lg text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
-                            <p className="text-slate-600 text-base max-h-12 overflow-x-hidden mt-2">Gói xét nghiệm tổng
+                            <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tổng quát</h2>
+                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
+                            <p className="text-slate-600 text-sm md:text-base max-h-12 overflow-x-hidden mt-2">Gói xét nghiệm tổng
                                 quát giúp kiểm tra sức khỏe toàn diện, bao gồm các xét nghiệm máu, nước tiểu và chỉ số
                                 sinh hóa. Kết quả hỗ trợ phát hiện sớm các bệnh lý tiềm ẩn.</p>
                         </div>
@@ -394,9 +394,9 @@ function HomePage() {
                     </div>
                     <div className="bg-slate-100 p-4 rounded-md flex items-center gap-4">
                         <div className="content col-span-2 flex flex-col">
-                            <h2 className="text-lg font-medium">Gói xét nghiệm tổng quát</h2>
-                            <p className="text-lg text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
-                            <p className="text-slate-600 text-base max-h-12 overflow-x-hidden mt-2">Gói xét nghiệm tổng
+                            <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tổng quát</h2>
+                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
+                            <p className="text-slate-600 text-sm md:text-base max-h-12 overflow-x-hidden mt-2">Gói xét nghiệm tổng
                                 quát giúp kiểm tra sức khỏe toàn diện, bao gồm các xét nghiệm máu, nước tiểu và chỉ số
                                 sinh hóa. Kết quả hỗ trợ phát hiện sớm các bệnh lý tiềm ẩn.</p>
                         </div>
@@ -404,9 +404,9 @@ function HomePage() {
                     </div>
                     <div className="bg-slate-100 p-4 rounded-md flex items-center gap-4">
                         <div className="content col-span-2 flex flex-col">
-                            <h2 className="text-lg font-medium">Gói xét nghiệm tổng quát</h2>
-                            <p className="text-lg text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
-                            <p className="text-slate-600 text-base max-h-12 overflow-x-hidden mt-2">Gói xét nghiệm tổng
+                            <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tổng quát</h2>
+                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
+                            <p className="text-slate-600 text-sm md:text-base max-h-12 overflow-x-hidden mt-2">Gói xét nghiệm tổng
                                 quát giúp kiểm tra sức khỏe toàn diện, bao gồm các xét nghiệm máu, nước tiểu và chỉ số
                                 sinh hóa. Kết quả hỗ trợ phát hiện sớm các bệnh lý tiềm ẩn.</p>
                         </div>
