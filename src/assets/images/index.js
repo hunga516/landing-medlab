@@ -19,6 +19,7 @@ const images = {
     background4: require('./img/background-4.jpg'),
     background5: require('./img/background-5.jpg'),
     background6: require('./img/background-6.jpg'),
+    backgroundstep1: require('./img/background-step1.jpg'),
     tongquat: require('./img/tong-quat.png'),
     virus: require('./img/virus.png'),
     sex: require('./img/sex.png'),
