@@ -15,7 +15,7 @@ function Header() {
 
     return (
         <>
-            <div className="header-wrapper fixed w-full md:px-4 lg:px-0 flex justify-center border-[#1618231F]">
+            <div className="header-wrapper fixed w-full md:px-4 lg:px-0 flex justify-center border-[#1618231F] z-50">
                 <div className="absolute inset-0 bg-white/80 backdrop-blur-lg -z-10"></div>
                 <div className="flex justify-between py-2 items-center w-full mx-4 md:mx-4 lg:mx-12">
                     <button onClick={toggleIsShowNavigateModal} className="block lg:hidden p-1">

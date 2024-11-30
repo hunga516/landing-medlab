@@ -13,36 +13,36 @@ function HomePage() {
         <>
             {/*Hero section*/}
             <div
-                className="w-full h-[250px] md:h-[600px] rounded-2xl bg-cover lg:bg-cover bg-center"
+                className="w-full h-[300px] md:h-[500px] rounded-2xl bg-cover lg:bg-cover bg-center"
                 style={{
                     backgroundImage: `url(${images.background1})`,
                     backgroundRepeat: 'no-repeat',
                     aspectRatio: 16 / 9,
                 }}
             >
-                <div className="grid grid-cols-2 p-4 lg:p-8 h-full">
-                    <div className="flex flex-col justify-between h-full">
+                <div className="grid md:grid-cols-2 grid-cols-3 p-6 md:p-8 h-full">
+                    <div className="flex flex-col justify-between col-span-2 md:col-span-1">
                         <div className="title">
-                            <h1 className="text-sky-600 font-bold max-h-[110px] md:max-h-screen text-xl md:text-6xl lg:text-6xl leading-5 md:leading-[60px] lg:leading-[60px] xl:leading-[60px] text-left">Xét
+                            <h1 className="text-sky-600 font-bold max-h-[110px] md:max-h-screen text-2xl md:text-4xl lg:text5xl leading-6 md:leading-[50px] lg:leading-[60px] xl:leading-[60px] text-left">Xét
                                 nghiệm chính xác, sức khoẻ an tâm
                             </h1>
-                            <p className="hidden md:block text-slate-600 text-sm md:text-xl mt-12 max-h-20 overflow-hidden">
+                            <p className="hidden md:block text-slate-600 text-sm md:text-sm mt-4 max-h-20 overflow-hidden">
                                 Medlab tự hào là trung tâm xét nghiệm hàng đầu, cung cấp dịch vụ chính xác, nhanh
                                 chóng
                                 với đội ngũ
                                 chuyên gia giàu kinh nghiệm và trang thiết bị hiện đại.
                             </p>
-                            <p className="block md:hidden text-slate-600 text-xs mt-4">
+                            <p className="block md:hidden text-slate-600 text-xs mt-6">
                                 Medlab tự hào là một trong top trung tâm xét nghiệm nhanh, chính xác.
                             </p>
                         </div>
-                        <div className="flex items-center gap-8 mt-16">
+                        <div className="flex items-center gap-8">
                             <button
-                                className="hidden md:flex items-center gap-1 bg-sky-600 px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-[10px] text-nowrap md:text-lg rounded-md text-[14px]">
+                                className="hidden md:flex items-center gap-1 bg-sky-600 px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-[10px] text-nowrap md:text-base rounded-md text-[14px]">
                                 <MdOutlineSearch />
                                 Tra cứu kết quả xét nghiệm
                             </button>
-                            <button className="hidden md:block md:flex items-center gap-2 text-[14px]">
+                            <button className="hidden md:block md:flex items-center gap-2 text-xs text-nowrap">
                                 Tìm hiểu thêm
                                 <FaArrowRightLong className="text-xs" />
                             </button>
@@ -54,32 +54,32 @@ function HomePage() {
                                 Tra cứu kết quả xét nghiệm
                             </button>
                         </div>
-                        <div className="w-full md:w-72 hidden md:flex items-center gap-x-4 md:gap-x-6">
+                        <div className="w-full md:w-72 hidden md:flex items-center gap-x-4">
                             <div className="flex flex-col items-center gap-2">
-                                <p className="text-xs md:text-2xl text-nowrap font-medium">35.5k</p>
-                                <p className="text-sky-600 text-xs md:text-lg tracking-wide text-nowrap">Khách
+                                <p className="text-xs md:text-lg text-nowrap font-medium">35.5k</p>
+                                <p className="text-sky-600 text-xs md:text-base tracking-wide text-nowrap">Khách
                                     hàng</p>
                             </div>
                             <div className="flex flex-col items-center gap-2">
-                                <p className="text-xs md:text-2xl text-nowrap font-medium">120.5k</p>
-                                <p className="text-sky-600 text-xs md:text-lg tracking-wide text-nowrap">Lượt xét
+                                <p className="text-xs md:text-lg text-nowrap font-medium">120.5k</p>
+                                <p className="text-sky-600 text-xs md:text-base tracking-wide text-nowrap">Lượt xét
                                     nghiệm</p>
                             </div>
                             <div className="flex flex-col items-center gap-2">
-                                <p className="text-xs md:text-2xl text-nowrap font-medium">+30</p>
-                                <p className="text-sky-600 text-xs md:text-lg tracking-wide text-nowrap">Đối tác</p>
+                                <p className="text-xs md:text-lg text-nowrap font-medium">+30</p>
+                                <p className="text-sky-600 text-xs md:text-base tracking-wide text-nowrap">Đối tác</p>
                             </div>
                         </div>
                     </div>
                     <div className="hero-show relative">
                         <div
-                            className="absolute top-0 right-0 bg-white lg:bottom-9 lg:top-auto px-2 py-1 md:px-4 md:py-2 rounded-md md:rounded-lg">
-                            <Rating className="w-2 h-2 md:w-3 md:h-3 lg:text-lg text-orange-300" />
+                            className="absolute top-0 right-0 bg-white lg:bottom-6 lg:top-auto px-2 py-1 rounded-md">
+                            <Rating className="w-2 h-2 text-orange-300" />
                         </div>
                         <div
-                            className="absolute hidden md:flex text-nowrap mt-0.5 bottom-0 right-0 bg-white px-2 py-0.5 sm:px-2 sm:py-0.5 md:px-4 md:py-1 rounded-md md:rounded-lg items-center gap-1 lg:gap-2 max-w-max">
-                            <FaCheck className="text-green-500 text-[8px] md:text-base" />
-                            <p className="text-slate-800 text-[8px] md:text-sm lg:text-base font-medium">Dịch vụ tận tâm</p>
+                            className="absolute hidden md:flex text-nowrap mt-0.5 bottom-0 right-0 bg-white px-2 py-0.5 sm:px-2 sm:py-0.5 rounded-md items-center gap-2 max-w-max">
+                            <FaCheck className="text-green-500 text-[8px] md:text-xs" />
+                            <p className="text-slate-800 text-[8px] md:text-xs font-medium">Dịch vụ tận tâm</p>
                         </div>
                     </div>
                 </div>
@@ -88,74 +88,74 @@ function HomePage() {
             {/*Dịch vụ section*/}
             <div className="w-full mt-12 md:mt-32">
                 <div className="">
-                    <p className="text-sky-500 text-sm md:text-2xl font-medium mx-auto font-sans">Dịch Vụ</p>
-                    <p className="text-slate-800 text-lg md:text-3xl mx-auto mt-2">Doanh mục <span
+                    <p className="text-sky-500 text-sm md:text-lg font-medium mx-auto font-sans">Dịch Vụ</p>
+                    <p className="text-slate-800 text-lg md:text-2xl mx-auto mt-2">Doanh mục <span
                         className="underline underline-offset-8 decoration-2 decoration-sky-500">Xét nghiệm</span> của
                         Medlab</p>
                 </div>
 
-                <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-8 gap-4 mt-6 md:mt-8">
-                    <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 lg:p-6 rounded-2xl">
-                        <img src={images.huyethoc} alt="" className="w-24 sm:w-20 px-2 py-1 mx-auto" />
-                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl text-center overflow-hidden text-ellipsis text-nowrap w-full">Huyết
+                <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-8 gap-4 mt-6 md:mt-8">
+                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                        <img src={images.huyethoc} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+                        <p className="text-sky-700 text-xs md:textsmm text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Huyết
                             học</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 lg:p-6 rounded-2xl">
-                        <img src={images.sinhhoamiendich} alt="" className="w-24 sm:w-20 px-2 py-1 mx-auto" />
-                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Sinh
+                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                        <img src={images.sinhhoamiendich} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+                        <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Sinh
                             hoá - Miễn dịch</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 lg:p-6 rounded-2xl">
-                        <img src={images.sinhhoa} alt="" className="w-24 sm:w-20 px-2 py-1 mx-auto" />
-                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Sinh
+                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                        <img src={images.sinhhoa} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+                        <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Sinh
                             hoá</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 lg:p-6 rounded-2xl">
-                        <img src={images.nuoctieu} alt="" className="w-24 sm:w-20 px-2 py-1 mx-auto" />
-                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Nước
+                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                        <img src={images.nuoctieu} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+                        <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Nước
                             tiểu</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 lg:p-6 rounded-2xl">
-                        <img src={images.xetnghiemdich} alt="" className="w-24 sm:w-20 px-2 py-1 mx-auto" />
-                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Xét
+                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                        <img src={images.xetnghiemdich} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+                        <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Xét
                             nghiệm dịch</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 lg:p-6 rounded-2xl">
-                        <img src={images.vitrung} alt="" className="w-24 sm:w-20 px-2 py-1 mx-auto" />
-                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Vi
+                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                        <img src={images.vitrung} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+                        <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Vi
                             trùng</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 lg:p-6 rounded-2xl">
-                        <img src={images.sinhhocphantu} alt="" className="w-24 sm:w-20 px-2 py-1 mx-auto" />
-                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Sinh
+                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                        <img src={images.sinhhocphantu} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+                        <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Sinh
                             học phân tử</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 lg:p-6 rounded-2xl">
-                        <img src={images.chuandoan} alt="" className="w-24 sm:w-20 px-2 py-1 mx-auto" />
-                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Chuẩn
+                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                        <img src={images.chuandoan} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+                        <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Chuẩn
                             đoán</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 md:p-4 lg:p-6 rounded-2xl">
-                        <img src={images.visinh} alt="" className="w-24 sm:w-20 px-2 py-1 mx-auto" />
-                        <p className="text-sky-700 text-xs sm:text-sm md:text-lg lg:text-xl  text-center overflow-hidden text-ellipsis text-nowrap w-full">Vi
+                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                        <img src={images.visinh} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+                        <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Vi
                             sinh</p>
                     </div>
                 </div>
 
                 <div className="flex items-center justify-between mt-6 md:mt-12">
-                    <div className="text-sky-600 text-sm md:text-lg flex items-center gap-2">
+                    <div className="text-sky-600 text-sm md:text-sm flex items-center gap-2">
                         Xem bảng giá dịch vụ
                         <TbCash />
                     </div>
-                    <p className="hidden md:block text-slate-600 text-sm md:text-lg">Cập nhật 1 ngày trước</p>
+                    <p className="hidden md:block text-slate-600 text-sm md:text-xs">Cập nhật 1 ngày trước</p>
                 </div>
             </div>
 
             {/*Quy trình section*/}
             <div className="w-full mt-12 md:mt-32">
                 <div className="">
-                    <h1 className="text-xl md:text-3xl leading-10">Quy trình <span
-                        className="underline underline-offset-8 decoration-2 decoration-yellow-400">Xét nghiệm</span>
+                    <h1 className="text-lg md:text-2xl leading-10">Quy trình
+                        <span className="underline underline-offset-8 decoration-2 decoration-yellow-400"> Xét nghiệm</span>
                     </h1>
                 </div>
 
@@ -169,7 +169,7 @@ function HomePage() {
                     >
                         <div className="md:grid md:grid-cols-3 -scale-x-100">
                             <div className="col-span-3 sm:col-span-2">
-                                <h1 className="text-sm md:text-lg font-medium leading-8">Bước 1: Đăng ký <span className="hidden sm:inline">thông
+                                <h1 className="text-sm md:text-lg font-medium">Bước 1: Đăng ký <span className="hidden sm:inline">thông
                                     tin</span></h1>
                                 <p className="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Bệnh
                                     nhân cung cấp thông tin cá
@@ -187,7 +187,7 @@ function HomePage() {
                     >
                         <div className="md:grid md:grid-cols-3 -scale-x-100">
                             <div className="col-span-3 sm:col-span-2">
-                                <h1 className="text-sm md:text-lg font-medium leading-8">Bước 2: Tiếp nhận</h1>
+                                <h1 className="text-sm md:text-lg font-medium">Bước 2: Tiếp nhận</h1>
                                 <p className="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Nhân viên tiếp nhận thông tin, kiểm tra giấy tờ và sắp xếp lịch khám hoặc xét nghiệm, sau đó thông báo ngày giờ cho bệnh nhân.</p>
                             </div>
                         </div>
@@ -201,7 +201,7 @@ function HomePage() {
                     >
                         <div className="md:grid md:grid-cols-3 -scale-x-100">
                             <div className="col-span-3 sm:col-span-2">
-                                <h1 className="text-sm md:text-lg font-medium leading-8">Bước 3: Xét nghiệm</h1>
+                                <h1 className="text-sm md:text-lg font-medium">Bước 3: Xét nghiệm</h1>
                                 <p className="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Bệnh nhân đến theo lịch hẹn, thực hiện xét nghiệm dưới sự hướng dẫn chi tiết của nhân viên y tế.</p>
                             </div>
                         </div>
@@ -215,7 +215,7 @@ function HomePage() {
                     >
                         <div className="md:grid md:grid-cols-3 -scale-x-100">
                             <div className="col-span-3 sm:col-span-2">
-                                <h1 className="text-sm md:text-lg font-medium leading-8">Bước 4: Tra cứu <p className="hidden sm:inline">kết quả</p></h1>
+                                <h1 className="text-sm md:text-lg font-medium">Bước 4: Tra cứu <p className="hidden sm:inline">kết quả</p></h1>
                                 <p className="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Bệnh nhân nhận kết quả tại bệnh viện hoặc tra cứu trực tuyến, bác sĩ sẽ giải thích và tư vấn điều trị nếu cần.</p>
                             </div>
                         </div>
@@ -228,8 +228,8 @@ function HomePage() {
 
                 <div className="grid grid-cols-3 gap-2 md:gap-4">
                     <div className="col-span-3 md:col-span-1">
-                        <h2 className="text-slate-800 text-xl md:text-3xl leading-snug">Khách hàng nói gì về <span
-                            className="bg-clip-text text-transparent bg-gradient-to-br from-sky-900 to-sky-400 text-xl md:text-3xl">Medlab Vĩnh Viễn</span>
+                        <h2 className="text-slate-800 text-xl md:text-2xl leading-snug">Khách hàng nói gì về <span
+                            className="bg-clip-text text-transparent bg-gradient-to-br from-sky-900 to-sky-400 text-xl md:text-2xl">Medlab Vĩnh Viễn</span>
                         </h2>
 
                         <div className="flex flex-row items-center gap-6 mt-2">
@@ -241,9 +241,9 @@ function HomePage() {
                         </div>
                     </div>
                     <div className="col-span-3 md:col-span-2 grid grid-cols-2 gap-4 mt-2 md:mt-0">
-                        <div className="bg-slate-100 p-4 rounded-lg ">
+                        <div className="bg-slate-100 p-2 md:p-4 rounded-lg ">
                             <div className="flex items-start justify-between gap-4">
-                                <p className="text-black text-sm md:text-lg">Khách hàng mới</p>
+                                <p className="text-black text-sm">Khách hàng mới</p>
                                 <div className="flex items-center">
                                     <img
                                         className="object-cover w-5 h-5 md:w-8 md:h-8 sm:w-10 sm:h-10 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
@@ -265,14 +265,14 @@ function HomePage() {
                                 </div>
                             </div>
 
-                            <div className="flex items-end mt-12">
-                                <div className="w-full">
-                                    <p className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-yellow-500">91%</p>
-                                    <p className="text-xs md:text-base text-slate-600 font-medium">Khách hàng hài lòng</p>
+                            <div className="grid grid-cols-3 mt-6 md:mt-12 items-end">
+                                <div className="w-full col-span-2">
+                                    <p className="text-xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-yellow-500">91%</p>
+                                    <p className="text-xs md:text-sm text-slate-600 font-medium">Khách hàng hài lòng</p>
                                 </div>
 
                                 <button className="hidden lg:flex text-nowrap text-xs items-center gap-2">
-                                    Đặt lịch ngay để nhận ưu đãi
+                                    Đặt lịch ngay
                                     <FaRegCircleCheck />
                                 </button>
                             </div>
@@ -280,11 +280,11 @@ function HomePage() {
 
                         <div className="bg-slate-100 rounded-lg overflow-hidden grid grid-rows-2">
                             <div
-                                className="border-b-[1px] bg-gradient-to-r p-4 w-full flex justify-center items-center from-green-400 to-blue-500 text-lg md:text-xl font-semibold text-transparent bg-clip-text text-nowrap">93%
+                                className="border-b-[1px] bg-gradient-to-r p-2 md:p-4 w-full flex justify-center items-center from-green-400 to-blue-500 text-sm md:text-base font-semibold text-transparent bg-clip-text text-nowrap">93%
                                 <p className="hidden md:block mx-1">khách hàng</p> hài lòng
                             </div>
                             <div
-                                className="bg-gradient-to-r from-yellow-400 to-yellow-600 w-full flex justify-center items-center text-lg md:text-xl text-nowrap font-semibold text-transparent bg-clip-text">85%
+                                className="bg-gradient-to-r from-yellow-400 to-yellow-600 w-full flex justify-center items-center text-sm md:text-base text-nowrap font-semibold text-transparent bg-clip-text">85%
                                 <p className="hidden md:block mx-1">khách hàng</p> quay lại
                             </div>
                         </div>
@@ -302,7 +302,7 @@ function HomePage() {
                                         alt="avatar-customer"
                                         className="w-8 h-8 rounded-full object-cover"
                                     />
-                                    <p className="flex items-center gap-2 text-slate-800 text-sm md:text-lg tracking-wide">
+                                    <p className="flex items-center gap-2 text-slate-800 text-xs md:text-sm tracking-wide">
                                         Chị Mai, Bình Tân TP.HCM
                                         <Rating />
                                     </p>
@@ -326,7 +326,7 @@ function HomePage() {
                                         alt="avatar-customer"
                                         className="w-8 h-8 rounded-full object-cover"
                                     />
-                                    <p className="flex items-center gap-2 text-slate-800 text-sm md:text-lg tracking-wide">
+                                    <p className="flex items-center gap-2 text-slate-800 text-xs md:text-sm tracking-wide">
                                         Anh Hùng, Quận 1 TP.HCM
                                         <Rating />
                                     </p>
@@ -350,7 +350,7 @@ function HomePage() {
                                         alt="avatar-customer"
                                         className="w-8 h-8 rounded-full object-cover"
                                     />
-                                    <p className="flex items-center gap-2 text-slate-800 text-sm md:text-lg tracking-wide">
+                                    <p className="flex items-center gap-2 text-slate-800 text-xs md:text-sm tracking-wide">
                                         Chị Thảo, Quận 10 TP.HCM
                                         <Rating />
                                     </p>
