@@ -4,20 +4,20 @@ function PricePage() {
 
     return (
         <>
-            <section className="container mx-auto">
+            <section className="container">
                 <div className="flex items-center justify-between">
                     <div>
-                        <h2 className="text-lg md:text-3xl font-medium text-gray-800 dark:text-white">Dịch vụ</h2>
+                        <h2 className="text-base sm:text-lg md:text-xl font-medium text-gray-800 dark:text-white">Dịch vụ</h2>
 
-                        <p className="mt-1 text-sm md:text-xl text-gray-500 dark:text-gray-300">Bảng giá tất cả dịch vụ
+                        <p className="hidden md:inline mt-1 text-base sm:text-lg md:text-lg text-gray-500 dark:text-gray-300">Bảng giá tất cả dịch vụ
                             của Medlab</p>
                     </div>
 
                     <div className="flex items-center gap-2">
                         <div className="relative">
-                            <input className="px-4 py-2 ring-1 ring-slate-200 rounded-lg w-80" type="text"
+                            <input className="px-2 py-1 md:px-4 md:py-2 ring-1 ring-slate-200 rounded-lg w-48 md:max-w-80 placeholder:text-sm" type="text"
                                    placeholder="Nhập dịch vụ cần tìm" />
-                            <p className="absolute right-4 top-1/2 transform -translate-y-1/2"><IoIosSearch className="text-slate-500" /></p>
+                            <p className="absolute right-4 top-1/2 transform -translate-y-1/2"><IoIosSearch className="text-slate-500 text-lg md:text-2xl" /></p>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@ function PricePage() {
                 <div className="flex flex-col mt-6">
                     <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                            <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
+                            <div className="overflow-scroll border border-gray-200 dark:border-gray-700 md:rounded-lg">
 
                                 <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                                     <thead className="bg-gray-50 dark:bg-gray-800">
@@ -33,7 +33,7 @@ function PricePage() {
                                         <th scope="col"
                                             className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                             <button className="flex items-center gap-x-3 focus:outline-none">
-                                                <span className="text-lg">Tên dịch vụ</span>
+                                                <span className="text-sm md:text-lg text-nowrap">Tên dịch vụ</span>
 
                                                 <svg className="h-3" viewBox="0 0 10 11" fill="none"
                                                      xmlns="http://www.w3.org/2000/svg">
@@ -51,17 +51,17 @@ function PricePage() {
                                         </th>
 
                                         <th scope="col"
-                                            className="px-12 py-3.5 text-sm md:text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            className="px-12 py-3.5 text-sm md:text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap">
                                             Tên nhóm
                                         </th>
 
                                         <th scope="col"
-                                            className="px-4 py-3.5 text-sm md:text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            className="px-4 py-3.5 text-sm md:text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap">
                                             Đơn vị
                                         </th>
 
                                         <th scope="col"
-                                            className="px-4 py-3.5 text-sm md:text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">Trạng thái
+                                            className="px-4 py-3.5 text-sm md:text-lg font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-nowrap">Trạng thái
                                         </th>
 
                                     </tr>
@@ -71,14 +71,14 @@ function PricePage() {
                                     <tr>
                                         <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
                                             <div>
-                                                <h2 className="font-medium text-gray-800 dark:text-white text-base">Khám
+                                                <h2 className="font-medium text-gray-800 dark:text-white text-sm md:text-base">Khám
                                                     1</h2>
                                             </div>
                                         </td>
                                         <td className="px-12 py-4 text-sm font-medium whitespace-nowrap">
                                             <div
                                                 className="">
-                                                <h2 className="font-medium text-gray-800 dark:text-white text-base">Khám
+                                                <h2 className="font-medium text-gray-800 dark:text-white text-sm md:text-base">Khám
                                                     1</h2>
                                             </div>
                                         </td>
@@ -98,14 +98,14 @@ function PricePage() {
                                     <tr>
                                         <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
                                             <div>
-                                                <h2 className="font-medium text-gray-800 dark:text-white text-base">Khám
+                                                <h2 className="font-medium text-gray-800 dark:text-white text-sm md:text-base">Khám
                                                     1</h2>
                                             </div>
                                         </td>
                                         <td className="px-12 py-4 text-sm font-medium whitespace-nowrap">
                                             <div
                                                 className="">
-                                                <h2 className="font-medium text-gray-800 dark:text-white text-base">Khám
+                                                <h2 className="font-medium text-gray-800 dark:text-white text-sm md:text-base">Khám
                                                     1</h2>
                                             </div>
                                         </td>
@@ -125,14 +125,14 @@ function PricePage() {
                                     <tr>
                                         <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
                                             <div>
-                                                <h2 className="font-medium text-gray-800 dark:text-white text-base">Khám
+                                                <h2 className="font-medium text-gray-800 dark:text-white text-sm md:text-base">Khám
                                                     1</h2>
                                             </div>
                                         </td>
                                         <td className="px-12 py-4 text-sm font-medium whitespace-nowrap">
                                             <div
                                                 className="">
-                                                <h2 className="font-medium text-gray-800 dark:text-white text-base">Khám
+                                                <h2 className="font-medium text-gray-800 dark:text-white text-sm md:text-base">Khám
                                                     1</h2>
                                             </div>
                                         </td>
@@ -152,14 +152,14 @@ function PricePage() {
                                     <tr>
                                         <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
                                             <div>
-                                                <h2 className="font-medium text-gray-800 dark:text-white text-base">Khám
+                                                <h2 className="font-medium text-gray-800 dark:text-white text-sm md:text-base">Khám
                                                     1</h2>
                                             </div>
                                         </td>
                                         <td className="px-12 py-4 text-sm font-medium whitespace-nowrap">
                                             <div
                                                 className="">
-                                                <h2 className="font-medium text-gray-800 dark:text-white text-base">Khám
+                                                <h2 className="font-medium text-gray-800 dark:text-white text-sm md:text-base">Khám
                                                     1</h2>
                                             </div>
                                         </td>
@@ -179,14 +179,14 @@ function PricePage() {
                                     <tr>
                                         <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
                                             <div>
-                                                <h2 className="font-medium text-gray-800 dark:text-white text-base">Khám
+                                                <h2 className="font-medium text-gray-800 dark:text-white text-sm md:text-base">Khám
                                                     1</h2>
                                             </div>
                                         </td>
                                         <td className="px-12 py-4 text-sm font-medium whitespace-nowrap">
                                             <div
                                                 className="">
-                                                <h2 className="font-medium text-gray-800 dark:text-white text-base">Khám
+                                                <h2 className="font-medium text-gray-800 dark:text-white text-sm md:text-base">Khám
                                                     1</h2>
                                             </div>
                                         </td>
@@ -206,14 +206,14 @@ function PricePage() {
                                     <tr>
                                         <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
                                             <div>
-                                                <h2 className="font-medium text-gray-800 dark:text-white text-base">Khám
+                                                <h2 className="font-medium text-gray-800 dark:text-white text-sm md:text-base">Khám
                                                     1</h2>
                                             </div>
                                         </td>
                                         <td className="px-12 py-4 text-sm font-medium whitespace-nowrap">
                                             <div
                                                 className="">
-                                                <h2 className="font-medium text-gray-800 dark:text-white text-base">Khám
+                                                <h2 className="font-medium text-gray-800 dark:text-white text-sm md:text-base">Khám
                                                     1</h2>
                                             </div>
                                         </td>
@@ -233,14 +233,14 @@ function PricePage() {
                                     <tr>
                                         <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
                                             <div>
-                                                <h2 className="font-medium text-gray-800 dark:text-white text-base">Khám
+                                                <h2 className="font-medium text-gray-800 dark:text-white text-sm md:text-base">Khám
                                                     1</h2>
                                             </div>
                                         </td>
                                         <td className="px-12 py-4 text-sm font-medium whitespace-nowrap">
                                             <div
                                                 className="">
-                                                <h2 className="font-medium text-gray-800 dark:text-white text-base">Khám
+                                                <h2 className="font-medium text-gray-800 dark:text-white text-sm md:text-base">Khám
                                                     1</h2>
                                             </div>
                                         </td>
