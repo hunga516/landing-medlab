@@ -1,62 +1,46 @@
+import { FaPhone } from 'react-icons/fa';
 
-import { SlMenu } from "react-icons/sl";
-import { CgCalendarDates } from 'react-icons/cg';
-import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
-import NavigateModal from '../../../components/Modal/NavigateModal';
-
-function Header() {
-
-    const [isShowNavigateModal, setIsShowNavigateModal] = useState(false);
-    const location = useLocation();
-
-    const toggleIsShowNavigateModal = () => {
-        setIsShowNavigateModal(!isShowNavigateModal);
-    }
+function Footer() {
 
     return (
-        <>
-            <div className="header-wrapper fixed w-full md:px-4 lg:px-0 flex justify-center border-[#1618231F] z-50">
-                <div className="absolute inset-0 bg-white/80 backdrop-blur-lg -z-10"></div>
-                <div className="flex justify-between py-2 items-center w-full mx-4 md:mx-4 lg:mx-12">
-                    <button onClick={toggleIsShowNavigateModal} className="block lg:hidden p-1">
-                        <SlMenu className="text-2xl" />
-                    </button>
-
-                    <Link to="/" className="logo flex gap-2 items-center">
-                        <p className="md:hidden bg-gradient-to-br from-sky-900 to-sky-500 text-transparent bg-clip-text text-sm md:text-xl font-semibold font-sans">Medlab
+        <div className="w-full p-4 md:p-16 bg-yellow-100 rounded-tr-lg rounded-tl-lg pb-24">
+            <div className="grid sm:grid-cols-2 gap-2 gap-y-4 md:gap-8">
+                <div className="flex items-start justify-between">
+                    <div className="flex items-center gap-2">
+                        <img src="/logo.png" alt="" className="w-6 h-6" />
+                        <p className="block bg-gradient-to-br from-sky-900 to-sky-500 text-transparent bg-clip-text text-sm text-nowrap font-semibold font-sans">Medlab
                             Vĩnh Viễn</p>
-                        <img src="/logo.png" alt="" className="w-10 h-10" />
-                        <p className="hidden md:block bg-gradient-to-br from-sky-900 to-sky-500 text-transparent bg-clip-text text-base font-semibold font-sans">Medlab Vĩnh Viễn</p>
-                    </Link>
-
-                    <div className="hidden lg:flex gap-8 items-center">
-                        <Link to={"/"} className={`${location.pathname === '/' ? 'text-slate-800' : "text-slate-800/60"}  text-base font-medium`}>Trang chủ</Link>
-                        <Link to="/price" className={`${location.pathname === '/price' ? 'text-slate-800' : "text-slate-800/60"}  text-base font-medium`}>Dịch vụ</Link>
-                        <Link to={"/about"} className={`${location.pathname === '/about' ? 'text-slate-800' : "text-slate-800/60"}  text-base font-medium`}>Về chúng tôi</Link>
-                        <Link to={"/support"} className={`${location.pathname === '/support' ? 'text-slate-800' : "text-slate-800/60"}  text-base font-medium`}>Tư vấn</Link>
                     </div>
-
-                    <div className="hidden md:block action ]">
-                        <button
-                            className="hidden lg:block text-base md:text-base bg-sky-600 px-4 py-2 text-white rounded-lg drop-shadow-[0_1px_35px_rgba(44,132,241,0.8)]">
-                            Đặt lịch xét nghiệm
-                        </button>
-                        <button
-                            className="lg:hidden flex items-center gap-1 bg-sky-600 pl-3 pr-4 py-2 text-white rounded-lg">
-                            <CgCalendarDates className="text-white" />
-                            Đặt lịch
-                        </button>
-
+                    <div className="flex flex-col items-end gap-2">
+                        <div
+                            className="flex items-center gap-2 text-nowrap bg-white rounded-full px-3 py-2 font-medium text-xs tracking-wide text-sky-600">
+                            <FaPhone />
+                            0909 636293
+                        </div>
+                        <div
+                            className="flex items-center gap-2 text-nowrap bg-white rounded-full px-3 py-2 font-medium text-xs tracking-wide text-sky-600">
+                            <FaPhone />
+                            028 39273929
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            {isShowNavigateModal && (
-                <NavigateModal toggleIsShowNavigateModal={toggleIsShowNavigateModal} />
-            )}
-        </>
+                <div className="">
+                    <h1 className="text-xs font-sans font-bold text-sky-600">
+                        CÔNG TY TNHH TM DV Y TẾ MEDLAB XÉT NGHIỆM Y KHOA - TẾ BÀO HỌC
+                    </h1>
+
+                    <p className="text-sky-600 text-xs font-semibold mt-1">Mã số thuế: 0314145380</p>
+                    <p className="text-sky-600 text-xs font-semibold mt-1">Ngày cấp: 06/12/2016</p>
+
+                    <h2 className="text-xs font-semibold mt-4 text-sky-600 ">Địa chỉ:</h2>
+                    <p className="text-sky-600 text-xs font-bold mt-1">Trung Tâm Xét Nghiệm Y Khoa Medlab, <p className="font-semibold">250 Đ. Vĩnh Viễn, Phường 4, Quận 10, Hồ Chí Minh, Việt Nam</p></p>
+
+
+                </div>
+            </div>
+        </div>
     );
 }
 
-export default Header;
+export default Footer;

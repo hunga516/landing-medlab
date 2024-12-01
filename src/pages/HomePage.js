@@ -2,8 +2,8 @@ import images from '../assets/images';
 import { FaArrowRightLong, FaRegCircleCheck } from 'react-icons/fa6';
 import { MdOutlineSearch } from 'react-icons/md';
 import { TbCash } from 'react-icons/tb';
-import { RxPencil1 } from "react-icons/rx";
-import { FaCheck } from "react-icons/fa";
+import { RxPencil1 } from 'react-icons/rx';
+import { FaCheck } from 'react-icons/fa';
 
 import Rating from '../components/Rating/Rating';
 
@@ -23,7 +23,7 @@ function HomePage() {
                 <div className="grid md:grid-cols-2 grid-cols-3 p-6 md:p-8 h-full">
                     <div className="flex flex-col justify-between col-span-2 md:col-span-1">
                         <div className="title">
-                            <h1 className="text-sky-600 font-bold max-h-[110px] md:max-h-screen text-2xl md:text-4xl lg:text5xl leading-6 md:leading-[50px] lg:leading-[60px] xl:leading-[60px] text-left">Xét
+                            <h1 className="text-[#0093DD] font-bold max-h-[110px] md:max-h-screen text-2xl md:text-4xl lg:text-5xl leading-7 md:leading-[40px] lg:leading-[50px] xl:leading-[50px] text-left">Xét
                                 nghiệm chính xác, sức khoẻ an tâm
                             </h1>
                             <p className="hidden md:block text-slate-600 text-sm md:text-sm mt-4 max-h-20 overflow-hidden">
@@ -38,7 +38,7 @@ function HomePage() {
                         </div>
                         <div className="flex items-center gap-8">
                             <button
-                                className="hidden md:flex items-center gap-1 bg-sky-600 px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-[10px] text-nowrap md:text-base rounded-md text-[14px]">
+                                className="hidden md:flex items-center gap-1 bg-[#0093DD] px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-[10px] text-nowrap md:text-base rounded-md text-[14px]">
                                 <MdOutlineSearch />
                                 Tra cứu kết quả xét nghiệm
                             </button>
@@ -49,7 +49,7 @@ function HomePage() {
                         </div>
                         <div className="search-mobile">
                             <button
-                                className="flex md:hidden items-center gap-1 bg-sky-600 px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-[10px] text-nowrap md:text-lg rounded-md text-[14px]">
+                                className="flex md:hidden items-center gap-1 bg-[#0093DD] px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-[10px] text-nowrap md:text-lg rounded-md text-[14px]">
                                 <MdOutlineSearch />
                                 Tra cứu kết quả xét nghiệm
                             </button>
@@ -85,6 +85,109 @@ function HomePage() {
                 </div>
             </div>
 
+            {/*Quy trình section*/}
+            <div className="w-full mt-12 md:mt-32">
+                <div className="">
+                    <h1 className="text-lg md:text-2xl leading-10">Quy trình
+                        <span
+                            className="underline underline-offset-8 decoration-2 decoration-yellow-400"> Xét nghiệm</span>
+                    </h1>
+                </div>
+
+                <div
+                    className="grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 gap-4 sm:gap-8 md:gap-12 mt-4 md:mt-6">
+                    <div
+                        className="rounded-md"
+                    >
+                        <div className="grid grid-cols-4 sm:grid-cols-3 h-full">
+                            <div className="col-span-3 sm:col-span-2 bg-white rounded-xl p-4 sm:px-0 pl-0 h-full">
+                                <h1 className="text-sm md:text-lg bg-yellow-100 px-2 py-1 rounded-lg">Bước 1: Đăng
+                                    ký <span
+                                        className="hidden sm:inline">thông
+                                    tin</span></h1>
+                                <p className="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Bệnh
+                                    nhân cung cấp thông tin cá
+                                    nhân và lịch sử
+                                    bệnh tại quầy tiếp nhận hoặc đăng ký ngay trên website.</p>
+                            </div>
+                            <div className="relative">
+                                <img src={images.medregistration} alt="bước 1"
+                                     className="absolute bottom-8 sm:bottom-0 md:bottom-0 right-0 w-16 sm:w-20 md:w-24" />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className="rounded-md"
+                    >
+                        <div className="grid grid-cols-4 sm:grid-cols-3 h-full">
+                            <div
+                                className="hidden md:block col-span-3 sm:col-span-2 bg-white rounded-xl p-4 sm:px-0 pr-0 h-full">
+                                <h1 className="text-sm md:text-lg bg-yellow-100 px-2 py-1 rounded-lg">Bước 2: Tiếp
+                                    nhận</h1>
+                                <p className="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Nhân viên tiếp
+                                    nhận thông tin, kiểm tra giấy tờ và sắp xếp lịch khám hoặc xét nghiệm, sau đó thông
+                                    báo ngày giờ cho bệnh nhân.</p>
+                            </div>
+                            <div className="relative">
+                                <img src={images.medwaiting} alt="bước 2"
+                                     className="absolute bottom-8 sm:bottom-0 md:bottom-0 left-0 md:left-auto md:right-0 w-16 sm:w-20 md:w-24" />
+                            </div>
+                            <div
+                                className="block md:hidden col-span-3 sm:col-span-2 bg-white rounded-xl p-4 sm:px-0 pr-0 h-full">
+                                <h1 className="text-sm md:text-lg bg-sky-100 px-2 py-1 rounded-lg">Bước 2: Tiếp
+                                    nhận</h1>
+                                <p className="text-slate-800 text-xs md:text-base mt-2 tracking-wide">Nhân viên tiếp
+                                    nhận thông tin, kiểm tra giấy tờ và sắp xếp lịch khám hoặc xét nghiệm, sau đó thông
+                                    báo ngày giờ cho bệnh nhân.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className="rounded-md"
+                    >
+                        <div className="grid grid-cols-4 sm:grid-cols-3 h-full">
+                            <div className="col-span-3 sm:col-span-2 bg-white rounded-xl p-4 sm:px-0 pl-0 h-full">
+                                <h1 className="text-sm md:text-lg bg-yellow-100 px-2 py-1 rounded-lg">Bước 3: Xét
+                                    nghiệm</h1>
+                                <p className="text-slate-800 text-xs md:text-base mt-2 tracking-wide">Bệnh nhân đến
+                                    theo lịch hẹn, thực hiện xét nghiệm dưới sự hướng dẫn chi tiết của nhân viên y
+                                    tế.</p>
+                            </div>
+                            <div className="relative">
+                                <img src={images.medprocess} alt="bước 3"
+                                     className="absolute bottom-8 sm:bottom-0 md:bottom-0 right-0 w-16 sm:w-20 md:w-24" />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className="rounded-md"
+                    >
+                        <div className="grid grid-cols-4 sm:grid-cols-3 h-full">
+                            <div
+                                className="hidden md:block col-span-3 sm:col-span-2 bg-white rounded-xl p-4 sm:px-0 h-full">
+                                <h1 className="text-sm md:text-lg bg-sky-100 px-2 py-1 rounded-lg">Bước 4: Tra cứu kết
+                                    quả</h1>
+                                <p className="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Bệnh nhân nhận
+                                    kết quả tại bệnh viện hoặc tra cứu trực tuyến, bác sĩ sẽ giải thích và tư vấn điều
+                                    trị nếu cần</p>
+                            </div>
+                            <div className="relative">
+                                <img src={images.medsearch} alt="bước 4"
+                                     className="absolute bottom-8 sm:bottom-0 md:bottom-0 left-0 md:left-auto md:right-0 w-16 sm:w-20 md:w-24" />
+                            </div>
+                            <div
+                                className="block md:hidden col-span-3 sm:col-span-2 bg-white rounded-xl p-4 sm:px-0 pr-0 h-full">
+                                <h1 className="text-sm md:text-lg bg-sky-100 px-2 py-1 rounded-lg">Bước 4: Tra cứu kết
+                                    quả</h1>
+                                <p className="text-slate-800 text-xs md:text-base mt-2 tracking-wide">Bệnh nhân nhận
+                                    kết quả tại bệnh viện hoặc tra cứu trực tuyến, bác sĩ sẽ giải thích và tư vấn điều
+                                    trị nếu cần</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/*Dịch vụ section*/}
             <div className="w-full mt-12 md:mt-32">
                 <div className="">
@@ -94,48 +197,49 @@ function HomePage() {
                         Medlab</p>
                 </div>
 
-                <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-8 gap-4 mt-6 md:mt-8">
-                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                <div
+                    className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-8 xl:grid-cols-10 gap-4 mt-6 md:mt-8">
+                    <div className="grid-item shadow-md p-2 rounded-2xl">
                         <img src={images.huyethoc} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
                         <p className="text-sky-700 text-xs md:textsmm text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Huyết
                             học</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                    <div className="grid-item shadow-md p-2 rounded-2xl">
                         <img src={images.sinhhoamiendich} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
                         <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Sinh
                             hoá - Miễn dịch</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                    <div className="grid-item shadow-md p-2 rounded-2xl">
                         <img src={images.sinhhoa} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
                         <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Sinh
                             hoá</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                    <div className="grid-item shadow-md p-2 rounded-2xl">
                         <img src={images.nuoctieu} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
                         <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Nước
                             tiểu</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                    <div className="grid-item shadow-md p-2 rounded-2xl">
                         <img src={images.xetnghiemdich} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
                         <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Xét
                             nghiệm dịch</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                    <div className="grid-item shadow-md p-2 rounded-2xl">
                         <img src={images.vitrung} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
                         <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Vi
                             trùng</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                    <div className="grid-item shadow-md p-2 rounded-2xl">
                         <img src={images.sinhhocphantu} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
                         <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Sinh
                             học phân tử</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                    <div className="grid-item shadow-md p-2 rounded-2xl">
                         <img src={images.chuandoan} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
                         <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Chuẩn
                             đoán</p>
                     </div>
-                    <div className="grid-item ring-1 ring-slate-300 p-2 rounded-2xl">
+                    <div className="grid-item shadow-md p-2 rounded-2xl">
                         <img src={images.visinh} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
                         <p className="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Vi
                             sinh</p>
@@ -151,80 +255,60 @@ function HomePage() {
                 </div>
             </div>
 
-            {/*Quy trình section*/}
+            {/*Các gói xét nghiệm section*/}
             <div className="w-full mt-12 md:mt-32">
                 <div className="">
-                    <h1 className="text-lg md:text-2xl leading-10">Quy trình
-                        <span className="underline underline-offset-8 decoration-2 decoration-yellow-400"> Xét nghiệm</span>
-                    </h1>
+                    <p className="text-slate-800 text-xl md:text-2xl mx-auto font-sans">Các gói xét nghiệm</p>
                 </div>
 
-                <div className="grid grid-cols-2 grid-row-2 gap-4 mt-6 md:mt-8">
-                    <div
-                        className="p-4 md:p-8 rounded-lg -scale-x-100 md:bg-cover"
-                        style={{
-                            backgroundImage: `url(${images.backgroundstep1})`,
-                            backgroundRepeat: 'no-repeat',
-                        }}
-                    >
-                        <div className="md:grid md:grid-cols-3 -scale-x-100">
-                            <div className="col-span-3 sm:col-span-2">
-                                <h1 className="text-sm md:text-lg font-medium">Bước 1: Đăng ký <span className="hidden sm:inline">thông
-                                    tin</span></h1>
-                                <p className="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Bệnh
-                                    nhân cung cấp thông tin cá
-                                    nhân và lịch sử
-                                    bệnh tại quầy tiếp nhận.</p>
-                            </div>
+                <div className="flex flex-col md:grid md:grid-cols-2 gap-2 mt-4 md:mt-6">
+                    <div className="bg-sky-100 p-4 rounded-md flex items-start gap-4">
+                        <div className="content col-span-2 flex flex-col ">
+                            <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tổng quát</h2>
+                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
+                            <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói xét
+                                nghiệm tổng quát giúp kiểm tra sức khỏe toàn diện, bao gồm các xét nghiệm máu, nước tiểu
+                                và chỉ số sinh hóa. Kết quả hỗ trợ phát hiện sớm các bệnh lý tiềm ẩn.</p>
                         </div>
+                        <img src={images.tongquat} alt="Hình ảnh gói xét nghiệm tổng quát"
+                             className="rounded-lg w-24" />
                     </div>
-                    <div
-                        className="p-4 md:p-8 rounded-lg -scale-x-100 md:bg-cover"
-                        style={{
-                            backgroundImage: `url(${images.backgroundstep1})`,
-                            backgroundRepeat: 'no-repeat',
-                        }}
-                    >
-                        <div className="md:grid md:grid-cols-3 -scale-x-100">
-                            <div className="col-span-3 sm:col-span-2">
-                                <h1 className="text-sm md:text-lg font-medium">Bước 2: Tiếp nhận</h1>
-                                <p className="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Nhân viên tiếp nhận thông tin, kiểm tra giấy tờ và sắp xếp lịch khám hoặc xét nghiệm, sau đó thông báo ngày giờ cho bệnh nhân.</p>
-                            </div>
+                    <div className="bg-sky-100 p-4 rounded-md flex items-start gap-4">
+                        <div className="content col-span-2 flex flex-col">
+                            <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm NIPT</h2>
+                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 1.200.000đ</p>
+                            <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói xét
+                                nghiệm NIPT giúp kiểm tra và phát hiện các rối loạn di truyền sớm trong thai kỳ, đảm bảo
+                                sức khỏe mẹ và bé.</p>
                         </div>
+                        <img src={images.nipt} alt="Hình ảnh gói xét nghiệm NIPT" className="rounded-lg w-24" />
                     </div>
-                    <div
-                        className="p-4 md:p-8 rounded-lg -scale-x-100 md:bg-cover"
-                        style={{
-                            backgroundImage: `url(${images.backgroundstep1})`,
-                            backgroundRepeat: 'no-repeat',
-                        }}
-                    >
-                        <div className="md:grid md:grid-cols-3 -scale-x-100">
-                            <div className="col-span-3 sm:col-span-2">
-                                <h1 className="text-sm md:text-lg font-medium">Bước 3: Xét nghiệm</h1>
-                                <p className="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Bệnh nhân đến theo lịch hẹn, thực hiện xét nghiệm dưới sự hướng dẫn chi tiết của nhân viên y tế.</p>
-                            </div>
+                    <div className="bg-sky-100 p-4 rounded-md flex items-start gap-4">
+                        <div className="content col-span-2 flex flex-col">
+                            <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm vi chất</h2>
+                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 800.000đ</p>
+                            <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói xét
+                                nghiệm vi chất giúp xác định sự thiếu hụt các vitamin và khoáng chất trong cơ thể, từ đó
+                                hỗ trợ điều chỉnh chế độ dinh dưỡng phù hợp.</p>
                         </div>
+                        <img src={images.vichat} alt="Hình ảnh gói xét nghiệm vi chất" className="rounded-lg w-24" />
                     </div>
-                    <div
-                        className="p-4 md:p-8 rounded-lg -scale-x-100 md:bg-cover"
-                        style={{
-                            backgroundImage: `url(${images.backgroundstep1})`,
-                            backgroundRepeat: 'no-repeat',
-                        }}
-                    >
-                        <div className="md:grid md:grid-cols-3 -scale-x-100">
-                            <div className="col-span-3 sm:col-span-2">
-                                <h1 className="text-sm md:text-lg font-medium">Bước 4: Tra cứu <p className="hidden sm:inline">kết quả</p></h1>
-                                <p className="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Bệnh nhân nhận kết quả tại bệnh viện hoặc tra cứu trực tuyến, bác sĩ sẽ giải thích và tư vấn điều trị nếu cần.</p>
-                            </div>
+                    <div className="bg-sky-100 p-4 rounded-md flex items-start gap-4">
+                        <div className="content col-span-2 flex flex-col">
+                            <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tim mạch</h2>
+                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 1.500.000đ</p>
+                            <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói xét
+                                nghiệm tim mạch cung cấp các thông tin quan trọng về chức năng tim và các yếu tố nguy
+                                cơ, giúp phát hiện sớm và phòng ngừa các bệnh lý tim mạch.</p>
                         </div>
+                        <img src={images.timmach} alt="Hình ảnh gói xét nghiệm tim mạch" className="rounded-lg w-24" />
                     </div>
                 </div>
             </div>
 
+
             {/*Đánh giá section*/}
-                <div className="w-full mt-12 md:mt-32">
+            <div className="w-full mt-12 md:mt-32">
 
                 <div className="grid grid-cols-3 gap-2 md:gap-4">
                     <div className="col-span-3 md:col-span-1">
@@ -234,7 +318,7 @@ function HomePage() {
 
                         <div className="flex flex-row items-center gap-6 mt-2">
                             <button
-                                className="flex items-center gap-2 px-4 py-1 text-white font-semibold rounded-lg text-sm bg-gradient-to-tl from-amber-500 to-yellow-400/70">
+                                className="flex items-center gap-2 px-2 py-0.5 md:px-4 md:py-1 text-white font-semibold rounded-lg text-xs md:text-sm bg-gradient-to-tl from-amber-500 to-yellow-400/70">
                                 Để lại đánh giá
                                 <RxPencil1 />
                             </button>
@@ -268,7 +352,8 @@ function HomePage() {
                             <div className="grid grid-cols-3 mt-6 md:mt-12 items-end">
                                 <div className="w-full col-span-2">
                                     <p className="text-xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-yellow-500">91%</p>
-                                    <p className="text-xs md:text-sm text-slate-600 font-medium">Khách hàng hài lòng</p>
+                                    <p className="text-xs md:text-sm text-slate-600 font-medium">Khách hàng hài
+                                        lòng</p>
                                 </div>
 
                                 <button className="hidden lg:flex text-nowrap text-xs items-center gap-2">
@@ -311,7 +396,8 @@ function HomePage() {
                             </div>
                         </div>
                         <div className="w-full mt-4 text-[14px]">
-                            Dịch vụ tại đây rất tuyệt vời! Nhân viên chuyên nghiệp, nhiệt tình hướng dẫn, kết quả xét nghiệm nhanh chóng và chính xác. Tôi sẽ tiếp tục tin tưởng lựa chọn.
+                            Dịch vụ tại đây rất tuyệt vời! Nhân viên chuyên nghiệp, nhiệt tình hướng dẫn, kết quả xét
+                            nghiệm nhanh chóng và chính xác. Tôi sẽ tiếp tục tin tưởng lựa chọn.
                         </div>
                     </div>
                     {/*Thẻ đệm*/}
@@ -335,7 +421,8 @@ function HomePage() {
                             </div>
                         </div>
                         <div className="w-full mt-4 text-[14px]">
-                            Medlab thực sự đáng tin cậy. Đội ngũ nhân viên không chỉ thân thiện mà còn tư vấn rất chi tiết, giúp tôi hiểu rõ hơn về tình trạng sức khỏe của mình
+                            Medlab thực sự đáng tin cậy. Đội ngũ nhân viên không chỉ thân thiện mà còn tư vấn rất chi
+                            tiết, giúp tôi hiểu rõ hơn về tình trạng sức khỏe của mình
                         </div>
                     </div>
                     {/*Thẻ đệm*/}
@@ -359,62 +446,12 @@ function HomePage() {
                             </div>
                         </div>
                         <div className="w-full mt-4 text-[14px]">
-                            Tôi rất ấn tượng với cơ sở vật chất hiện đại và quy trình xét nghiệm nhanh gọn tại đây. Kết quả trả đúng hẹn, không để khách hàng phải chờ đợi.
+                            Tôi rất ấn tượng với cơ sở vật chất hiện đại và quy trình xét nghiệm nhanh gọn tại đây. Kết
+                            quả trả đúng hẹn, không để khách hàng phải chờ đợi.
                         </div>
                     </div>
                 </div>
             </div>
-
-            {/*Các gói xét nghiệm section*/}
-            <div className="w-full mt-12 md:mt-32 pb-48">
-                <div className="">
-                    <p className="text-slate-800 text-xl md:text-3xl mx-auto font-sans">Các gói xét nghiệm</p>
-                </div>
-
-                <div className="flex flex-col md:grid md:grid-cols-2 gap-2 mt-4 md:mt-6">
-                    <div className="bg-slate-100 p-4 rounded-md flex items-center gap-4">
-                        <div className="content col-span-2 flex flex-col">
-                            <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tổng quát</h2>
-                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
-                            <p className="text-slate-600 text-sm md:text-base max-h-12 overflow-x-hidden mt-2">Gói xét nghiệm tổng
-                                quát giúp kiểm tra sức khỏe toàn diện, bao gồm các xét nghiệm máu, nước tiểu và chỉ số
-                                sinh hóa. Kết quả hỗ trợ phát hiện sớm các bệnh lý tiềm ẩn.</p>
-                        </div>
-                        <img src={images.sony} alt="Hinh anh goi xet nghiem" className="rounded-lg w-24" />
-                    </div>
-                    <div className="bg-slate-100 p-4 rounded-md flex items-center gap-4">
-                        <div className="content col-span-2 flex flex-col">
-                            <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tổng quát</h2>
-                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
-                            <p className="text-slate-600 text-sm md:text-base max-h-12 overflow-x-hidden mt-2">Gói xét nghiệm tổng
-                                quát giúp kiểm tra sức khỏe toàn diện, bao gồm các xét nghiệm máu, nước tiểu và chỉ số
-                                sinh hóa. Kết quả hỗ trợ phát hiện sớm các bệnh lý tiềm ẩn.</p>
-                        </div>
-                        <img src={images.sony} alt="Hinh anh goi xet nghiem" className="rounded-lg w-24" />
-                    </div>
-                    <div className="bg-slate-100 p-4 rounded-md flex items-center gap-4">
-                        <div className="content col-span-2 flex flex-col">
-                            <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tổng quát</h2>
-                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
-                            <p className="text-slate-600 text-sm md:text-base max-h-12 overflow-x-hidden mt-2">Gói xét nghiệm tổng
-                                quát giúp kiểm tra sức khỏe toàn diện, bao gồm các xét nghiệm máu, nước tiểu và chỉ số
-                                sinh hóa. Kết quả hỗ trợ phát hiện sớm các bệnh lý tiềm ẩn.</p>
-                        </div>
-                        <img src={images.sony} alt="Hinh anh goi xet nghiem" className="rounded-lg w-24" />
-                    </div>
-                    <div className="bg-slate-100 p-4 rounded-md flex items-center gap-4">
-                        <div className="content col-span-2 flex flex-col">
-                            <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tổng quát</h2>
-                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
-                            <p className="text-slate-600 text-sm md:text-base max-h-12 overflow-x-hidden mt-2">Gói xét nghiệm tổng
-                                quát giúp kiểm tra sức khỏe toàn diện, bao gồm các xét nghiệm máu, nước tiểu và chỉ số
-                                sinh hóa. Kết quả hỗ trợ phát hiện sớm các bệnh lý tiềm ẩn.</p>
-                        </div>
-                        <img src={images.sony} alt="Hinh anh goi xet nghiem" className="rounded-lg w-24" />
-                    </div>
-                </div>
-            </div>
-
 
         </>
     );
