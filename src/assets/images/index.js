@@ -32,6 +32,12 @@ const images = {
     medwaiting: require('./img/med-waiting.png'),
     medprocess: require('./img/med-process.png'),
     medsearch: require('./img/med-search.png'),
+    facebook: require('./img/facebook.png'),
+    zalo: require('./img/zalo.png'),
+    insta: require('./img/insta.png'),
+    momo: require('./img/momo.png'),
+    vietqr: require('./img/vietqr.png'),
+    tienmat: require('./img/tienmat.png')
 }
 
 export default images;

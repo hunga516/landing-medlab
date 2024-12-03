@@ -3,7 +3,6 @@ import { FaArrowRightLong, FaRegCircleCheck } from 'react-icons/fa6';
 import { MdOutlineSearch } from 'react-icons/md';
 import { TbCash } from 'react-icons/tb';
 import { RxPencil1 } from 'react-icons/rx';
-import { FaCheck } from 'react-icons/fa';
 
 import Rating from '../components/Rating/Rating';
 
@@ -36,11 +35,10 @@ function HomePage() {
                                 Medlab tự hào là một trong top trung tâm xét nghiệm nhanh, chính xác.
                             </p>
                         </div>
-                        <div className="flex items-center gap-8">
+                        <div className="flex items-center gap-4">
                             <button
                                 className="hidden md:flex items-center gap-1 bg-[#0093DD] px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-[10px] text-nowrap md:text-base rounded-md text-[14px]">
-                                <MdOutlineSearch />
-                                Tra cứu kết quả xét nghiệm
+                                Đặt lịch xét nghiệm
                             </button>
                             <button className="hidden md:block md:flex items-center gap-2 text-xs text-nowrap">
                                 Tìm hiểu thêm
@@ -71,17 +69,17 @@ function HomePage() {
                             </div>
                         </div>
                     </div>
-                    <div className="hero-show relative">
-                        <div
-                            className="absolute top-0 right-0 bg-white lg:bottom-6 lg:top-auto px-2 py-1 rounded-md">
-                            <Rating className="w-2 h-2 text-orange-300" />
-                        </div>
-                        <div
-                            className="absolute hidden md:flex text-nowrap mt-0.5 bottom-0 right-0 bg-white px-2 py-0.5 sm:px-2 sm:py-0.5 rounded-md items-center gap-2 max-w-max">
-                            <FaCheck className="text-green-500 text-[8px] md:text-xs" />
-                            <p className="text-slate-800 text-[8px] md:text-xs font-medium">Dịch vụ tận tâm</p>
-                        </div>
-                    </div>
+                    {/*<div className="hero-show relative">*/}
+                    {/*    <div*/}
+                    {/*        className="absolute top-0 right-0 bg-white lg:bottom-6 lg:top-auto px-2 py-1 rounded-md">*/}
+                    {/*        <Rating className="w-2 h-2 text-orange-300" />*/}
+                    {/*    </div>*/}
+                    {/*    <div*/}
+                    {/*        className="absolute hidden md:flex text-nowrap mt-0.5 bottom-0 right-0 bg-white px-2 py-0.5 sm:px-2 sm:py-0.5 rounded-md items-center gap-2 max-w-max">*/}
+                    {/*        <FaCheck className="text-green-500 text-[8px] md:text-xs" />*/}
+                    {/*        <p className="text-slate-800 text-[8px] md:text-xs font-medium">Dịch vụ tận tâm</p>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
             </div>
 
@@ -101,7 +99,7 @@ function HomePage() {
                     >
                         <div className="grid grid-cols-4 sm:grid-cols-3 h-full">
                             <div className="col-span-3 sm:col-span-2 bg-white rounded-xl p-4 sm:px-0 pl-0 h-full">
-                                <h1 className="text-sm md:text-lg bg-yellow-100 px-2 py-1 rounded-lg">Bước 1: Đăng
+                                <h1 className="text-sm md:text-lg bg-sky-100 px-2 py-1 rounded-lg">Bước 1: Đăng
                                     ký <span
                                         className="hidden sm:inline">thông
                                     tin</span></h1>

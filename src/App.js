@@ -3,6 +3,7 @@ import { publicRoute } from "./routes";
 
 import DefaultLayout from "./layouts/DefaultLayout";
 import { AuthModalProvider, AuthProvider, LoadingProvider } from "./context";
+import 'tippy.js/animations/shift-away.css';
 
 
 function App() {
