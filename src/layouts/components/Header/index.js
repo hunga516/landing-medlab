@@ -1,7 +1,7 @@
 
 import { SlMenu } from "react-icons/sl";
 import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import NavigateModal from '../../../components/Modal/NavigateModal';
 import Tippy from '@tippyjs/react/headless';
 import Wrapper from '../../../components/Popper/Wrapper';
@@ -16,13 +16,36 @@ function Header() {
 
     const [isShowNavigateModal, setIsShowNavigateModal] = useState(false);
     const [isShowBookingModal, setIsShowBookingModal] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
     const location = useLocation();
+
+    useEffect(() => {
+        let prevScroll = window.scrollY
+
+        const handleScroll = () => {
+            const currentScroll = window.scrollY
+                if(currentScroll > prevScroll) {
+                    setIsHidden(true)
+                } else {
+                    setIsHidden(false)
+                }
+                prevScroll = currentScroll;
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    },[])
+
+    console.log(isHidden);
 
     const toggleIsShowNavigateModal = () => {
         setIsShowNavigateModal(!isShowNavigateModal);
     }
 
-    const toggleIsShowBookingModal = () => {
+   const toggleIsShowBookingModal = () => {
         setIsShowBookingModal(!isShowBookingModal);
     }
 
@@ -30,7 +53,7 @@ function Header() {
         <>
             <div
                 className="header-wrapper fixed w-full md:px-4 lg:px-0 flex justify-center border-[#1618231F] z-50">
-                <div className="fixed hidden sm:flex w-full items-center justify-end bg-sky-600 text-white gap-2">
+                <div className={`fixed ${isHidden ? '-translate-y-full' : "translate-y-0"} hidden sm:flex w-full items-center justify-end bg-sky-600 text-white gap-2 duration-300`}>
                     <button
                         onClick={toggleIsShowBookingModal}
                         className="flex items-center gap-2 text-xs font-medium hover:bg-sky-700 rounded-lg leading-4 pl-2 py-1 pr-1.5 text-white">
@@ -53,7 +76,7 @@ function Header() {
                     </button>
                 </div>
                 <div className="absolute inset-0 bg-white/80 backdrop-blur-lg -z-10 drop-shadow-sm"></div>
-                <div className="flex justify-between py-2 items-center w-full mt-0 sm:mt-9 mx-4 md:mx-4 lg:mx-12">
+                <div className={`flex justify-between py-2 items-center w-full ${isHidden ? 'mt-0' : "sm:mt-9"} mt-0 mx-4 md:mx-4 lg:mx-8 duration-300`}>
                     <button onClick={toggleIsShowNavigateModal} className="block lg:hidden p-1">
                         <SlMenu className="text-2xl" />
                     </button>
@@ -68,13 +91,13 @@ function Header() {
 
                     <div className="hidden lg:flex gap-2 items-center">
                         <Link to={"/"}
-                              className={`text-slate-800 hover:bg-slate-100 px-2 py-1 rounded-lg  text-sm font-semibold`}>Trang
+                              className={`text-slate-800 hover:bg-slate-300 px-2 py-1 rounded-lg  text-sm font-semibold`}>Trang
                             chủ</Link>
                         <Link to="/price"
-                              className={`text-slate-800 hover:bg-slate-100 px-2 py-1 rounded-lg  text-sm font-semibold`}>Dịch
+                              className={`text-slate-800 hover:bg-slate-300 px-2 py-1 rounded-lg  text-sm font-semibold`}>Dịch
                             vụ</Link>
                         <Link to={"/about"}
-                              className={`text-slate-800 hover:bg-slate-100 px-2 py-1 rounded-lg text-sm font-semibold`}>Về
+                              className={`text-slate-800 hover:bg-slate-300 px-2 py-1 rounded-lg text-sm font-semibold`}>Về
                             chúng tôi</Link>
                         <Tippy
                             interactive={true}

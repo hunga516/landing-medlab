@@ -4,7 +4,7 @@ import images from '../../../assets/images';
 function Footer() {
 
     return (
-        <div className="w-full p-4 sm:px-8 sm:py-4 md:px-16 md:py-0 bg-blue-100 rounded-tr-lg rounded-tl-lg pb-24">
+        <div className="w-full p-4 sm:px-8 sm:py-4 md:px-16 md:py-0 md:pb-24 bg-blue-100/50 rounded-tr-lg rounded-tl-lg">
             <div className="flex items-center justify-between gap-2 pt-8 pb-4  border-b-[0.5px] border-sky-400">
                 <div className="flex items-center gap-2">
                     <img src="/logo.png" alt="" className="w-8 h-8" />
@@ -30,8 +30,8 @@ function Footer() {
                         CÔNG TY TNHH TM DV Y TẾ MEDLAB XÉT NGHIỆM Y KHOA - TẾ BÀO HỌC
                     </h1>
 
-                    <p className="text-sky-600 text-[10px] sm:text-sm">Mã số thuế: 0314145380</p>
-                    <p className="text-sky-600 text-[10px] sm:text-sm">Ngày cấp: 06/12/2016</p>
+                    <p className="text-sky-600 text-[10px] sm:text-sm mt-1">Mã số thuế: 0314145380</p>
+                    <p className="text-sky-600 text-[10px] sm:text-sm mt-1">Ngày cấp: 06/12/2016</p>
                 </div>
                 <div className="grid-item-3">
                     <h2 className="text-[10px] sm:text-sm text-sky-600 font-bold">TRA CỨU</h2>
@@ -75,8 +75,8 @@ function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="rounded-md overflow-hidden w-full mt-12">
-                <div className="" style={{ width: '99%' }}>
+            <div className="rounded-2xl overflow-hidden w-full mt-12">
+                <div className="" style={{ width: '100%' }}>
                     <iframe
                         title="Google Map"
                         width="100%"

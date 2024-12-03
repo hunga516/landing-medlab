@@ -194,7 +194,6 @@ function HomePage() {
                         className="underline underline-offset-8 decoration-2 decoration-sky-500">Xét nghiệm</span> của
                         Medlab</p>
                 </div>
-
                 <div
                     className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-8 xl:grid-cols-10 gap-4 mt-6 md:mt-8">
                     <div className="grid-item shadow-md p-2 rounded-2xl">
