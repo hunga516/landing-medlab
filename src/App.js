@@ -3,6 +3,9 @@ import { publicRoute } from "./routes";
 
 import DefaultLayout from "./layouts/DefaultLayout";
 import { AuthModalProvider, AuthProvider, LoadingProvider } from "./context";
+import 'tippy.js/animations/shift-away.css';
+import { ModalProvider } from './context/ModalContext';
+import ScrollToTop from './hooks/ScrollToTop';
 
 
 function App() {
@@ -11,10 +14,12 @@ function App() {
 
   return (
     <>
+      <ModalProvider>
       <LoadingProvider>
         <div className="app">
           <BrowserRouter>
             <AuthModalProvider>
+                <ScrollToTop />
               <AuthProvider>
                 <Routes>
                   {publicRoute.map((route, index) => {
@@ -34,6 +39,7 @@ function App() {
           </BrowserRouter>
         </div>
       </LoadingProvider>
+      </ModalProvider>
     </>
   )
 }

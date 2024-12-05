@@ -1,6 +1,6 @@
 function Wrapper({ children }) {
     return (
-        <div className="max-w-[500px] w-[270px] py-2 mt-2 bg-white drop-shadow-md rounded-lg">
+        <div className="max-w-[500px] mt-2 bg-white/80 backdrop-blur-lg duration-500 drop-shadow-sm rounded-md">
             {children}
         </div>
     );

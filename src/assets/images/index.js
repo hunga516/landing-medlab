@@ -32,6 +32,19 @@ const images = {
     medwaiting: require('./img/med-waiting.png'),
     medprocess: require('./img/med-process.png'),
     medsearch: require('./img/med-search.png'),
+    facebook: require('./img/facebook.png'),
+    zalo: require('./img/zalo.png'),
+    insta: require('./img/insta.png'),
+    momo: require('./img/momo.png'),
+    vietqr: require('./img/vietqr.png'),
+    tienmat: require('./img/tienmat.png'),
+    medlab1: require('./img/medlab-1.png'),
+    mebau: require('./img/mebau.png'),
+    nugioi: require('./img/nugioi.png'),
+    namgioi: require('./img/namgioi.png'),
+    treem: require('./img/treem.png'),
+    tienhonnhan: require('./img/tienhonnhan.png'),
+    contact: require('./img/contact.png'),
 }
 
 export default images;

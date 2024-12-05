@@ -1,11 +1,11 @@
 import images from '../assets/images';
-import { FaArrowRightLong, FaRegCircleCheck } from 'react-icons/fa6';
+import { FaArrowLeftLong, FaArrowRightLong, FaRegCircleCheck } from 'react-icons/fa6';
 import { MdOutlineSearch } from 'react-icons/md';
 import { TbCash } from 'react-icons/tb';
 import { RxPencil1 } from 'react-icons/rx';
-import { FaCheck } from 'react-icons/fa';
 
 import Rating from '../components/Rating/Rating';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
 
@@ -13,7 +13,7 @@ function HomePage() {
         <>
             {/*Hero section*/}
             <div
-                className="w-full h-[300px] md:h-[500px] rounded-2xl bg-cover lg:bg-cover bg-center"
+                className="w-full relative h-[300px] md:h-[500px] rounded-2xl bg-cover lg:bg-cover bg-top"
                 style={{
                     backgroundImage: `url(${images.background1})`,
                     backgroundRepeat: 'no-repeat',
@@ -21,28 +21,27 @@ function HomePage() {
                 }}
             >
                 <div className="grid md:grid-cols-2 grid-cols-3 p-6 md:p-8 h-full">
-                    <div className="flex flex-col justify-between col-span-2 md:col-span-1">
+                    <div className="flex flex-col gap-2 md:gap-6 col-span-2 md:col-span-1 md:mt-8">
                         <div className="title">
-                            <h1 className="text-[#0093DD] font-bold max-h-[110px] md:max-h-screen text-2xl md:text-4xl lg:text-5xl leading-7 md:leading-[40px] lg:leading-[50px] xl:leading-[50px] text-left">Xét
+                            <h1 className="text-[#0093DD] font-bold max-h-[110px] md:max-h-screen text-2xl md:text-4xl lg:text-5xl leading-7 md:leading-[40px] lg:leading-[50px] xl:leading-[50px] text-left tracking-wide">Xét
                                 nghiệm chính xác, sức khoẻ an tâm
                             </h1>
-                            <p className="hidden md:block text-slate-600 text-sm md:text-sm mt-4 max-h-20 overflow-hidden">
+                            <p className="hidden md:block text-slate-600 text-sm md:text-base mt-4 overflow-hidden">
                                 Medlab tự hào là trung tâm xét nghiệm hàng đầu, cung cấp dịch vụ chính xác, nhanh
                                 chóng
                                 với đội ngũ
                                 chuyên gia giàu kinh nghiệm và trang thiết bị hiện đại.
                             </p>
-                            <p className="block md:hidden text-slate-600 text-xs mt-6">
+                            <p className="block md:hidden text-slate-600 text-sm mt-6">
                                 Medlab tự hào là một trong top trung tâm xét nghiệm nhanh, chính xác.
                             </p>
                         </div>
-                        <div className="flex items-center gap-8">
+                        <div className="flex items-center gap-4">
                             <button
                                 className="hidden md:flex items-center gap-1 bg-[#0093DD] px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-[10px] text-nowrap md:text-base rounded-md text-[14px]">
-                                <MdOutlineSearch />
-                                Tra cứu kết quả xét nghiệm
+                                Đặt lịch xét nghiệm
                             </button>
-                            <button className="hidden md:block md:flex items-center gap-2 text-xs text-nowrap">
+                            <button className="hidden md:flex items-center gap-2 text-sm text-nowrap">
                                 Tìm hiểu thêm
                                 <FaArrowRightLong className="text-xs" />
                             </button>
@@ -54,41 +53,31 @@ function HomePage() {
                                 Tra cứu kết quả xét nghiệm
                             </button>
                         </div>
-                        <div className="w-full md:w-72 hidden md:flex items-center gap-x-4">
-                            <div className="flex flex-col items-center gap-2">
-                                <p className="text-xs md:text-lg text-nowrap font-medium">35.5k</p>
-                                <p className="text-sky-600 text-xs md:text-base tracking-wide text-nowrap">Khách
-                                    hàng</p>
-                            </div>
-                            <div className="flex flex-col items-center gap-2">
-                                <p className="text-xs md:text-lg text-nowrap font-medium">120.5k</p>
-                                <p className="text-sky-600 text-xs md:text-base tracking-wide text-nowrap">Lượt xét
-                                    nghiệm</p>
-                            </div>
-                            <div className="flex flex-col items-center gap-2">
-                                <p className="text-xs md:text-lg text-nowrap font-medium">+30</p>
-                                <p className="text-sky-600 text-xs md:text-base tracking-wide text-nowrap">Đối tác</p>
-                            </div>
-                        </div>
                     </div>
-                    <div className="hero-show relative">
-                        <div
-                            className="absolute top-0 right-0 bg-white lg:bottom-6 lg:top-auto px-2 py-1 rounded-md">
-                            <Rating className="w-2 h-2 text-orange-300" />
-                        </div>
-                        <div
-                            className="absolute hidden md:flex text-nowrap mt-0.5 bottom-0 right-0 bg-white px-2 py-0.5 sm:px-2 sm:py-0.5 rounded-md items-center gap-2 max-w-max">
-                            <FaCheck className="text-green-500 text-[8px] md:text-xs" />
-                            <p className="text-slate-800 text-[8px] md:text-xs font-medium">Dịch vụ tận tâm</p>
-                        </div>
+                </div>
+
+                <div className="absolute left-0 bottom-0 hidden md:flex items-center gap-x-8 px-8 py-6 bg-yellow-300/60 outline outline-8 outline-white rounded-tr-2xl rounded-br-2xl after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[33px] after:rounded-2xl after:absolute after:shadow-curve-bl">
+                    <div className="flex flex-col items-center gap-2">
+                        <p className="text-xs md:text-3xl text-nowrap text-blue-500">35.5N</p>
+                        <p className="text-blue-500 text-xs md:text-sm tracking-wide text-nowrap">Khách
+                            hàng</p>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                        <p className="text-xs md:text-3xl text-nowrap text-blue-500">120.5N</p>
+                        <p className="text-blue-500 text-xs md:text-sm tracking-wide text-nowrap">Lượt xét
+                            nghiệm</p>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                        <p className="text-xs md:text-3xl text-nowrap text-blue-500">+30</p>
+                        <p className="text-blue-500 text-xs md:text-sm tracking-wide text-nowrap">Đối tác</p>
                     </div>
                 </div>
             </div>
 
             {/*Quy trình section*/}
-            <div className="w-full mt-12 md:mt-32">
+            <div className="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
                 <div className="">
-                    <h1 className="text-lg md:text-2xl leading-10">Quy trình
+                    <h1 className="text-lg md:text-2xl font-semibold leading-1 font-sans">Quy trình
                         <span
                             className="underline underline-offset-8 decoration-2 decoration-yellow-400"> Xét nghiệm</span>
                     </h1>
@@ -101,7 +90,7 @@ function HomePage() {
                     >
                         <div className="grid grid-cols-4 sm:grid-cols-3 h-full">
                             <div className="col-span-3 sm:col-span-2 bg-white rounded-xl p-4 sm:px-0 pl-0 h-full">
-                                <h1 className="text-sm md:text-lg bg-yellow-100 px-2 py-1 rounded-lg">Bước 1: Đăng
+                                <h1 className="text-sm md:text-lg bg-blue-100 px-2 py-1 rounded-lg">Bước 1: Đăng
                                     ký <span
                                         className="hidden sm:inline">thông
                                     tin</span></h1>
@@ -189,16 +178,15 @@ function HomePage() {
             </div>
 
             {/*Dịch vụ section*/}
-            <div className="w-full mt-12 md:mt-32">
+            <div className="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
                 <div className="">
-                    <p className="text-sky-500 text-sm md:text-lg font-medium mx-auto font-sans">Dịch Vụ</p>
-                    <p className="text-slate-800 text-lg md:text-2xl mx-auto mt-2">Doanh mục <span
+                    <p className="text-sky-500 text-sm md:text-lg mx-auto font-sans">Dịch Vụ</p>
+                    <p className="text-slate-800 text-lg md:text-2xl font-semibold font-sans mx-auto mt-2">Doanh mục <span
                         className="underline underline-offset-8 decoration-2 decoration-sky-500">Xét nghiệm</span> của
                         Medlab</p>
                 </div>
-
                 <div
-                    className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-8 xl:grid-cols-10 gap-4 mt-6 md:mt-8">
+                    className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-8 xl:grid-cols-9 gap-4 mt-6 md:mt-8">
                     <div className="grid-item shadow-md p-2 rounded-2xl">
                         <img src={images.huyethoc} alt="" className="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
                         <p className="text-sky-700 text-xs md:textsmm text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">Huyết
@@ -256,13 +244,13 @@ function HomePage() {
             </div>
 
             {/*Các gói xét nghiệm section*/}
-            <div className="w-full mt-12 md:mt-32">
+            <div className="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
                 <div className="">
-                    <p className="text-slate-800 text-xl md:text-2xl mx-auto font-sans">Các gói xét nghiệm</p>
+                    <p className="text-slate-800 text-xl md:text-2xl font-semibold mx-auto font-sans">Các gói xét nghiệm</p>
                 </div>
 
                 <div className="flex flex-col md:grid md:grid-cols-2 gap-2 mt-4 md:mt-6">
-                    <div className="bg-sky-100 p-4 rounded-md flex items-start gap-4">
+                    <div className="bg-blue-100 p-4 rounded-md flex items-start gap-4">
                         <div className="content col-span-2 flex flex-col ">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tổng quát</h2>
                             <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
@@ -273,7 +261,7 @@ function HomePage() {
                         <img src={images.tongquat} alt="Hình ảnh gói xét nghiệm tổng quát"
                              className="rounded-lg w-24" />
                     </div>
-                    <div className="bg-sky-100 p-4 rounded-md flex items-start gap-4">
+                    <div className="bg-blue-100 p-4 rounded-md flex items-start gap-4">
                         <div className="content col-span-2 flex flex-col">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm NIPT</h2>
                             <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 1.200.000đ</p>
@@ -283,7 +271,7 @@ function HomePage() {
                         </div>
                         <img src={images.nipt} alt="Hình ảnh gói xét nghiệm NIPT" className="rounded-lg w-24" />
                     </div>
-                    <div className="bg-sky-100 p-4 rounded-md flex items-start gap-4">
+                    <div className="bg-blue-100 p-4 rounded-md flex items-start gap-4">
                         <div className="content col-span-2 flex flex-col">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm vi chất</h2>
                             <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 800.000đ</p>
@@ -293,7 +281,7 @@ function HomePage() {
                         </div>
                         <img src={images.vichat} alt="Hình ảnh gói xét nghiệm vi chất" className="rounded-lg w-24" />
                     </div>
-                    <div className="bg-sky-100 p-4 rounded-md flex items-start gap-4">
+                    <div className="bg-blue-100 p-4 rounded-md flex items-start gap-4">
                         <div className="content col-span-2 flex flex-col">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tim mạch</h2>
                             <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 1.500.000đ</p>
@@ -306,13 +294,39 @@ function HomePage() {
                 </div>
             </div>
 
+            {/*Đối tượng xét nghiệm section*/}
+            <div className="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
+                <p className="text-slate-800 text-xl md:text-2xl mx-auto font-semibold font-sans">Đối tượng xét nghiệm</p>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mt-4 md:mt-6">
+                    <div className="relative h-40 md:h-60 bg-blue-500 rounded-lg">
+                        <p className="text-base font-bold text-blue-100 mx-auto w-fit mt-4">MẸ BẦU</p>
+                        <img src={images.mebau} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[65px] md:w-2/3 lg:w-[55%]" />
+                    </div>
+                    <div className="relative h-40 md:h-60 bg-blue-100 rounded-lg">
+                        <p className="text-base font-bold text-blue-500 mx-auto w-fit mt-4">TRẺ EM</p>
+                        <img src={images.treem} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/4 lg:w-2/4" />
+                    </div>
+                    <div className="relative h-40 md:h-60 bg-blue-500 rounded-lg">
+                        <p className="text-base font-bold text-blue-100 mx-auto w-fit mt-4">NỮ GIỚI</p>
+                        <img src={images.nugioi} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-1/2" />
+                    </div>
+                    <div className="relative h-40 md:h-60 bg-blue-100 rounded-lg">
+                        <p className="text-base font-bold text-blue-500 mx-auto w-fit mt-4">TIỀN HÔN NHÂN</p>
+                        <img src={images.tienhonnhan} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-1/2" />
+                    </div>
+                    <div className="relative h-40 md:h-60 bg-blue-500 rounded-lg">
+                        <p className="text-base font-bold text-blue-100 mx-auto w-fit mt-4">NAM GIỚI</p>
+                        <img src={images.namgioi} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[81px] md:w-3/4 lg:w-[60%]" />
+                    </div>
+                </div>
+            </div>
 
             {/*Đánh giá section*/}
-            <div className="w-full mt-12 md:mt-32">
+            <div className="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
 
                 <div className="grid grid-cols-3 gap-2 md:gap-4">
                     <div className="col-span-3 md:col-span-1">
-                        <h2 className="text-slate-800 text-xl md:text-2xl leading-snug">Khách hàng nói gì về <span
+                    <h2 className="text-slate-800 text-xl md:text-2xl leading-snug font-sans font-medium">Khách hàng nói gì về <span
                             className="bg-clip-text text-transparent bg-gradient-to-br from-sky-900 to-sky-400 text-xl md:text-2xl">Medlab Vĩnh Viễn</span>
                         </h2>
 
@@ -453,8 +467,135 @@ function HomePage() {
                 </div>
             </div>
 
-        </>
-    );
-}
+            {/*Tin tức section*/}
+            <div className="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
+                <div className="flex items-center justify-between">
+                    <p className="text-slate-800 text-xl md:text-2xl font-semibold">Tin tức về y khoa</p>
+                    <Link
+                        to="/blog" className="flex items-center gap-2 px-4 py-1 bg-blue-100 text-blue-600 rounded-lg">
+                        <FaArrowRightLong />
+                        Xem tất cả
+                    </Link>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 md:grid-rows-2 gap-2 mt-4 md:mt-6">
+                    <div className="grid-item">
+                        <div className="relative">
+                            <img src={images.background3} alt="" className="rounded-md h-40 w-full object-cover" />
+                            <div
+                                className="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">Doanh
+                                mục 1
+                            </div>
+                        </div>
+                        <div className="px-2 py-4 flex flex-col gap-2">
+                            <div className="flex items-center justify-between">
 
-export default HomePage;
+                                <p className="text-blue-500 text-xs">17-12-2024</p>
+                            </div>
+                            <h2 className="text-lg font-medium">Bai viet dau tien</h2>
+                            <p className="text-slate-600 h-24 overflow-hidden text-ellipsis">Day la noi dung cua blog
+                                dau
+                                tiennnnnnbnnndjgdjgjdfgijdiogjdiofgjoidjgiodfgdl;fdskfl;skfs;kfls;kfslkf;skfsl;dkf;sdf</p>
+                        </div>
+                    </div>
+                    <div className="grid-item">
+                        <div className="relative">
+                            <img src={images.background3} alt="" className="rounded-md h-40 w-full object-cover" />
+                            <div
+                                className="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">Doanh
+                                mục 1
+                            </div>
+                        </div>
+                        <div className="px-2 py-4 flex flex-col gap-2">
+                            <div className="flex items-center justify-between">
+
+                                <p className="text-blue-500 text-xs">17-12-2024</p>
+                            </div>
+                            <h2 className="text-lg font-medium">Bai viet dau tien</h2>
+                            <p className="text-slate-600 h-24 overflow-hidden text-ellipsis">Day la noi dung cua blog
+                                dau
+                                tiennnnnnbnnndjgdjgjdfgijdiogjdiofgjoidjgiodfgdl;fdskfl;skfs;kfls;kfslkf;skfsl;dkf;sdf</p>
+                        </div>
+                    </div>
+                    <div className="grid-item">
+                        <div className="relative">
+                            <img src={images.background3} alt="" className="rounded-md h-40 w-full object-cover" />
+                            <div
+                                className="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">Doanh
+                                mục 1
+                            </div>
+                        </div>
+                        <div className="px-2 py-4 flex flex-col gap-2">
+                            <div className="flex items-center justify-between">
+
+                                <p className="text-blue-500 text-xs">17-12-2024</p>
+                            </div>
+                            <h2 className="text-lg font-medium">Bai viet dau tien</h2>
+                            <p className="text-slate-600 h-24 overflow-hidden text-ellipsis">Day la noi dung cua blog
+                                dau
+                                tiennnnnnbnnndjgdjgjdfgijdiogjdiofgjoidjgiodfgdl;fdskfl;skfs;kfls;kfslkf;skfsl;dkf;sdf</p>
+                        </div>
+                    </div>
+                    <div className="grid-item">
+                        <div className="relative">
+                            <img src={images.background3} alt="" className="rounded-md h-40 w-full object-cover" />
+                            <div
+                                className="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">Doanh
+                                mục 1
+                            </div>
+                        </div>
+                        <div className="px-2 py-4 flex flex-col gap-2">
+                            <div className="flex items-center justify-between">
+
+                                <p className="text-blue-500 text-xs">17-12-2024</p>
+                            </div>
+                            <h2 className="text-lg font-medium">Bai viet dau tien</h2>
+                            <p className="text-slate-600 h-24 overflow-hidden text-ellipsis">Day la noi dung cua blog
+                                dau
+                                tiennnnnnbnnndjgdjgjdfgijdiogjdiofgjoidjgiodfgdl;fdskfl;skfs;kfls;kfslkf;skfsl;dkf;sdf</p>
+                        </div>
+                    </div>
+                    <div className="grid-item">
+                        <div className="relative">
+                            <img src={images.background3} alt="" className="rounded-md h-40 w-full object-cover" />
+                            <div
+                                className="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">Doanh
+                                mục 1
+                            </div>
+                        </div>
+                        <div className="px-2 py-4 flex flex-col gap-2">
+                            <div className="flex items-center justify-between">
+
+                                <p className="text-blue-500 text-xs">17-12-2024</p>
+                            </div>
+                            <h2 className="text-lg font-medium">Bai viet dau tien</h2>
+                            <p className="text-slate-600 h-24 overflow-hidden text-ellipsis">Day la noi dung cua blog
+                                dau
+                                tiennnnnnbnnndjgdjgjdfgijdiogjdiofgjoidjgiodfgdl;fdskfl;skfs;kfls;kfslkf;skfsl;dkf;sdf</p>
+                        </div>
+                    </div>
+                    <div className="grid-item">
+                        <div className="relative">
+                            <img src={images.background3} alt="" className="rounded-md h-40 w-full object-cover" />
+                            <div
+                                className="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">Doanh
+                                mục 1
+                            </div>
+                        </div>
+                        <div className="px-2 py-4 flex flex-col gap-2">
+                            <div className="flex items-center justify-between">
+
+                                <p className="text-blue-500 text-xs">17-12-2024</p>
+                            </div>
+                            <h2 className="text-lg font-medium">Bai viet dau tien</h2>
+                            <p className="text-slate-600 h-24 overflow-hidden text-ellipsis">Day la noi dung cua blog
+                                dau
+                                tiennnnnnbnnndjgdjgjdfgijdiogjdiofgjoidjgiodfgdl;fdskfl;skfs;kfls;kfslkf;skfsl;dkf;sdf</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </>
+            );
+            }
+
+            export default HomePage;

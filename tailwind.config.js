@@ -21,6 +21,11 @@ module.exports = {
       textColor: {
         "bluePrimary": "#007FFF"
       },
+      boxShadow: {
+        'curve-bl': '-10px 10px 0 #fff',
+        'curve-tl': '-10px 10px 0 #fff',
+        'curve-bl-4px': '-4px 4px 0 #fff',
+      }
     },
   },
   plugins: [],

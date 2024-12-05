@@ -1,59 +1,125 @@
-
-import { SlMenu } from "react-icons/sl";
-import { CgCalendarDates } from 'react-icons/cg';
+import { SlMenu } from 'react-icons/sl';
 import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import NavigateModal from '../../../components/Modal/NavigateModal';
+import Tippy from '@tippyjs/react/headless';
+import Wrapper from '../../../components/Popper/Wrapper';
+import { IoIosArrowDown } from 'react-icons/io';
+import { FaPhone } from 'react-icons/fa';
+import { MdOutlineEditCalendar } from 'react-icons/md';
+import { RiTestTubeFill } from 'react-icons/ri';
+import { PiHospitalBold } from 'react-icons/pi';
+import BookingModal from '../../../components/Modal/BookingModal';
+import { FiPhone } from 'react-icons/fi';
+import { TbTestPipe } from 'react-icons/tb';
 
 function Header() {
 
     const [isShowNavigateModal, setIsShowNavigateModal] = useState(false);
+    const [isShowBookingModal, setIsShowBookingModal] = useState(false);
     const location = useLocation();
 
     const toggleIsShowNavigateModal = () => {
         setIsShowNavigateModal(!isShowNavigateModal);
-    }
+    };
+
+    const toggleIsShowBookingModal = () => {
+        setIsShowBookingModal(!isShowBookingModal);
+    };
 
     return (
         <>
-            <div className="header-wrapper fixed w-full md:px-4 lg:px-0 flex justify-center border-[#1618231F] z-50">
-                <div className="absolute inset-0 bg-white/80 backdrop-blur-lg -z-10"></div>
-                <div className="flex justify-between py-2 items-center w-full mx-4 md:mx-4 lg:mx-12">
-                    <button onClick={toggleIsShowNavigateModal} className="block lg:hidden p-1">
+            <div
+                className="header-wrapper fixed w-full md:px-12 md:pt-4 border-[#1618231F] z-50">
+                <div className="absolute inset-0 bg-white/80 backdrop-blur-lg -z-10 drop-shadow-sm"></div>
+                <div
+                    className={`hidden md:flex w-full items-center justify-between px-2 text-white gap-2 duration-200 pb-4 border-b-[0.5px] border-slate-200`}>
+                    <Link to="/" className="logo flex flex-col gap-2 items-center">
+                        <img src="/logo.png" alt="" className="w-10 h-10" />
+                        <p className="hidden md:block bg-gradient-to-br from-sky-900 to-sky-500 text-transparent bg-clip-text text-base font-semibold font-sans">Medlab
+                            Vĩnh Viễn</p>
+                    </Link>
+                    <div className="flex items-center gap-4">
+                        <button
+                            className="flex items-center gap-2 text-lg font-medium rounded-lg leading-4 pl-4 py-2 pr-3.5 text-pink-600 font-sans ring-2 ring-pink-600/70">
+                            <TbTestPipe />
+                            Tra cứu kết quả xét nghiệm
+                        </button>
+                        <button
+                            className="flex items-center gap-2 text-lg font-medium rounded-lg leading-4 pl-4 py-2 pr-3.5 text-pink-600 font-sans  ring-2 ring-pink-600/70">
+                            <FiPhone />
+                            0909 636293
+                        </button>
+                    </div>
+                </div>
+                <div className={`flex justify-between py-2 mx-4 md:mx-0 items-center duration-200`}>
+                    <button onClick={toggleIsShowNavigateModal} className="block md:hidden p-1">
                         <SlMenu className="text-2xl" />
                     </button>
-
-                    <Link to="/" className="logo flex gap-2 items-center">
-                        <p className="md:hidden bg-gradient-to-br from-sky-900 to-sky-500 text-transparent bg-clip-text text-sm md:text-xl font-semibold font-sans">Medlab
+                    <Link to="/" className="logo flex md:hidden gap-2 items-center">
+                        <p className="inline md:hidden bg-gradient-to-br from-sky-900 to-sky-500 text-transparent bg-clip-text text-base font-semibold font-sans">Medlab
                             Vĩnh Viễn</p>
                         <img src="/logo.png" alt="" className="w-10 h-10" />
-                        <p className="hidden md:block bg-gradient-to-br from-sky-900 to-sky-500 text-transparent bg-clip-text text-base font-semibold font-sans">Medlab Vĩnh Viễn</p>
                     </Link>
 
-                    <div className="hidden lg:flex gap-8 items-center">
-                        <Link to={"/"} className={`${location.pathname === '/' ? 'text-slate-800' : "text-slate-800/60"}  text-base font-medium`}>Trang chủ</Link>
-                        <Link to="/price" className={`${location.pathname === '/price' ? 'text-slate-800' : "text-slate-800/60"}  text-base font-medium`}>Dịch vụ</Link>
-                        <Link to={"/about"} className={`${location.pathname === '/about' ? 'text-slate-800' : "text-slate-800/60"}  text-base font-medium`}>Về chúng tôi</Link>
-                        <Link to={"/support"} className={`${location.pathname === '/support' ? 'text-slate-800' : "text-slate-800/60"}  text-base font-medium`}>Tư vấn</Link>
-                    </div>
-
-                    <div className="hidden md:block action ]">
-                        <button
-                            className="hidden lg:block text-base md:text-base bg-[#0093DD] px-4 py-2 text-white rounded-lg           ">
-                            Đặt lịch xét nghiệm
-                        </button>
-                        <button
-                            className="lg:hidden flex items-center gap-1 bg-[#0093DD] pl-3 pr-4 py-2 text-white rounded-lg">
-                            <CgCalendarDates className="text-white" />
-                            Đặt lịch
-                        </button>
-
+                    <div className="hidden md:flex gap-4 items-center">
+                        <Link to={'/'}
+                              className={`${location.pathname === '/' ? 'text-slate-700' : 'text-slate-500'} hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>TRANG
+                            CHỦ</Link>
+                        <Link to="/price"
+                              className={`${location.pathname === '/price' ? 'text-slate-700' : 'text-slate-500'} hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>DỊCH
+                            VỤ</Link>
+                        <Tippy
+                            interactive={true}
+                            delay={[0, 500]}
+                            render={attrs => (
+                                <Wrapper {...attrs}>
+                                    <div
+                                        className="flex flex-col items-start ring-1 ring-slate-200/70 drop-shadow-lg rounded-lg">
+                                        <Link to="/combo/:id"
+                                              className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200 rounded-lg">Tất
+                                            cả gói xét nghiệm</Link>
+                                        <Link to="/combo/:id"
+                                              className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
+                                            xét nghiệm 1</Link>
+                                        <Link to="/combo/:id"
+                                              className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
+                                            xét nghiệm dành cho nữ giới</Link>
+                                        <Link to="/combo/:id"
+                                              className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
+                                            xét nghiệm dành cho nam giới</Link>
+                                        <Link to="/combo/:id"
+                                              className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
+                                            xét nghiệm dành cho trẻ em</Link>
+                                        <Link to="/combo/:id"
+                                              className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
+                                            xét nghiệm dành cho tiền hôn nhân</Link>
+                                    </div>
+                                </Wrapper>
+                            )}
+                        >
+                            <Link className={`text-slate-500 font-medium flex items-center gap-1 font-sans`}>
+                                GÓI XÉT NGHIỆM
+                                <IoIosArrowDown className="text-sky-600" />
+                            </Link>
+                        </Tippy>
+                        <Link to={'/about'}
+                              className={`${location.pathname === '/about' ? 'text-slate-700' : 'text-slate-500'} hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>VỀ
+                            CHÚNG TÔI</Link>
+                        <Link to="/blog"
+                              className={`${location.pathname === '/blog' ? 'text-slate-700' : 'text-slate-500'} hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>
+                            BLOG
+                        </Link>
                     </div>
                 </div>
             </div>
 
             {isShowNavigateModal && (
                 <NavigateModal toggleIsShowNavigateModal={toggleIsShowNavigateModal} />
+            )}
+
+            {isShowBookingModal && (
+                <BookingModal toggleIsShowBookingModal={toggleIsShowBookingModal} />
             )}
         </>
     );
