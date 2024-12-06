@@ -13,7 +13,7 @@ function AboutPage() {
     return (
         <>
             {/*Tổng quan section*/}
-            <div className="md:px-8 lg:px-0 lg:mx-32">
+            <div className="md:px-8 lg:px-0 lg:mx-32 md:mt-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <div className="row-span-2 flex flex-col justify-center gap-4 md:gap-8 items-start">
                         <h1 className="text-bold text-xl md:text-4xl leading-6 md:leading-10"><span

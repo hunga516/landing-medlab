@@ -208,15 +208,15 @@ function AdminBlogPage() {
 
     return (
         <>
-            <div className="home-page-wrapper bg-white ring-1 ring-slate-300/30 rounded-md shadow-2xl px-5 py-4">
+            <div className="home-page-wrapper bg-white px-5 py-4">
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <div>
                         <div className="flex items-center gap-x-3">
-                            <h2 className="text-lg font-medium text-gray-800">Khoá học</h2>
+                            <h2 className="text-lg font-medium text-gray-800">Tin tức</h2>
                             <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full">{courses?.length} khoá học</span>
                         </div>
 
-                        <p className="mt-1 text-sm text-gray-500">Quản lý các khoá học</p>
+                        <p className="mt-1 text-sm text-gray-500">Quản lý các tin tức</p>
                     </div>
 
                     <div className="flex items-center mt-4 gap-x-3">
@@ -235,7 +235,7 @@ function AdminBlogPage() {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
 
-                            <span>Đăng khóa học</span>
+                            <span>Đăng tin tức</span>
                         </button>
                     </div>
                 </div>
@@ -272,7 +272,7 @@ function AdminBlogPage() {
                             </svg>
                         </span>
 
-                        <input onChange={(e) => handleSearch(e)} type="text" placeholder="Tìm khoá học" className="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg md:w-80 placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5  focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <input onChange={(e) => handleSearch(e)} type="text" placeholder="Tìm tin tức" className="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg md:w-80 placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5  focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
                 </div>
 
@@ -280,7 +280,7 @@ function AdminBlogPage() {
                     {activeButton === 'all' || activeButton === 'recent' ? (
                         courses ? (
                             <CourseTable
-                                headers={["STT", "Lĩnh vực", "Tiêu đề", "Người đăng", "Lượt đăng ký", "Cập nhật"]}
+                                headers={["STT", "Tiêu đề", "Doanh mục", "Người đăng", "Ngày đăng", "Lượt xem"]}
                                 data={courses}
                                 activeButton={activeButton}
                                 handleRestore={handleRestore}

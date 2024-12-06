@@ -45,6 +45,7 @@ const images = {
     treem: require('./img/treem.png'),
     tienhonnhan: require('./img/tienhonnhan.png'),
     contact: require('./img/contact.png'),
+    phone: require('./img/phone.png'),
 }
 
 export default images;

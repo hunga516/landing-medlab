@@ -1,3 +1,5 @@
+import images from '../assets/images';
+
 export default function DetailsBlogPage() {
     const socialIcons = [
         { src: "https://cdn.builder.io/api/v1/image/assets/TEMP/efb413c5cc5cc81ae2410fcc315d9f99e09ab33b66c57e0b8a3b0713329fe728?placeholderIfAbsent=true&apiKey=0f38df9da2834ce78ff98df9da825ead", alt: "Share on Twitter" },
@@ -68,8 +70,8 @@ export default function DetailsBlogPage() {
                         <div className="flex flex-col grow max-md:mt-8">
                             {/*<AuthorCard />*/}
                             <div
-                                className="flex overflow-hidden flex-col items-center bg-indigo-700 rounded-xl aspect-square">
-                                <div className="flex relative flex-col p-5 w-full aspect-[1.024]">
+                                className="flex overflow-hidden flex-col items-center bg-indigo-700 rounded-xl">
+                                <div className="flex relative flex-col p-5 w-full">
                                     <img
                                         loading="lazy"
                                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/0143b2936edf67984ba985e0f0e6f98bb5d5078c4f1ef30cde00bd33dcfa6cf8?placeholderIfAbsent=true&apiKey=0f38df9da2834ce78ff98df9da825ead"
@@ -79,31 +81,17 @@ export default function DetailsBlogPage() {
                                     <div className="flex relative gap-5 self-start">
                                         <img
                                             loading="lazy"
-                                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/159c435451af90554d904b668fae755aa77e6004e71604c8781274738813075d?placeholderIfAbsent=true&apiKey=0f38df9da2834ce78ff98df9da825ead"
-                                            alt="Tamás Hám-Szabó profile picture"
-                                            className="object-contain shrink-0 max-w-full aspect-square w-[100px]"
-                                        />
-                                        <img
-                                            loading="lazy"
-                                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/72a8021d01861c5c0309238e90b528a18416a95d23c3709117ad20acc3477a9c?placeholderIfAbsent=true&apiKey=0f38df9da2834ce78ff98df9da825ead"
-                                            alt=""
-                                            className="object-contain shrink-0 self-end mt-16 aspect-square w-[30px] max-md:mt-10"
+                                            src={images.sony}
+                                            alt="Tác giả"
+                                            className="object-contain shrink-0 max-w-full w-[100px]"
                                         />
                                     </div>
                                     <div className="flex relative flex-col mt-5 text-white">
                                         <div className="flex flex-col max-w-full w-[301px]">
-                                            <div className="text-xl font-semibold">Tamás Hám-Szabó</div>
-                                            <div className="mt-2.5 text-base">
-                                                Founder of SAAS First - the Best AI and Data-Driven Customer Engagement
-                                                Tool
-                                            </div>
+                                            <div className="text-xl font-semibold">Nguyen Truong Vu</div>
                                         </div>
                                         <div
                                             className="mt-2.5 max-w-full bg-white border border-white border-solid opacity-20 min-h-[1px] w-[301px]" />
-                                    </div>
-                                    <div className="relative mt-5 text-sm leading-5 text-white">
-                                        With 11 years in SaaS, I've built MillionVerifier and SAAS First. Passionate
-                                        about SaaS, data, and AI. Let's connect if you share the same drive for success!
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +135,10 @@ export default function DetailsBlogPage() {
             </div>
             <div className="self-stretch mt-8 max-md:max-w-full">
                 <div className="flex gap-5 max-md:flex-col">
-                    <div className="flex flex-col w-[67%] max-md:ml-0 max-md:w-full" />
+                    <div className="flex flex-col w-[67%] max-md:ml-0 max-md:w-full">
+                        <h1 className="text-xl font-medium">Day la tieu de cua bai viet, dai 2 dongg gggg ggg gggg ggg gggg ggg</h1>
+                        <p className="text-lg font-light text-slate-800 mt-4">Day la noi dung d as dias jdaisjd asdasidjas jdadadas ijdas daj diaj da dasdasdaijs dasdasdadasdijasdada  d adjasdasdasdasiajdad iajdiasjdiasd ijiasjdiajsda ijdijasidjsa diajdiasjdiajd sadijidjasidjas diajsdiasjdiajsd aidjasidjaidjiasd ajdiasdjiajdas diajdiajsidas diasjdiajdiajdas diajdiajdiajdias daisjdiajdiajsdiasd aijdiasjdiadja sdiajdiajdiajda sidjaisjdaisdjiasjdiasjd aidjaisdjaisdjasidiajdia iajdiada diajdiasdj asidj iadj aisj diajdaisdjasidasdj </p>
+                    </div>
                     <div className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
                         {/*<TableOfContents />*/}
                         <div className="flex flex-col text-zinc-900 max-md:mt-8">

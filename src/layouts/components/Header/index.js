@@ -17,6 +17,7 @@ function Header() {
 
     const [isShowNavigateModal, setIsShowNavigateModal] = useState(false);
     const [isShowBookingModal, setIsShowBookingModal] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
     const location = useLocation();
 
     const toggleIsShowNavigateModal = () => {
@@ -27,32 +28,50 @@ function Header() {
         setIsShowBookingModal(!isShowBookingModal);
     };
 
+    useEffect(() => {
+        const toggleIsHidden = () => {
+            let currentY = window.scrollY;
+            if (currentY > 300) {
+                setIsHidden(true);
+            } else {
+                setIsHidden(false);
+            }
+        }
+
+        window.addEventListener('scroll', toggleIsHidden);
+
+        return () => {
+            window.removeEventListener('scroll', toggleIsHidden);
+        }
+
+    }, [])
+
     return (
         <>
             <div
-                className="header-wrapper fixed w-full md:px-12 md:pt-4 border-[#1618231F] z-50">
+                className="header-wrapper fixed w-full md:px-8 md:pt-4 border-[#1618231F] z-50">
                 <div className="absolute inset-0 bg-white/80 backdrop-blur-lg -z-10 drop-shadow-sm"></div>
                 <div
-                    className={`hidden md:flex w-full items-center justify-between px-2 text-white gap-2 duration-200 pb-4 border-b-[0.5px] border-slate-200`}>
+                    className={`hidden ${isHidden ? "-translate-y-full": "translate-y-0 border-b-[0.5px] border-slate-200"} md:flex duration-300 w-full items-center justify-between px-2 text-white gap-2 pb-4`}>
                     <Link to="/" className="logo flex flex-col gap-2 items-center">
-                        <img src="/logo.png" alt="" className="w-10 h-10" />
+                        <img src="/logo.png" alt="" className="w-20 h-20" />
                         <p className="hidden md:block bg-gradient-to-br from-sky-900 to-sky-500 text-transparent bg-clip-text text-base font-semibold font-sans">Medlab
                             Vĩnh Viễn</p>
                     </Link>
                     <div className="flex items-center gap-4">
                         <button
-                            className="flex items-center gap-2 text-lg font-medium rounded-lg leading-4 pl-4 py-2 pr-3.5 text-pink-600 font-sans ring-2 ring-pink-600/70">
+                            className="flex items-center gap-2 text-lg font-medium rounded-lg leading-4 pl-6 py-4 pr-6 text-pink-600 font-sans ring-2 ring-pink-600/70">
                             <TbTestPipe />
                             Tra cứu kết quả xét nghiệm
                         </button>
                         <button
-                            className="flex items-center gap-2 text-lg font-medium rounded-lg leading-4 pl-4 py-2 pr-3.5 text-pink-600 font-sans  ring-2 ring-pink-600/70">
+                            className="flex items-center gap-2 text-lg font-medium rounded-lg leading-4 pl-6 py-4 pr-6 text-pink-600 font-sans  ring-2 ring-pink-600/70">
                             <FiPhone />
                             0909 636293
                         </button>
                     </div>
                 </div>
-                <div className={`flex justify-between py-2 mx-4 md:mx-0 items-center duration-200`}>
+                <div className={`${isHidden ? "mt-0 md:-mt-36" : "md:mt-0"} flex justify-between py-2 mx-4 md:mx-0 items-center duration-300`}>
                     <button onClick={toggleIsShowNavigateModal} className="block md:hidden p-1">
                         <SlMenu className="text-2xl" />
                     </button>
@@ -62,54 +81,61 @@ function Header() {
                         <img src="/logo.png" alt="" className="w-10 h-10" />
                     </Link>
 
-                    <div className="hidden md:flex gap-4 items-center">
-                        <Link to={'/'}
-                              className={`${location.pathname === '/' ? 'text-slate-700' : 'text-slate-500'} hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>TRANG
-                            CHỦ</Link>
-                        <Link to="/price"
-                              className={`${location.pathname === '/price' ? 'text-slate-700' : 'text-slate-500'} hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>DỊCH
-                            VỤ</Link>
-                        <Tippy
-                            interactive={true}
-                            delay={[0, 500]}
-                            render={attrs => (
-                                <Wrapper {...attrs}>
-                                    <div
-                                        className="flex flex-col items-start ring-1 ring-slate-200/70 drop-shadow-lg rounded-lg">
-                                        <Link to="/combo/:id"
-                                              className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200 rounded-lg">Tất
-                                            cả gói xét nghiệm</Link>
-                                        <Link to="/combo/:id"
-                                              className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
-                                            xét nghiệm 1</Link>
-                                        <Link to="/combo/:id"
-                                              className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
-                                            xét nghiệm dành cho nữ giới</Link>
-                                        <Link to="/combo/:id"
-                                              className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
-                                            xét nghiệm dành cho nam giới</Link>
-                                        <Link to="/combo/:id"
-                                              className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
-                                            xét nghiệm dành cho trẻ em</Link>
-                                        <Link to="/combo/:id"
-                                              className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
-                                            xét nghiệm dành cho tiền hôn nhân</Link>
-                                    </div>
-                                </Wrapper>
-                            )}
-                        >
-                            <Link className={`text-slate-500 font-medium flex items-center gap-1 font-sans`}>
-                                GÓI XÉT NGHIỆM
-                                <IoIosArrowDown className="text-sky-600" />
+                    <div className="hidden md:flex w-full items-center justify-between">
+                        <div className="flex items-center gap-8">
+                            <Link to={'/'}
+                                  className={`${location.pathname === '/' ? 'text-slate-700' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>TRANG
+                                CHỦ</Link>
+                            <Link to="/price"
+                                  className={`${location.pathname === '/price' ? 'text-slate-700' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>DỊCH
+                                VỤ</Link>
+                            <Tippy
+                                interactive={true}
+                                delay={[0, 500]}
+                                render={attrs => (
+                                    <Wrapper {...attrs}>
+                                        <div
+                                            className="flex flex-col items-start ring-1 ring-slate-200/70 drop-shadow-lg rounded-lg">
+                                            <Link to="/combo/:id"
+                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200 rounded-lg">Tất
+                                                cả gói xét nghiệm</Link>
+                                            <Link to="/combo/:id"
+                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
+                                                xét nghiệm 1</Link>
+                                            <Link to="/combo/:id"
+                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
+                                                xét nghiệm dành cho nữ giới</Link>
+                                            <Link to="/combo/:id"
+                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
+                                                xét nghiệm dành cho nam giới</Link>
+                                            <Link to="/combo/:id"
+                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
+                                                xét nghiệm dành cho trẻ em</Link>
+                                            <Link to="/combo/:id"
+                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
+                                                xét nghiệm dành cho tiền hôn nhân</Link>
+                                        </div>
+                                    </Wrapper>
+                                )}
+                            >
+                                <Link className={`text-slate-500 text-lg font-medium flex items-center gap-1 font-sans`}>
+                                    GÓI XÉT NGHIỆM
+                                    <IoIosArrowDown className="text-sky-600" />
+                                </Link>
+                            </Tippy>
+                            <Link to={'/about'}
+                                  className={`${location.pathname === '/about' ? 'text-slate-700' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>VỀ
+                                CHÚNG TÔI</Link>
+                            <Link to="/blog"
+                                  className={`${location.pathname === '/blog' ? 'text-slate-700' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>
+                                TIN TỨC
                             </Link>
-                        </Tippy>
-                        <Link to={'/about'}
-                              className={`${location.pathname === '/about' ? 'text-slate-700' : 'text-slate-500'} hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>VỀ
-                            CHÚNG TÔI</Link>
-                        <Link to="/blog"
-                              className={`${location.pathname === '/blog' ? 'text-slate-700' : 'text-slate-500'} hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>
-                            BLOG
-                        </Link>
+                        </div>
+                        <div>
+                            <button className="hidden lg:block px-4 py-2 text-lg rounded-md text-white bg-sky-600">
+                                ĐĂNG KÝ TƯ VẤN
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

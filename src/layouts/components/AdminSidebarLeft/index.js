@@ -3,11 +3,10 @@ import { useLocation } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 
 import { LoadingContext } from "../../../context";
-import { RiDraftLine } from "react-icons/ri";
-import { RiHome5Line } from "react-icons/ri";
 import { RiUser3Line } from "react-icons/ri";
-import { RiBookOpenLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { MdOutlineMedicalServices } from 'react-icons/md';
+import { BsFilePost } from 'react-icons/bs';
 
 function AdminSidebarLeft({ className }) {
     const LoadingContextValue = useContext(LoadingContext);
@@ -15,31 +14,26 @@ function AdminSidebarLeft({ className }) {
 
     const NAV_ITEMS = [
         {
-            icon: RiHome5Line,
-            title: 'Trang chủ',
+            icon: BsFilePost,
+            title: 'Blog',
             descriptio: 'Beta',
-            to: '/admin'
+            to: '/admin/blog'
         },
         {
             icon: RiUser3Line,
             title: 'Người dùng',
-            to: '/admin/users'
+            to: '/admin/user'
         },
         {
-            icon: RiBookOpenLine,
-            title: 'Khóa học',
-            to: '/admin/courses'
-        },
-        {
-            icon: RiDraftLine,
-            title: 'Bài học',
-            to: '/admin/lessons'
+            icon: MdOutlineMedicalServices,
+            title: 'Dịch vụ',
+            to: '/admin/service'
         },
     ]
 
     return (
         <aside
-            className={`${className} flex flex-col w-[250px] drop-shadow-md box-border`}
+            className={`${className} flex flex-col drop-shadow-md box-border`}
             style={{
                 height: 'calc(100vh - 61px)',
                 // backgroundImage: `url(${images.background})`
@@ -66,10 +60,9 @@ function AdminSidebarLeft({ className }) {
                                     className={`${location.pathname === item.to
                                         ? 'bg-gray-200 before:absolute before:right-[-9px] before:h-8 before:w-[2px] before:bg-bluePrimary'
                                         : ''
-                                    } flex items-center px-3 py-2 text-gray-600 transition-color rounded-lg relative `}
+                                    } flex items-center justify-center px-3 py-2 text-gray-600 transition-color rounded-lg relative `}
                                 >
-                                    <item.icon size="18px" className="text-gray-600" />
-                                    <span className="mx-2 text-sm font-medium">{item.title}</span>
+                                    <item.icon size="25px" className="text-gray-600" />
                                 </Link>
                             ))}
                         </>

@@ -13,7 +13,7 @@ function HomePage() {
         <>
             {/*Hero section*/}
             <div
-                className="w-full relative h-[300px] md:h-[500px] rounded-2xl bg-cover lg:bg-cover bg-top"
+                className="w-full relative h-[300px] md:h-[600px] rounded-2xl bg-cover lg:bg-cover bg-top"
                 style={{
                     backgroundImage: `url(${images.background1})`,
                     backgroundRepeat: 'no-repeat',
@@ -21,7 +21,7 @@ function HomePage() {
                 }}
             >
                 <div className="grid md:grid-cols-2 grid-cols-3 p-6 md:p-8 h-full">
-                    <div className="flex flex-col gap-2 md:gap-6 col-span-2 md:col-span-1 md:mt-8">
+                    <div className="flex flex-col gap-2 md:gap-6 col-span-2 md:col-span-1 md:mt-24">
                         <div className="title">
                             <h1 className="text-[#0093DD] font-bold max-h-[110px] md:max-h-screen text-2xl md:text-4xl lg:text-5xl leading-7 md:leading-[40px] lg:leading-[50px] xl:leading-[50px] text-left tracking-wide">Xét
                                 nghiệm chính xác, sức khoẻ an tâm
@@ -56,7 +56,7 @@ function HomePage() {
                     </div>
                 </div>
 
-                <div className="absolute left-0 bottom-0 hidden md:flex items-center gap-x-8 px-8 py-6 bg-yellow-300/60 outline outline-8 outline-white rounded-tr-2xl rounded-br-2xl after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[33px] after:rounded-2xl after:absolute after:shadow-curve-bl">
+                <div className="absolute left-8 bottom-0 hidden md:flex items-center gap-x-8 px-16 py-6 bg-yellow-300/60 outline outline-8 outline-white rounded-tr-2xl rounded-br-2xl after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[33px] after:rounded-2xl after:absolute after:shadow-curve-bl">
                     <div className="flex flex-col items-center gap-2">
                         <p className="text-xs md:text-3xl text-nowrap text-blue-500">35.5N</p>
                         <p className="text-blue-500 text-xs md:text-sm tracking-wide text-nowrap">Khách

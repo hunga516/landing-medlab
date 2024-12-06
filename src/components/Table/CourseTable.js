@@ -60,7 +60,7 @@ const CourseTable = ({ headers, data, activeButton, handleRestore, itemEditedId,
                 )}
             </div>
 
-            <div className="overflow-hidden border border-gray-200 md:rounded-lg">
+            <div className="overflow-hidden">
                 <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-slate-50 font-sans">
                         <tr>

@@ -9,10 +9,8 @@ function BlogPage() {
 
     return (
         <>
-            <h1 className="mx-auto text-3xl font-bold font-san w-fit">Tin tức từ Medlab Vĩnh Viễn</h1>
-
             {/*Tìm kiếm section*/}
-            <div className="relative mt-8 flex items-center gap-2 md:px-8 lg:px-0 lg:mx-32">
+            <div className="relative mt-8 flex items-center gap-2 md:px-8 lg:px-0 lg:mx-32 md:mt-20">
                 <input type="text" className="flex-1 px-4 py-2 ring-1 ring-slate-400/60 rounded-lg placeholder:text-slate-600 outline-none" placeholder="Tìm bài viết bằng tên hoặc chủ đề" />
                 <HiSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-xl" />
             </div>
@@ -53,7 +51,7 @@ function BlogPage() {
             <div className="grid grid-cols-3 gap-6 mt-8 md:px-8 lg:px-0 lg:mx-32">
                 <div className="grid grid-cols-2 gap-16 col-span-2 bg-slate-100/60 rounded-lg p-8">
                     <div className="flex flex-col items-start gap-4">
-                        <div className="p-2 bg-purple-600 text-white text-xs rounded-lg">Doanh mục 1</div>
+                        <div className="p-2 bg-yellow-500 text-white text-xs rounded-lg">Doanh mục 1</div>
                         <h3 className="text-lg font-medium leading-5">Day la tieu de cua bai viet 1 so, noi dung se duoc hien thi o day</h3>
                         <p className="text-slate-600 h-60 overflow-hidden text-ellipsis">Day la noi dung o ben torng bai viet, dad sa das as dasd adadadad da da sd a d as dasdadasd adasdasd asdasdas weerewr wrwerdfs dfsdfsdfs vcxvxcv xcvxf sfsdfew rewrw fsdfsdf sfsdfsd fs vvxcvxcv sdfsfsdf werwr dfsfs werwer fsdfsdf wrwrwer sdfsfs dasdasd wqeqwewq adadadasd sfsfsdf cxcvcxvcxv sadasdsa wqeqeq sadasdasd dsadasd adadasd dsadasd asdasd adads dadasdasd asdasd </p>
                         <Link to="/blog/:id" className="px-4 py-2 rounded-2xl ring-1 ring-slate-600 text-slate-800">Đọc tiếp</Link>
@@ -67,7 +65,7 @@ function BlogPage() {
                     </div>
                     <div className="flex flex-col gap-4 mt-4 max-h-[450px] overflow-scroll">
                         <div className="blog-item flex flex-col gap-2">
-                            <div className="px-4 py-2 bg-purple-600 text-white text-[10px] rounded-lg w-fit">Doanh mục
+                            <div className="px-4 py-2 bg-yellow-500 text-white text-[10px] rounded-lg w-fit">Doanh mục
                                 1
                             </div>
                             <div className="grid grid-cols-5">
@@ -80,7 +78,7 @@ function BlogPage() {
                             <span className="border-b-[0.5px] border-slate-300 mt-2"></span>
                         </div>
                         <div className="blog-item flex flex-col gap-2">
-                            <div className="px-4 py-2 bg-purple-600 text-white text-[10px] rounded-lg w-fit">Doanh mục
+                            <div className="px-4 py-2 bg-yellow-500 text-white text-[10px] rounded-lg w-fit">Doanh mục
                                 1
                             </div>
                             <div className="grid grid-cols-5">
@@ -93,7 +91,7 @@ function BlogPage() {
                             <span className="border-b-[0.5px] border-slate-300 mt-2"></span>
                         </div>
                         <div className="blog-item flex flex-col gap-2">
-                            <div className="px-4 py-2 bg-purple-600 text-white text-[10px] rounded-lg w-fit">Doanh mục
+                            <div className="px-4 py-2 bgyellowe5600 text-white text-[10px] rounded-lg w-fit">Doanh mục
                                 1
                             </div>
                             <div className="grid grid-cols-5">
@@ -106,7 +104,7 @@ function BlogPage() {
                             <span className="border-b-[0.5px] border-slate-300 mt-2"></span>
                         </div>
                         <div className="blog-item flex flex-col gap-2">
-                            <div className="px-4 py-2 bg-purple-600 text-white text-[10px] rounded-lg w-fit">Doanh mục
+                            <div className="px-4 py-2 bg-yellow-500 text-white text-[10px] rounded-lg w-fit">Doanh mục
                                 1
                             </div>
                             <div className="grid grid-cols-5">
@@ -119,7 +117,7 @@ function BlogPage() {
                             <span className="border-b-[0.5px] border-slate-300 mt-2"></span>
                         </div>
                         <div className="blog-item flex flex-col gap-2">
-                            <div className="px-4 py-2 bg-purple-600 text-white text-[10px] rounded-lg w-fit">Doanh mục
+                            <div className="px-4 py-2 bg-yellow-500 text-white text-[10px] rounded-lg w-fit">Doanh mục
                                 1
                             </div>
                             <div className="grid grid-cols-5">
