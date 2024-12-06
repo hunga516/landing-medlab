@@ -29,6 +29,14 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+div::-webkit-scrollbar {
+    display: none;
+}
+
+h2::-webkit-scrollbar {
+    display: none;
+}
+
 body .tippy-box {
     background-color: #ff0000;
 }

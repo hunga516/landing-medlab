@@ -80,8 +80,7 @@ function DefaultLayout({ children }) {
                         <img src={images.facebook} alt="zalo contact" className="w-10 h-10" />
                     </div>
                     <div className="p-4 flex gap-2 items-center justify-center">
-                        <MdOutlineEditCalendar className="text-3xl text-sky-600" />
-                        <p className="font-sans text-nowrap text-sky-600">Đặt lịch</p>
+                        <p className="text-nowrap font-medium text-sky-600">TRA CỨU</p>
                     </div>
                 </div>
             </div>

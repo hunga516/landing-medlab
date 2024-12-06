@@ -8,9 +8,10 @@ import { TiEdit } from 'react-icons/ti';
 import Menu from "../Popper/Menu";
 import Button from '../Button';
 import axios from 'axios';
+import images from '../../assets/images';
 
 
-const CourseTable = ({ headers, data, activeButton, handleRestore, itemEditedId, courseActions, handleActionForm }) => {
+const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, courseActions, handleActionForm }) => {
     const [isSelectAction, setIsSelectAtion] = useState(false)
     const [courseIds, setCourseIds] = useState([])
 
@@ -65,7 +66,7 @@ const CourseTable = ({ headers, data, activeButton, handleRestore, itemEditedId,
                     <thead className="bg-slate-50 font-sans">
                         <tr>
                             {headers.map((header, index) => (
-                                <th key={index} className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 ">
+                                <th key={index} className="py-2 px-2 text-sm font-medium text-left rtl:text-right text-gray-800 ">
                                     {header}
                                 </th>
                             ))}
@@ -78,59 +79,72 @@ const CourseTable = ({ headers, data, activeButton, handleRestore, itemEditedId,
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
                         {data.map((item, index) => (
-                            <tr key={item._id} className={`transition ease-out duration-200 hover:bg-gray-200 hover:duration-75 even:bg-slate-50 ${itemEditedId === item._id ? 'transition ease-out duration-1000 bg-green-200' : ''}`}>
+                            <tr key={item.id}
+                                className={`transition ease-out duration-200 hover:bg-gray-200 hover:duration-75 even:bg-slate-50 ${itemEditedId === item._id ? 'transition ease-out duration-1000 bg-green-200' : ''}`}>
                                 {isSelectAction ? (
                                     <>
-                                        <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
-                                            <input type='checkbox' name='courseId' value={item._id}
-                                                onChange={handleChangeCheckbox}
+                                        <td className="px-2 py-4 text-sm font-medium whitespace-nowrap">
+                                            <input type='checkbox' name='courseId' value={item.id}
+                                                   onChange={handleChangeCheckbox}
                                             />
                                         </td>
                                     </>
                                 ) : (
                                     <>
-                                        <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
-                                            <h2 className="font-medium text-gray-800">{item.courseId}</h2>
+                                        <td className="px-2 py-4 text-sm whitespace-nowrap">
+                                            <h2 className="text-gray-800">{item.id}</h2>
                                         </td>
                                     </>
                                 )}
-                                <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
-                                    <h2 className="font-medium text-gray-800">{item.role}</h2>
+                                <td className="px-2 py-4 text-sm whitespace-nowrap">
+                                    <h2 className="max-w-52 overflow-scroll text-ellipsis flex items-center gap-2 text-gray-800">
+                                        <img src={`${process.env.REACT_APP_ASP_NET_CORE_APP_URL}/${item.img}`}
+                                             alt="hinh anh blog" className="w-6 h-6 rounded-lg object-cover" />
+                                        {item.title}
+                                    </h2>
                                 </td>
-                                <td className="px-4 py-4 max-w-36 text-sm font-medium text-ellipsis overflow-hidden whitespace-nowrap">
-                                    <div className="py-1 text-sm font-normal rounded-full overflow-hidden text-ellipsis">{item.title}</div>
+                                <td className="px-2 py-4 whitespace-nowrap">
+                                    <div
+                                        className="max-w-36 text-sm overflow-scroll py-1 rounded-full">{item.title}</div>
                                 </td>
-                                <td className="px-4 py-4 text-sm font-medium text-ellipsis overflow-hidden whitespace-nowrap">
-                                    <div className="flex gap-2 items-center py-1 text-sm font-normal rounded-full">
-                                        <img src={item.author.photoURL} className="w-4 rounded-full object-cover" alt="avatar" />
-                                        {item.author.displayName}
+                                <td className="px-2 py-4 text-sm text-ellipsis overflow-hidden whitespace-nowrap">
+                                    <div className="flex gap-2 items-center py-1 text-sm rounded-full">
+                                        <img src={images.sony} className="w-4 rounded-full object-cover" alt="avatar" />
+                                        Ngoc Loc
                                     </div>
                                 </td>
-                                <td className="px-4 py-4 text-sm whitespace-nowrap">
-                                    <h4 className="text-gray-700 text-center">{item.registrationCount}</h4>
+                                <td className="px-2 py-4 text-sm whitespace-nowrap">
+                                    <h4 className="text-gray-700">{item.createdAt}</h4>
+                                </td>
+                                <td className="px-2 py-4 text-sm whitespace-nowrap">
+                                    <h4 className="text-gray-700">{item.createdAt}</h4>
                                 </td>
                                 {activeButton === 'trash' ? (
-                                    <td className="px-4 py-4 text-sm whitespace-nowrap">
+                                    <td className="px-2 py-4 text-sm whitespace-nowrap">
                                         <h4 className="text-gray-700 text-left">{item.deletedAt}</h4>
                                     </td>
                                 ) : (
-                                    <td className="px-4 py-4 text-sm whitespace-nowrap">
+                                    <td className="px-2 py-4 text-sm whitespace-nowrap">
                                         <h4 className="text-gray-700 text-left">{item.updatedAt}</h4>
                                     </td>
                                 )}
                                 {activeButton === 'trash' ? (
                                     <td className=''>
-                                        <Button className='text-sm px-[-2] hover:bg-gray-200 hover:duration-200' onClick={() => handleRestore(item)}>
+                                        <Button className='text-sm px-[-2] hover:bg-gray-200 hover:duration-200'
+                                                onClick={() => handleRestore(item)}>
                                             <LuArchiveRestore />
                                             Khôi phục
                                         </Button>
                                     </td>
                                 ) : (
                                     <Menu items={courseActions} payload={item}>
-                                        <td className="flex justify-center px-4 py-4 text-sm whitespace-nowrap">
-                                            <button className="px-1 py-1 text-gray-500 transition-colors duration-200 rounded-lg hover:bg-gray-100">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                                        <td className="flex justify-center px-2 py-4 text-sm whitespace-nowrap">
+                                            <button
+                                                className="px-1 py-1 text-gray-500 transition-colors duration-200 rounded-lg hover:bg-gray-100">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                                    <path strokeLinecap="round" strokeLinejoin="round"
+                                                          d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
                                                 </svg>
                                             </button>
                                         </td>
@@ -139,10 +153,10 @@ const CourseTable = ({ headers, data, activeButton, handleRestore, itemEditedId,
                             </tr>
                         ))}
                     </tbody>
-                </table >
-            </div >
-        </div >
+                </table>
+            </div>
+        </div>
     );
 };
 
-export default CourseTable;
+export default BlogTable;

@@ -9,18 +9,19 @@ import { CiFolderOn } from "react-icons/ci";
 
 import CreateCourseModal from "../components/Modal/Course/CreateCourseModal";
 import EditCourseModal from "../components/Modal/Course/EditCourseModal";
-import CourseTable from "../components/Table/CourseTable";
+import CourseTable from "../components/Table/BlogTable";
 import FileCourseModal from "../components/Modal/Course/FileCourseModal";
 import Button from "../components/Button";
 import Skeleton from "react-loading-skeleton";
 import { AuthContext } from "../context";
+import BlogTable from '../components/Table/BlogTable';
 
 function AdminBlogPage() {
-    const [courses, setCourses] = useState()
+    const [blogs, setBlogs] = useState()
     const [isShowCreateCourse, setIsShowCreateCourse] = useState(false)
     const [isShowEditCourse, setIsShowEditCourse] = useState(false)
     const [isShowFileCourse, setIsShowFileCourse] = useState(false)
-    const [selectedCourse, setSelectedCourse] = useState(null) //for render courses
+    const [selectedCourse, setSelectedCourse] = useState(null) //for render blogs
     const [activeButton, setActiveButton] = useState('all')
     const [searchQuery, setSearchQuery] = useState('')
     const [courseEditedId, setCourseEditedId] = useState('')
@@ -28,24 +29,13 @@ function AdminBlogPage() {
     const [totalPages, setTotalPages] = useState(10)
     const { userId } = useContext(AuthContext)
 
-
     useEffect(() => {
-        // Đặt lại currentPage về 1 khi activeButton thay đổi
-        setCurrentPage(1);
-    }, [activeButton]) // Chỉ theo dõi activeButton
-
-    useEffect(() => {
-        const socket = io(`${process.env.REACT_APP_API_URL}`, {
-            reconnectionAttempts: 5, // Số lần thử kết nối lại
-            timeout: 10000, // Thời gian timeout
-            transports: ['polling'], // Sử dụng WebSocket nếu có thể để giảm thiểu lỗi kết nối
-        });
-
-        const getAllCourses = async () => {
+        const getAllBlogs = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/courses?page=${currentPage}`)
-                setCourses(response.data.courses)
-                setTotalPages(Math.ceil(response.data.totalCourses / 10))
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/Blog/Read`)
+                setBlogs(response.data)
+                console.log(response.data);
+                // setTotalPages(Math.ceil(response.data.totalCourses / 10))
             } catch (error) {
                 console.log(error);
             }
@@ -53,8 +43,8 @@ function AdminBlogPage() {
 
         const getRecentCourses = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/courses?sort=updatedAt&order=desc&page=${currentPage}`)
-                setCourses(response.data.courses)
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/blogs?sort=updatedAt&order=desc&page=${currentPage}`)
+                setBlogs(response.data.blogs)
                 setTotalPages(Math.ceil(response.data.totalCourses / 10))
             } catch (error) {
                 console.log(error);
@@ -63,8 +53,8 @@ function AdminBlogPage() {
 
         const getTrashCourses = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/courses/trash?page=${currentPage}`)
-                setCourses(response.data.courses)
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/blogs/trash?page=${currentPage}`)
+                setBlogs(response.data.blogs)
                 setTotalPages(Math.ceil(response.data.totalCoursesDeleted / 10))
             } catch (error) {
                 console.log(error);
@@ -74,7 +64,7 @@ function AdminBlogPage() {
         //For active button (all,recent,trash)
         switch (activeButton) {
             case 'all':
-                getAllCourses()
+                getAllBlogs()
                 break;
             case 'recent':
                 getRecentCourses()
@@ -86,62 +76,6 @@ function AdminBlogPage() {
                 break;
         }
 
-        //Listen socketi io for realtime
-        socket.on('course:create', (newCourse) => {
-            if (Array.isArray(newCourse)) {
-                setCourses((prevCourses) => [...newCourse, ...prevCourses]);
-            } else {
-                setCourses((prevCourses) => [newCourse, ...prevCourses]);
-            }
-        });
-
-
-        socket.on('course:update', (updatedCourse) => {
-            setCourses((prevCourses) => {
-                const updatedCourses = prevCourses.map(course =>
-                    course._id === updatedCourse._id ? updatedCourse : course
-                );
-                setCourseEditedId(updatedCourse._id)
-                return updatedCourses
-            });
-        });
-
-        socket.on('course:soft-delete', (courseDeleteds) => {
-            setCourses(prevCourses =>
-                prevCourses.filter(course => {
-                        if (Array.isArray(courseDeleteds)) {
-                            return !courseDeleteds.some(courseDeleted =>
-                                course._id === courseDeleted._id
-                            )
-                        } else {
-                            return course._id !== courseDeleteds._id
-                        }
-                    }
-                )
-            )
-        })
-
-        socket.on('course:restore', (courseRestoreds) => {
-            setCourses(prevCourses =>
-                prevCourses.filter(course => {
-                    if (Array.isArray(courseRestoreds)) {
-                        return !courseRestoreds.some(courseRestored =>
-                            course._id === courseRestored._id
-                        );
-                    } else {
-                        return course._id !== courseRestoreds._id;
-                    }
-                })
-            )
-        })
-
-        return () => {
-            socket.off('course:create');
-            socket.off('course:update');
-            socket.off('course:soft-delete');
-            socket.off('course:restore');
-            socket.disconnect()
-        };
     }, [currentPage, activeButton]) // Theo dõi cả currentPage và activeButton
 
     const toggleIsShowCreateCourse = () => {
@@ -159,7 +93,7 @@ function AdminBlogPage() {
 
     const handleSoftDelete = async (course) => {
         try {
-            await axios.delete(`${process.env.REACT_APP_API_URL}/courses/${course._id}?updatedBy=${userId}`);
+            await axios.delete(`${process.env.REACT_APP_API_URL}/blogs/${course._id}?updatedBy=${userId}`);
         } catch (error) {
             console.log(error);
         }
@@ -168,7 +102,7 @@ function AdminBlogPage() {
 
     const handleRestore = async (course) => {
         try {
-            await axios.post(`${process.env.REACT_APP_API_URL}/courses/restore/${course._id}?updatedBy=${userId}`)
+            await axios.post(`${process.env.REACT_APP_API_URL}/blogs/restore/${course._id}?updatedBy=${userId}`)
         } catch (error) {
             console.log(error);
         }
@@ -177,8 +111,8 @@ function AdminBlogPage() {
     const handleSearch = async (e) => {
         try {
             setSearchQuery(e.target.value)
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/courses?title=${e.target.value}`)
-            setCourses(response.data.courses)
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/blogs?title=${e.target.value}`)
+            setBlogs(response.data.blogs)
         } catch (error) {
             console.log(error);
         }
@@ -203,7 +137,7 @@ function AdminBlogPage() {
 
     const handleActionForm = async (e, data) => {
         e.preventDefault();
-        const response = await axios.post(`${process.env.REACT_APP_API_URL}/courses/handle-form-action`, data)
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}/blogs/handle-form-action`, data)
     }
 
     return (
@@ -213,7 +147,7 @@ function AdminBlogPage() {
                     <div>
                         <div className="flex items-center gap-x-3">
                             <h2 className="text-lg font-medium text-gray-800">Tin tức</h2>
-                            <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full">{courses?.length} khoá học</span>
+                            <span className="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full">{blogs?.length} khoá học</span>
                         </div>
 
                         <p className="mt-1 text-sm text-gray-500">Quản lý các tin tức</p>
@@ -278,10 +212,10 @@ function AdminBlogPage() {
 
                 <div className="table max-w-full flex flex-col w-full mt-6 drop-shadow-md">
                     {activeButton === 'all' || activeButton === 'recent' ? (
-                        courses ? (
-                            <CourseTable
-                                headers={["STT", "Tiêu đề", "Doanh mục", "Người đăng", "Ngày đăng", "Lượt xem"]}
-                                data={courses}
+                        blogs ? (
+                            <BlogTable
+                                headers={["STT", "Tiêu đề", "Doanh mục", "Người đăng", "Ngày đăng", "Lượt xem", ""]}
+                                data={blogs}
                                 activeButton={activeButton}
                                 handleRestore={handleRestore}
                                 itemEditedId={courseEditedId}
@@ -301,7 +235,7 @@ function AdminBlogPage() {
                     ) : (
                         <CourseTable
                             headers={["STT", "Lĩnh vực", "Tiêu đề", "Người đăng", "Lượt đăng ký", "Ngày xoá"]}
-                            data={courses}
+                            data={blogs}
                             activeButton={activeButton}
                             handleRestore={handleRestore}
                             itemEditedId={courseEditedId}

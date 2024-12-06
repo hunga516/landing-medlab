@@ -31,7 +31,7 @@ function Header() {
     useEffect(() => {
         const toggleIsHidden = () => {
             let currentY = window.scrollY;
-            if (currentY > 300) {
+            if (currentY > 30) {
                 setIsHidden(true);
             } else {
                 setIsHidden(false);
@@ -84,10 +84,10 @@ function Header() {
                     <div className="hidden md:flex w-full items-center justify-between">
                         <div className="flex items-center gap-8">
                             <Link to={'/'}
-                                  className={`${location.pathname === '/' ? 'text-slate-700' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>TRANG
+                                  className={`${location.pathname === '/' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>TRANG
                                 CHỦ</Link>
                             <Link to="/price"
-                                  className={`${location.pathname === '/price' ? 'text-slate-700' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>DỊCH
+                                  className={`${location.pathname === '/price' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>DỊCH
                                 VỤ</Link>
                             <Tippy
                                 interactive={true}
@@ -124,10 +124,10 @@ function Header() {
                                 </Link>
                             </Tippy>
                             <Link to={'/about'}
-                                  className={`${location.pathname === '/about' ? 'text-slate-700' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>VỀ
+                                  className={`${location.pathname === '/about' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>VỀ
                                 CHÚNG TÔI</Link>
                             <Link to="/blog"
-                                  className={`${location.pathname === '/blog' ? 'text-slate-700' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>
+                                  className={`${location.pathname === '/blog' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>
                                 TIN TỨC
                             </Link>
                         </div>

@@ -9,7 +9,7 @@ import { CiFolderOn } from "react-icons/ci";
 
 import CreateCourseModal from "../components/Modal/Course/CreateCourseModal";
 import EditCourseModal from "../components/Modal/Course/EditCourseModal";
-import CourseTable from "../components/Table/CourseTable";
+import CourseTable from "../components/Table/BlogTable";
 import FileCourseModal from "../components/Modal/Course/FileCourseModal";
 import Button from "../components/Button";
 import Skeleton from "react-loading-skeleton";

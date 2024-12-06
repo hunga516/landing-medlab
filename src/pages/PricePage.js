@@ -9,7 +9,7 @@ function PricePage() {
 
     useEffect(() => {
         const getServices = async () => {
-            const response = await axios.get(`http://localhost:5106/api/Service/Read`)
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/Service/Read`)
             setServices(response.data);
         }
 
