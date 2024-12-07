@@ -56,7 +56,7 @@ function HomePage() {
                     </div>
                 </div>
 
-                <div className="absolute left-8 bottom-0 hidden md:flex items-center gap-x-8 px-16 py-6 bg-yellow-300/60 outline outline-8 outline-white rounded-tr-2xl rounded-br-2xl after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[33px] after:rounded-2xl after:absolute after:shadow-curve-bl">
+                <div className="absolute left-8 bottom-0 hidden md:flex items-center gap-x-8 px-8 py-4 bg-yellow-300/60 outline outline-8 outline-white rounded-2xl before:w-[25px] before:h-[25px] before:absolute before:bottom-0 before:left-[-33px] before:shadow-curve-br before:rounded-2xl after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[33px] after:rounded-2xl after:absolute after:shadow-curve-bl">
                     <div className="flex flex-col items-center gap-2">
                         <p className="text-xs md:text-3xl text-nowrap text-blue-500">35.5N</p>
                         <p className="text-blue-500 text-xs md:text-sm tracking-wide text-nowrap">Khách
@@ -300,23 +300,23 @@ function HomePage() {
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mt-4 md:mt-6">
                     <div className="relative h-40 md:h-60 bg-blue-500 rounded-lg">
                         <p className="text-base font-bold text-blue-100 mx-auto w-fit mt-4">MẸ BẦU</p>
-                        <img src={images.mebau} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[65px] md:w-2/3 lg:w-[55%]" />
+                        <img src={images.mebau} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[65px] md:w-2/3 lg:w-[70%]" />
                     </div>
                     <div className="relative h-40 md:h-60 bg-blue-100 rounded-lg">
                         <p className="text-base font-bold text-blue-500 mx-auto w-fit mt-4">TRẺ EM</p>
-                        <img src={images.treem} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/4 lg:w-2/4" />
+                        <img src={images.treem} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/4 lg:w-[60%" />
                     </div>
                     <div className="relative h-40 md:h-60 bg-blue-500 rounded-lg">
                         <p className="text-base font-bold text-blue-100 mx-auto w-fit mt-4">NỮ GIỚI</p>
-                        <img src={images.nugioi} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-1/2" />
+                        <img src={images.nugioi} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-[65%]" />
                     </div>
                     <div className="relative h-40 md:h-60 bg-blue-100 rounded-lg">
                         <p className="text-base font-bold text-blue-500 mx-auto w-fit mt-4">TIỀN HÔN NHÂN</p>
-                        <img src={images.tienhonnhan} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-1/2" />
+                        <img src={images.tienhonnhan} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-[65%]" />
                     </div>
                     <div className="relative h-40 md:h-60 bg-blue-500 rounded-lg">
                         <p className="text-base font-bold text-blue-100 mx-auto w-fit mt-4">NAM GIỚI</p>
-                        <img src={images.namgioi} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[81px] md:w-3/4 lg:w-[60%]" />
+                        <img src={images.namgioi} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[81px] md:w-3/4 lg:w-[80%]" />
                     </div>
                 </div>
             </div>

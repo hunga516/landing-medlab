@@ -7,12 +7,12 @@ function AdminLayout({ children }) {
     return (
         <div className="min-h-screen">
             <AdminHeader />
-            <div className="layout-wrapper wrapper grid md:grid-cols-7 lg:grid-cols-8 gap-8">
+            <div className="layout-wrapper wrapper grid grid-cols-8">
                 {/* Content Wrapper */}
                 <div className="col-span-1 mt-[61px]">
                     <AdminSidebarLeft />
                 </div>
-                <div className="md:col-span-4 lg:col-span-7 overflow-auto">
+                <div className="col-span-7 overflow-auto mx-8">
                     <div className="mt-[80px]">
                         {children}
                     </div>

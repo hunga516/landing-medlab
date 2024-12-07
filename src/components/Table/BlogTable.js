@@ -11,23 +11,23 @@ import axios from 'axios';
 import images from '../../assets/images';
 
 
-const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, courseActions, handleActionForm }) => {
+const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, blogActions, handleActionForm }) => {
     const [isSelectAction, setIsSelectAtion] = useState(false)
     const [courseIds, setCourseIds] = useState([])
 
-    const handleSoftDeleteFormAction = async () => {
-        const response = await axios.post(`${process.env.REACT_APP_API_URL}/courses/handle-form-action`, {
-            action: 'soft-delete',
-            courseIds,
-        })
-    }
-
-    const handleRestoreFormAction = async () => {
-        const response = await axios.post(`${process.env.REACT_APP_API_URL}/courses/handle-form-action`, {
-            action: 'restore',
-            courseIds,
-        })
-    }
+    // const handleSoftDeleteFormAction = async () => {
+    //     const response = await axios.post(`${process.env.REACT_APP_API_URL}/courses/handle-form-action`, {
+    //         action: 'soft-delete',
+    //         courseIds,
+    //     })
+    // }
+    //
+    // const handleRestoreFormAction = async () => {
+    //     const response = await axios.post(`${process.env.REACT_APP_API_URL}/courses/handle-form-action`, {
+    //         action: 'restore',
+    //         courseIds,
+    //     })
+    // }
 
     const handleChangeCheckbox = (e) => {
         if (e.target.checked) {
@@ -40,33 +40,33 @@ const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, c
     return (
         <div className="inline-block min-w-full py-2 align-middle">
             <div className='flex justify-end h-10'>
-                {isSelectAction && (
-                    <>
-                        {activeButton === 'trash' ? (
-                            <Button onClick={handleRestoreFormAction} className={"flex text-sm w-[200px] text-bluePrimary "} size='medium'>
-                                <FaRegTrashAlt />
-                                Khôi phục
-                            </Button>
-                        ) : (
-                            <Button onClick={handleSoftDeleteFormAction} className={"flex text-sm w-[200px] text-bluePrimary "} size='medium'>
-                                <FaRegTrashAlt />
-                                Chuyển vào thùng rác
-                            </Button>
-                        )}
-                        <Button className={"flex text-sm w-[120px] text-bluePrimary "} size='medium'>
-                            <TiEdit className='text-[16px]' />
-                            Chỉnh sửa
-                        </Button>
-                    </>
-                )}
+                {/*{isSelectAction && (*/}
+                {/*    <>*/}
+                {/*        {activeButton === 'trash' ? (*/}
+                {/*            <Button onClick={handleRestoreFormAction} className={"flex text-sm w-[200px] text-bluePrimary "} size='medium'>*/}
+                {/*                <FaRegTrashAlt />*/}
+                {/*                Khôi phục*/}
+                {/*            </Button>*/}
+                {/*        ) : (*/}
+                {/*            <Button onClick={handleSoftDeleteFormAction} className={"flex text-sm w-[200px] text-bluePrimary "} size='medium'>*/}
+                {/*                <FaRegTrashAlt />*/}
+                {/*                Chuyển vào thùng rác*/}
+                {/*            </Button>*/}
+                {/*        )}*/}
+                {/*        <Button className={"flex text-sm w-[120px] text-bluePrimary "} size='medium'>*/}
+                {/*            <TiEdit className='text-[16px]' />*/}
+                {/*            Chỉnh sửa*/}
+                {/*        </Button>*/}
+                {/*    </>*/}
+                {/*)}*/}
             </div>
 
-            <div className="overflow-hidden">
+            <div className="overflow-hidden rounded-lg">
                 <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-slate-50 font-sans">
                         <tr>
                             {headers.map((header, index) => (
-                                <th key={index} className="py-2 px-2 text-sm font-medium text-left rtl:text-right text-gray-800 ">
+                                <th key={index} className="py-2 px-4 text-sm font-medium text-left rtl:text-right text-gray-800 ">
                                     {header}
                                 </th>
                             ))}
@@ -83,7 +83,7 @@ const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, c
                                 className={`transition ease-out duration-200 hover:bg-gray-200 hover:duration-75 even:bg-slate-50 ${itemEditedId === item._id ? 'transition ease-out duration-1000 bg-green-200' : ''}`}>
                                 {isSelectAction ? (
                                     <>
-                                        <td className="px-2 py-4 text-sm font-medium whitespace-nowrap">
+                                        <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
                                             <input type='checkbox' name='courseId' value={item.id}
                                                    onChange={handleChangeCheckbox}
                                             />
@@ -91,40 +91,40 @@ const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, c
                                     </>
                                 ) : (
                                     <>
-                                        <td className="px-2 py-4 text-sm whitespace-nowrap">
+                                        <td className="px-4 py-4 text-sm whitespace-nowrap">
                                             <h2 className="text-gray-800">{item.id}</h2>
                                         </td>
                                     </>
                                 )}
-                                <td className="px-2 py-4 text-sm whitespace-nowrap">
+                                <td className="px-4 py-4 text-sm whitespace-nowrap">
                                     <h2 className="max-w-52 overflow-scroll text-ellipsis flex items-center gap-2 text-gray-800">
                                         <img src={`${process.env.REACT_APP_ASP_NET_CORE_APP_URL}/${item.img}`}
                                              alt="hinh anh blog" className="w-6 h-6 rounded-lg object-cover" />
                                         {item.title}
                                     </h2>
                                 </td>
-                                <td className="px-2 py-4 whitespace-nowrap">
+                                <td className="px-4 py-4 whitespace-nowrap">
                                     <div
-                                        className="max-w-36 text-sm overflow-scroll py-1 rounded-full">{item.title}</div>
+                                        className="max-w-36 text-sm overflow-scroll py-1 rounded-full">{item.category}</div>
                                 </td>
-                                <td className="px-2 py-4 text-sm text-ellipsis overflow-hidden whitespace-nowrap">
-                                    <div className="flex gap-2 items-center py-1 text-sm rounded-full">
-                                        <img src={images.sony} className="w-4 rounded-full object-cover" alt="avatar" />
-                                        Ngoc Loc
+                                <td className="px-4 py-4 text-sm text-ellipsis overflow-hidden whitespace-nowrap">
+                                    <div className="flex gap-2 items-end py-1 text-sm rounded-full">
+                                        <img src="/logo.png" className="w-6 rounded-full object-cover" alt="avatar" />
+                                       Medlab Vĩnh Viễn
                                     </div>
                                 </td>
-                                <td className="px-2 py-4 text-sm whitespace-nowrap">
+                                <td className="px-4 py-4 text-sm whitespace-nowrap">
                                     <h4 className="text-gray-700">{item.createdAt}</h4>
                                 </td>
-                                <td className="px-2 py-4 text-sm whitespace-nowrap">
-                                    <h4 className="text-gray-700">{item.createdAt}</h4>
+                                <td className="px-4 py-4 text-sm whitespace-nowrap">
+                                    <h4 className="text-gray-700">{item.viewCount}</h4>
                                 </td>
                                 {activeButton === 'trash' ? (
-                                    <td className="px-2 py-4 text-sm whitespace-nowrap">
+                                    <td className="px-4 py-4 text-sm whitespace-nowrap">
                                         <h4 className="text-gray-700 text-left">{item.deletedAt}</h4>
                                     </td>
                                 ) : (
-                                    <td className="px-2 py-4 text-sm whitespace-nowrap">
+                                    <td className="px-4 py-4 text-sm whitespace-nowrap">
                                         <h4 className="text-gray-700 text-left">{item.updatedAt}</h4>
                                     </td>
                                 )}
@@ -137,7 +137,7 @@ const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, c
                                         </Button>
                                     </td>
                                 ) : (
-                                    <Menu items={courseActions} payload={item}>
+                                    <Menu items={blogActions} payload={item}>
                                         <td className="flex justify-center px-2 py-4 text-sm whitespace-nowrap">
                                             <button
                                                 className="px-1 py-1 text-gray-500 transition-colors duration-200 rounded-lg hover:bg-gray-100">

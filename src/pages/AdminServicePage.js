@@ -7,10 +7,10 @@ import { TiEdit } from "react-icons/ti";
 import { MdDeleteOutline } from "react-icons/md";
 import { CiFolderOn } from "react-icons/ci";
 
-import CreateCourseModal from "../components/Modal/Course/CreateCourseModal";
-import EditCourseModal from "../components/Modal/Course/EditCourseModal";
+import CreateBlogModal from "../components/Modal/Blog/CreateBlogModal";
+import EditCourseModal from "../components/Modal/Blog/EditBlogModal";
 import CourseTable from "../components/Table/BlogTable";
-import FileCourseModal from "../components/Modal/Course/FileCourseModal";
+import FileCourseModal from "../components/Modal/Blog/FileCourseModal";
 import Button from "../components/Button";
 import Skeleton from "react-loading-skeleton";
 import { AuthContext } from "../context";
@@ -334,7 +334,7 @@ function AdminServicePage() {
                 </div >
             </div>
             {isShowCreateCourse && (
-                <CreateCourseModal toggleIsShowCreateCourse={toggleIsShowCreateCourse} />
+                <CreateBlogModal toggleIsShowCreateCourse={toggleIsShowCreateCourse} />
             )
             }
             {

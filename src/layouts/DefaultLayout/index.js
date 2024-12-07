@@ -33,7 +33,7 @@ function DefaultLayout({ children }) {
         <div className="bg-slate-100/30 relative">
             <Header />
             <div className="wrapper mx-auto flex justify-center max-w-[1536px]">
-                <div className="content w-full mt-20 md:mt-40 px-4 md:px-0">
+                <div className="content w-full mt-20 md:mt-28 px-4 md:px-0">
                     {children}
                     <div className="mt-12 md:mt-32">
                         <Footer />

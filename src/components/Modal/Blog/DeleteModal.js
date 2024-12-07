@@ -1,4 +1,4 @@
-function DeleteModal() {
+function DeleteModal({blog, toggleIsShowDeleteBlog, handleSoftDelete}) {
     return (
         <div id="deleteModal" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
             <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
@@ -19,17 +19,20 @@ function DeleteModal() {
                                 <div class="mt-2 text-center sm:mt-0 sm:text-left">
                                     <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Xác nhận xoá</h3>
                                     <div class="mt-2">
-                                        <p class="text-sm text-gray-500"><span id="spanComfirmDelete">Bạn có chắc muốn xoá khoá học ID:
-                                        </span></p>
+                                        <p class="text-sm text-gray-500"><span id="spanComfirmDelete">Bạn có chắc muốn xoá tin tức {blog.title}</span></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="flex bg-gray-50 px-4 py-3 justify-end gap-1">
                             <button type="button" class="bg-white ring-1 ring-inset ring-gray-300 px-3 font-semibold rounded-md h-[40px]"
-                                onclick="closeModal()">Huỷ</button>
+                               onClick={toggleIsShowDeleteBlog}>
+                                Huỷ
+                            </button>
                             <button type="button" class="bg-red-500 text-white px-3 py-2 font-semibold rounded-md h-[40px]"
-                                onclick="submitDelete()">Xoá</button>
+                                onClick={() => handleSoftDelete(blog)}>
+                                Xoá
+                            </button>
                         </div>
                     </div>
                 </div>

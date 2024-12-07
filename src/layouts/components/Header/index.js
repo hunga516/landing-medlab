@@ -49,10 +49,10 @@ function Header() {
     return (
         <>
             <div
-                className="header-wrapper fixed w-full md:px-8 md:pt-4 border-[#1618231F] z-50">
+                className="header-wrapper fixed w-full md:px-8 md:pt-1 border-[#1618231F] z-50">
                 <div className="absolute inset-0 bg-white/80 backdrop-blur-lg -z-10 drop-shadow-sm"></div>
                 <div
-                    className={`hidden ${isHidden ? "-translate-y-full": "translate-y-0 border-b-[0.5px] border-slate-200"} md:flex duration-300 w-full items-center justify-between px-2 text-white gap-2 pb-4`}>
+                    className={`hidden ${isHidden ? "-translate-y-full": "translate-y-0 border-b-[0.5px] border-slate-200"} md:flex duration-300 w-full items-center justify-between px-2 text-white gap-2`}>
                     <Link to="/" className="logo flex flex-col gap-2 items-center">
                         <img src="/logo.png" alt="" className="w-20 h-20" />
                         <p className="hidden md:block bg-gradient-to-br from-sky-900 to-sky-500 text-transparent bg-clip-text text-base font-semibold font-sans">Medlab
@@ -71,7 +71,7 @@ function Header() {
                         </button>
                     </div>
                 </div>
-                <div className={`${isHidden ? "mt-0 md:-mt-36" : "md:mt-0"} flex justify-between py-2 mx-4 md:mx-0 items-center duration-300`}>
+                <div className={`${isHidden ? "mt-0 md:-mt-28" : "md:mt-0"} flex justify-between mx-4 md:mx-0 items-center duration-300`}>
                     <button onClick={toggleIsShowNavigateModal} className="block md:hidden p-1">
                         <SlMenu className="text-2xl" />
                     </button>
@@ -81,7 +81,7 @@ function Header() {
                         <img src="/logo.png" alt="" className="w-10 h-10" />
                     </Link>
 
-                    <div className="hidden md:flex w-full items-center justify-between">
+                    <div className="hidden md:flex w-full items-center py-1 justify-between">
                         <div className="flex items-center gap-8">
                             <Link to={'/'}
                                   className={`${location.pathname === '/' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>TRANG
@@ -132,7 +132,7 @@ function Header() {
                             </Link>
                         </div>
                         <div>
-                            <button className="hidden lg:block px-4 py-2 text-lg rounded-md text-white bg-sky-600">
+                            <button className="hidden lg:block px-4 py-1.5 text-lg rounded-md text-white bg-sky-600">
                                 ĐĂNG KÝ TƯ VẤN
                             </button>
                         </div>

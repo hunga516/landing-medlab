@@ -31,7 +31,7 @@ function AdminHeader() {
 
     return (
         <>
-            <div className="header-wrapper fixed z-10 w-full flex justify-center drop-shadow bg-white/70 backdrop-blur-md border-[#1618231F]">
+            <div className="header-wrapper fixed z-10 w-full flex px-4 drop-shadow bg-white/70 backdrop-blur-md border-[#1618231F]">
                 <div className="header-inner w-[1426px] flex justify-between items-center h-[60px] pl-3 pr-6">
                     <div className="logo">
                         {LoadingContextValue ? (

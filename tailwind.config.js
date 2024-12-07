@@ -24,6 +24,7 @@ module.exports = {
       boxShadow: {
         'curve-bl': '-10px 10px 0 #fff',
         'curve-tl': '-10px 10px 0 #fff',
+        'curve-br': '10px 10px 0 #fff',
         'curve-bl-4px': '-4px 4px 0 #fff',
       }
     },

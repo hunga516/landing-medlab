@@ -6,7 +6,7 @@ import MenuItem from './MenuItem';
 import { useState } from 'react';
 
 
-function Menu({ children, items, onChange }) {
+function Menu({ children, items, onChange,payload }) {
 
     const [history, setHistory] = useState([{ data: items }])
     const current = history[history.length - 1]
@@ -14,9 +14,8 @@ function Menu({ children, items, onChange }) {
 
     return (
         <Tippy
-            delay={[0, 700]}
             target
-            offset={[-110, 8]}
+            offset={[0, -50]}
             placement='bottom'
             interactive={true}
             render={attrs => (
@@ -31,7 +30,7 @@ function Menu({ children, items, onChange }) {
                                     if (isParent) {
                                         setHistory((prev) => [...prev, item.children]);
                                     } else {
-                                        item.onClick ? item.onClick() : onChange(item);
+                                        item.onClick ? item.onClick(payload) : onChange(item);
                                     }
                                 }}
                             />
