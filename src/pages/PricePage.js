@@ -123,23 +123,23 @@ function PricePage() {
             <div className="mt-12 md:mt-16 md:px-8 lg:px-0 lg:mx-32">
                 <div className="">
                     <div className="grid grid-cols-3 p-4 mx-auto md:p-8 bg-slate-100 rounded-md">
-                        <div className="col-span-3 md:col-span-2">
+                        <div className="col-span-3 md:col-span-2 px-20">
                             <h2 className="text-slate-800 text-xl font-medium">Bạn cần hỗ trợ?</h2>
                             <p className="text-slate-600 leading-5 text-sm mt-2">Medlab rất hân hạnh được hỗ trợ bạn,
                                 hãy để lại thông tin cho chúng tôi nhé. Yêu cầu của bạn sẽ được xử lý và phản hồi trong
                                 thời gian sớm nhất.</p>
                             <div className="grid grid-cols-2 gap-2 mt-6">
-                                <div className="col-span-2 md:col-span-1 flex flex-col gap-1">
+                                <div className="col-span-2 md:col-span-1 flex flex-col gap-2">
                                     <h3 className="text-slate-800">Họ và tên:</h3>
                                     <input type="text" placeholder="Nhập tên"
                                            className="col-span-2 sm:col-span-1 px-4 py-1 placeholder:text-base placeholder:font-light placeholder:font-sans placeholder:text-slate-600 ring-1 ring-slate-300 rounded-md" />
                                 </div>
-                                <div className="col-span-2 md:col-span-1 flex flex-col gap-1">
+                                <div className="col-span-2 md:col-span-1 flex flex-col gap-2">
                                     <h3 className="text-slate-800">Số điện thoại:</h3>
                                     <input type="text" placeholder="Nhập số điện thoại"
                                            className="col-span-2 sm:col-span-1 px-4 py-1 placeholder:text-base placeholder:font-light placeholder:font-sans placeholder:text-slate-600 ring-1 ring-slate-300 rounded-md" />
                                 </div>
-                                <div className="flex flex-col gap-1 col-span-2 md:mt-2">
+                                <div className="flex flex-col gap-1 col-span-2 md:mt-4">
                                     <h3 className="text-slate-800">Email:</h3>
                                     <input type="text" placeholder="Nhập email liên hệ"
                                            className="col-span-2 px-4 py-1 placeholder:text-base placeholder:font-light placeholder:font-sans placeholder:text-slate-600 ring-1 ring-slate-300 rounded-md" />
