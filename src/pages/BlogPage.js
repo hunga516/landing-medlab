@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { renderContentWithHighlight } from '../helper/rendeContentWithHighlight';
 
 function BlogPage() {
     const [blogs, setBlogs] = useState([]);
@@ -97,7 +98,9 @@ function BlogPage() {
                                             <div
                                                 className="p-2 bg-yellow-500 text-white text-xs rounded-lg">{blog.category}</div>
                                             <h3 className="text-lg font-medium leading-5">{blog.title}</h3>
-                                            <p className="text-slate-600 h-40 overflow-hidden text-ellipsis">{blog.content}</p>
+                                            <p className="text-slate-600 h-40 overflow-hidden text-ellipsis">
+                                                {renderContentWithHighlight(blog?.content)}
+                                            </p>
                                             <Link to="/blog/:id"
                                                   className="px-4 py-2 rounded-2xl ring-1 ring-slate-600 text-slate-800"
                                             >
@@ -154,13 +157,14 @@ function BlogPage() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4 md:mt-6 ">
                     {blogs && blogs.length > 0 ? (
                         blogs.map((blog, index) => (
-                            <div key={index} className={`grid-item ${index % 5 === 0 ? "col-span-2" : "col-span-1"}`}>
+                            <Link to={`/blog/${blog.id}`} className={`grid-item ${index % 5 === 0 ? "col-span-2" : "col-span-1"}`}>
+                            <div key={index} >
                                 <div className="relative">
                                     <img src={`${process.env.REACT_APP_ASP_NET_CORE_APP_URL}${blog.img}`} alt="hinh anh tin tuc"
                                          className="rounded-md h-40 w-full object-cover" />
                                     <div
-                                        className="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">Doanh
-                                        mục 1
+                                        className="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">
+                                        {blog.category}
                                     </div>
                                 </div>
                                 <div className="px-2 py-4 flex flex-col gap-2">
@@ -168,13 +172,13 @@ function BlogPage() {
 
                                         <p className="text-blue-500 text-xs">17-12-2024</p>
                                     </div>
-                                    <h2 className="text-lg font-medium">Bai viet dau tien</h2>
-                                    <p className="text-slate-600 h-24 overflow-hidden text-ellipsis">Day la noi dung cua
-                                        blog
-                                        dau
-                                        tiennnnnnbnnndjgdjgjdfgijdiogjdiofgjoidjgiodfgdl;fdskfl;skfs;kfls;kfslkf;skfsl;dkf;sdf</p>
+                                    <h2 className="text-lg font-medium h-8 overflow-hidden text-ellipsis">{blog.title}</h2>
+                                    <p className="text-slate-600 max-h-14 overflow-hidden text-ellipsis">
+                                        {renderContentWithHighlight(blog?.content)}
+                                    </p>
                                 </div>
                             </div>
+                            </Link>
                         ))
                     ) : (
                         <div>dataloading</div>

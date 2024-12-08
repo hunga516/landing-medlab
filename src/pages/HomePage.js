@@ -38,7 +38,7 @@ function HomePage() {
                         </div>
                         <div className="flex items-center gap-4">
                             <button
-                                className="hidden md:flex items-center gap-1 bg-[#0093DD] px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-[10px] text-nowrap md:text-base rounded-md text-[14px]">
+                                className="hidden md:flex items-center gap-1 bg-[#0093DD] px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-nowrap md:text-lg rounded-md text-[14px]">
                                 Đặt lịch xét nghiệm
                             </button>
                             <button className="hidden md:flex items-center gap-2 text-sm text-nowrap">
@@ -48,7 +48,7 @@ function HomePage() {
                         </div>
                         <div className="search-mobile">
                             <button
-                                className="flex md:hidden items-center gap-1 bg-[#0093DD] px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-[10px] text-nowrap md:text-lg rounded-md text-[14px]">
+                                className="flex md:hidden items-center gap-1 bg-[#0093DD] px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-nowrap md:text-lg rounded-md text-[14px]">
                                 <MdOutlineSearch />
                                 Tra cứu kết quả xét nghiệm
                             </button>
@@ -298,25 +298,25 @@ function HomePage() {
             <div className="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
                 <p className="text-slate-800 text-xl md:text-2xl mx-auto font-semibold font-sans">Đối tượng xét nghiệm</p>
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mt-4 md:mt-6">
-                    <div className="relative h-40 md:h-60 bg-blue-500 rounded-lg">
+                    <div className="relative h-40 md:h-52 lg:h-56 bg-blue-500 rounded-lg">
                         <p className="text-base font-bold text-blue-100 mx-auto w-fit mt-4">MẸ BẦU</p>
-                        <img src={images.mebau} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[65px] md:w-2/3 lg:w-[70%]" />
+                        <img src={images.mebau} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[65px] md:w-2/3 lg:w-[50%]" />
                     </div>
-                    <div className="relative h-40 md:h-60 bg-blue-100 rounded-lg">
+                    <div className="relative h-40 md:h-52 lg:h-56 bg-blue-100 rounded-lg">
                         <p className="text-base font-bold text-blue-500 mx-auto w-fit mt-4">TRẺ EM</p>
-                        <img src={images.treem} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/4 lg:w-[60%" />
+                        <img src={images.treem} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/4 lg:w-[50%]" />
                     </div>
-                    <div className="relative h-40 md:h-60 bg-blue-500 rounded-lg">
+                    <div className="relative h-40 md:h-52 lg:h-56 bg-blue-500 rounded-lg">
                         <p className="text-base font-bold text-blue-100 mx-auto w-fit mt-4">NỮ GIỚI</p>
-                        <img src={images.nugioi} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-[65%]" />
+                        <img src={images.nugioi} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-[45%]" />
                     </div>
-                    <div className="relative h-40 md:h-60 bg-blue-100 rounded-lg">
+                    <div className="relative h-40 md:h-52 lg:h-56 bg-blue-100 rounded-lg">
                         <p className="text-base font-bold text-blue-500 mx-auto w-fit mt-4">TIỀN HÔN NHÂN</p>
-                        <img src={images.tienhonnhan} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-[65%]" />
+                        <img src={images.tienhonnhan} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-[45%]" />
                     </div>
-                    <div className="relative h-40 md:h-60 bg-blue-500 rounded-lg">
+                    <div className="relative h-40 md:h-52 lg:h-56 bg-blue-500 rounded-lg">
                         <p className="text-base font-bold text-blue-100 mx-auto w-fit mt-4">NAM GIỚI</p>
-                        <img src={images.namgioi} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[81px] md:w-3/4 lg:w-[80%]" />
+                        <img src={images.namgioi} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[81px] md:w-3/4 lg:w-[55%]" />
                     </div>
                 </div>
             </div>

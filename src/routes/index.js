@@ -13,7 +13,7 @@ import DetailsBlogPage from '../pages/DetailsBlogPage';
 export const publicRoute = [
     { path: '/', element: HomePage, layout: DefautLayout },
     // { path: '/login', element: LoginPage, layout: NoneLayout },
-    { path: '/blog/single-blog', element: DetailsBlogPage, layout: DefautLayout },
+    { path: '/blog/:id', element: DetailsBlogPage, layout: DefautLayout },
     { path: '/blog', element: BlogPage, layout: DefautLayout },
     { path: '/price', element: PricePage, layout: DefaultLayout },
     { path: '/about', element: AboutPage, layout: DefaultLayout },

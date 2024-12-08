@@ -171,21 +171,15 @@ function AboutPage() {
 
         {/*Dịch vụ chất lượng section*/}
             <div className="mt-8 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2  sm:gap-16">
+                <div className="grid grid-cols-1 gap-2  sm:gap-16">
                     <div className="flex flex-col items-start gap-4">
                         <h3 className="text-blue-500 text-sm md:text-lg font-medium font-sans">Dịch vụ chất
                             lượng</h3>
                         <h2 className="text-slate-800 text-4xl leading-10">Dịch Vụ Tốt Nhất Dành Cho Bạn</h2>
                     </div>
-                    <div className="flex flex-col items-start sm:items-end gap-2">
-                        <h3 className="text-blue-500 font-sans text-sm md:text-lg">Dịch vụ xét nghiệm</h3>
-                        <p className="text-slate-600 text-sm md:text-base leading-6">Chúng tôi thấu hiểu những lo lắng
-                            của bạn về sức khỏe của bản thân và gia đình. Vì vậy, dịch vụ xét nghiệm của chúng tôi luôn
-                            cam kết mang đến kết quả chính xác nhất, đặt sức khỏe của bạn làm ưu tiên hàng đầu.</p>
-                    </div>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-12 sm:gap-12 mt-12">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-12 sm:gap-x-16 sm:gap-y-16 mt-12">
                     <div className="grid-item flex flex-col items-start justify-between">
                         <div>
                             <div className="flex flex-col sm:flex-row justify-start items-start sm:items-end gap-2">
@@ -194,7 +188,7 @@ function AboutPage() {
                                 </div>
                                 <p className="text-slate-800 text-base sm:text-lg">Trực tuyến 24/7</p>
                             </div>
-                            <p className="mt-1 sm:mt-4 text-slate-600 text-sm md:text-base leading-6 text-left">Đội ngũ
+                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">Đội ngũ
                                 chuyên
                                 gia y tế luôn sẵn sàng
                                 giải đáp mọi thắc mắc của bạn.</p>
@@ -209,14 +203,10 @@ function AboutPage() {
                                 <p className="text-slate-800 text-base sm:text-lg">Trả kết quả nhanh
                                 </p>
                             </div>
-                            <p className="mt-1 sm:mt-4 text-slate-600 text-sm md:text-base leading-6 text-left">Cung cấp
+                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">Cung cấp
                                 kết quả
                                 xét nghiệm chính xác và kịp thời.</p>
                         </div>
-                        <button
-                            className="mt-4 text-sm bg-white ring-1 ring-blue-500 text-blue-500 hover:bg-blue-500 px-4 py-1 rounded-full hover:text-white w-fit duration-300 ease-in-out text-nowrap">Tra
-                            cứu kết quả
-                        </button>
                     </div>
                     <div className="grid-item flex flex-col items-start justify-between">
                         <div>
@@ -226,14 +216,10 @@ function AboutPage() {
                                 </div>
                                 <p className="text-slate-800 text-base sm:text-lg">Đặt lịch dễ dàng</p>
                             </div>
-                            <p className="mt-1 sm:mt-4 text-slate-600 text-sm md:text-base leading-6 text-left">Đặt lịch
+                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">Đặt lịch
                                 xét
                                 nghiệm trực tuyến nhanh chóng, không cần chờ đợi lâu.</p>
                         </div>
-                        <button
-                            className="mt-4 text-sm bg-white ring-1 ring-blue-500 text-blue-500 hover:bg-blue-500 px-4 py-1 rounded-full hover:text-white w-fit duration-300 ease-in-out">Đặt
-                            lịch ngay
-                        </button>
                     </div>
                     <div className="grid-item flex flex-col items-start justify-between">
                         <div>
@@ -243,14 +229,10 @@ function AboutPage() {
                                 </div>
                                 <p className="text-slate-800 text-base sm:text-lg">Không gian thoải mái</p>
                             </div>
-                            <p className="mt-1 sm:mt-4 text-slate-600 text-sm md:text-base leading-6 text-left">Cơ sở
+                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">Cơ sở
                                 vật chất
                                 hiện đại, không gian sạch sẽ, thoáng mát.</p>
                         </div>
-                        <button
-                            className="mt-4 text-sm bg-white ring-1 ring-blue-500 text-blue-500 hover:bg-blue-500 px-4 py-1 rounded-full hover:text-white w-fit duration-300 ease-in-out">Tìm
-                            hiểu thêm
-                        </button>
                     </div>
                     <div className="grid-item flex flex-col items-start justify-between">
                         <div>
@@ -260,7 +242,7 @@ function AboutPage() {
                                 </div>
                                 <p className="text-slate-800 text-base sm:text-lg">Hậu xét nghiệm</p>
                             </div>
-                            <p className="mt-1 sm:mt-4 text-slate-600 text-sm md:text-base leading-6 text-left">Tư vấn
+                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">Tư vấn
                                 chi tiết
                                 và hướng dẫn theo dõi sau xét nghiệm.</p>
                         </div>
@@ -273,7 +255,7 @@ function AboutPage() {
                                 </div>
                                 <p className="text-slate-800 text-base sm:text-lg">Độ chính xác cao</p>
                             </div>
-                            <p className="mt-1 sm:mt-4 text-slate-600 text-sm md:text-base leading-6 text-left">Mỗi
+                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">Mỗi
                                 xét
                                 nghiệm với chúng tôi là một trách nhiệm phải hoàn thành tốt nhất</p>
                         </div>
@@ -287,18 +269,6 @@ function AboutPage() {
                     <div className="flex flex-col items-start gap-4">
                         <h3 className="text-blue-500 text-sm md:text-lg font-medium font-sans">FAQ</h3>
                         <h2 className="text-slate-800 text-4xl leading-10">Các câu hỏi thường gặp</h2>
-                    </div>
-                    <div className="flex flex-col items-start sm:items-end gap-2">
-                        <h3 className="text-blue-500 font-sans text-sm md:text-lg font-medium">Bạn có câu hỏi cần
-                            giải đáp
-                            ?</h3>
-                        <p className="text-slate-600 text-sm md:text-base leading-6 text-right">Liên hệ ngay với
-                            Medlab, chúng tôi sẽ trả lời nhanh nhất có thể qua email hoặc <p>số điện thoại
-                                liên hệ.</p></p>
-                        <button className="px-4 py-1.5 bg-yellow-500 text-white flex items-center gap-2 rounded-lg">
-                            <FaPhoneAlt />
-                            Liên hệ với Medlab
-                        </button>
                     </div>
                 </div>
 
@@ -453,7 +423,7 @@ function AboutPage() {
                             </div>
                         </div>
                         <div className="accordion">
-                            <div onClick={() => toggleAccordion(`accordion7`)}
+                            <div onClick={() => toggleAccordion(`accordion8`)}
                                  className="px-4 py-3 ring-1 ring-inset bg-blue-100/50 ring-slate-200 rounded-md cursor-pointer">
                                 <div className="flex justify-between gap-2">
                                     <h3 className="text-sm sm:text-base text-slate-800 tracking-wide font-medium">MedLab
@@ -462,7 +432,7 @@ function AboutPage() {
                                     <FiPlusCircle className="text-blue-500 text-2xl" />
                                 </div>
                                 <div
-                                    className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen[`accordion7`] ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                                    className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen[`accordion8`] ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
                                     <div className="flex gap-2 items-center px-4 py-3 border-b-[0.5px] text-slate-700">
                                         Hiện tại, MedLab hỗ trợ thanh toán thông qua một số bảo hiểm y tế đối tác. Bạn
                                         hãy

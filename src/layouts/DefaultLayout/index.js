@@ -11,7 +11,7 @@ function DefaultLayout({ children }) {
 
     useEffect(() => {
         const toggleIsShowScroll = () => {
-            if(window.scrollY >900) {
+            if(window.scrollY > 300) {
                 setIsShowScroll(true);
             } else {
                 setIsShowScroll(false);
@@ -32,7 +32,7 @@ function DefaultLayout({ children }) {
     return (
         <div className="bg-slate-100/30 relative">
             <Header />
-            <div className="wrapper mx-auto flex justify-center max-w-[1536px]">
+            <div className="wrapper mx-auto flex justify-center max-w-screen-xl">
                 <div className="content w-full mt-20 md:mt-28 px-4 md:px-0">
                     {children}
                     <div className="mt-12 md:mt-32">
@@ -42,7 +42,7 @@ function DefaultLayout({ children }) {
             </div>
 
             <div
-                className={`hidden ${isShowScroll ? "md:fixed md:opacity-85" : "md:opacity-0"} duration-300 right-8 bottom-8`}>
+                className={`${isShowScroll ? "md:fixed md:opacity-85" : "md:opacity-0"} duration-300 right-8 bottom-8`}>
                 <button className="text-3xl" onClick={() => scrollToTop()}>
                     <FaCircleArrowUp className="text-pink-600" />
                 </button>
