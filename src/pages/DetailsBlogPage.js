@@ -4,19 +4,26 @@ import axios from 'axios';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import { renderContentWithHighlight } from '../helper/rendeContentWithHighlight';
 
-export default function DetailsBlogPage() {
-    const [blog, setBlog] = useState(null);
+export default function DetailsBlogPage({data}) {
+    const [blog, setBlog] = useState(data);
     const [blogs, setBlogs] = useState([]);
     const params = useParams();
 
     const getDetailsBlog = async () => {
-        try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/Blog/GetDetail/${params.id}`);
-            setBlog(response.data);
-        } catch (e) {
-            console.log(e);
+        if (!data){
+            try {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/Blog/GetDetail/${params.id}`);
+                setBlog(response.data);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        else {
+            return;
         }
     };
+
+    console.log(data);
 
     const getBlogs = async () => {
         try {
