@@ -9,8 +9,13 @@ function PricePage() {
 
     useEffect(() => {
         const getServices = async () => {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/Service/Read`)
-            setServices(response.data);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/Service/Read`,{
+                params: {
+                    page: 1,
+                    pageSize: 100,
+                }
+            })
+            setServices(response.data.services);
         }
 
         getServices();

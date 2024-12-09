@@ -50,11 +50,11 @@ function DefaultLayout({ children }) {
 
             <div className="hidden md:block md:fixed right-8 top-1/2 -translate-y-1/2">
                 <div className="flex flex-col gap-8 items-center">
-                    <div className="relative">
+                    <a href="https://www.facebook.com/vinhvien.medlab/" target="_blank" className="relative">
                         <img src={images.facebook} alt="facebook contact"
                              className="absolute z-10 w-12 h-12 rounded-full object-cover" />
                         <p className="w-12 h-12 rounded-full bg-blue-700 animate-ping delay-150 ease-in-out"></p>
-                    </div>
+                    </a>
                     <div className="relative">
                         <img src={images.phone} alt="phone contact"
                              className="absolute z-10 w-12 h-12 rounded-full object-cover" />
@@ -70,15 +70,15 @@ function DefaultLayout({ children }) {
 
             <div className="fixed md:hidden bottom-0 left-0 right-0">
                 <div className="grid grid-cols-4 bg-white/80 backdrop-blur-2xl w-full">
-                    <div className="p-4 flex items-center justify-center">
+                    <a href="" className="p-4 flex items-center justify-center">
                         <img src={images.zalo} alt="zalo contact" className="w-10 h-10" />
-                    </div>
+                    </a>
                     <div className="p-4 flex items-center justify-center">
                         <img src={images.phone} alt="zalo contact" className="w-10 h-10" />
                     </div>
-                    <div className="p-4 flex items-center justify-center">
+                    <a href="https://www.facebook.com/vinhvien.medlab/" target="_blank" className="p-4 flex items-center justify-center">
                         <img src={images.facebook} alt="zalo contact" className="w-10 h-10" />
-                    </div>
+                    </a>
                     <div className="p-4 flex gap-2 items-center justify-center">
                         <p className="text-nowrap font-medium text-sky-600">TRA CỨU</p>
                     </div>

@@ -26,12 +26,16 @@ export default function DetailsBlogPage({data}) {
     console.log(data);
 
     const getBlogs = async () => {
-        try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/Blog/Read`);
-            setBlogs(response.data.blogs);
-        } catch (e) {
-            console.log(e);
+        if (!data){
+            try {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/Blog/Read`);
+                setBlogs(response.data.blogs);
+            } catch (e) {
+                console.log(e);
+            }
         }
+
+        return
     };
 
     useEffect(() => {
@@ -70,7 +74,7 @@ export default function DetailsBlogPage({data}) {
                                     className="object-cover absolute inset-0 size-full"
                                 />
                                 <div
-                                    className="flex relative z-10 shrink-0 mb-0 h-[428px] max-md:mb-2.5 max-md:max-w-full" />
+                                    className="flex relative z-10 shrink-0 mb-0 h-[300px] max-md:mb-2.5 max-md:max-w-full" />
                             </div>
                         </div>
                     </div>
@@ -154,7 +158,7 @@ export default function DetailsBlogPage({data}) {
                         <div className="flex flex-col text-zinc-900 max-md:mt-8">
                             <div className="text-xl font-semibold">Các bài viết liên quan</div>
                             <div className="flex flex-col gap-6 mt-5 w-full text-base max-w-[341px]">
-                                {blogs && blogs.length > 0 && (
+                                {blogs && blogs?.length > 0 && (
                                     blogs.map((blog, index) => (
                                         <Link to={`/blog/${blog.id}`} key={index}
                                               className="blog-item flex flex-col gap-2">

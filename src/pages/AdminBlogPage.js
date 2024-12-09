@@ -11,13 +11,15 @@ import Skeleton from 'react-loading-skeleton';
 import { AuthContext } from '../context';
 import EditBlogModal from '../components/Modal/Blog/EditBlogModal';
 import DeleteModal from '../components/Modal/Blog/DeleteModal';
+import DetailsBlogPage from './DetailsBlogPage';
+import { FaRegEye } from 'react-icons/fa';
 
 function AdminBlogPage() {
     const [blogs, setBlogs] = useState();
     const [isShowCreateBlog, setIsShowCreateBlog] = useState(false);
     const [isShowEditBlog, setIsShowEditBlog] = useState(false);
     const [isShowDeleteBlog, setIsShowDeleteBlog] = useState(false);
-    const [isShowFileCourse, setIsShowFileCourse] = useState(false);
+    const [isShowPreviewBlog, setIsShowPreviewBlog] = useState(false);
     const [selectedBlogDelete, setSelectedBlogDelete] = useState(null);
     const [selectedBlog, setSelectedBlog] = useState(null); //for render blogs
     const [activeButton, setActiveButton] = useState('all');
@@ -44,11 +46,17 @@ function AdminBlogPage() {
         };
 
 
-        const getRecentCourses = async () => {
+        const getDraftBlogs = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_API_URL}/blogs?sort=updatedAt&order=desc&page=${currentPage}`);
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/Blog/Read`, {
+                    params: {
+                        page: currentPage,
+                        pageSize: 10,
+                        status: "draft",
+                    },
+                });
                 setBlogs(response.data.blogs);
-                setTotalPages(Math.ceil(response.data.totalCourses / 10));
+                setTotalPages(response.data.totalPages);
             } catch (error) {
                 console.log(error);
             }
@@ -64,13 +72,15 @@ function AdminBlogPage() {
             }
         };
 
+        console.log(selectedBlog);
+
         //For active button (all,recent,trash)
         switch (activeButton) {
             case 'all':
                 getAllBlogs();
                 break;
-            case 'recent':
-                getRecentCourses();
+            case 'draft':
+                getDraftBlogs();
                 break;
             case 'trash':
                 getTrashCourses();
@@ -92,6 +102,17 @@ function AdminBlogPage() {
 
     const toggleIsShowDeleteBlog = () => {
         setIsShowDeleteBlog(!isShowDeleteBlog);
+    }
+
+    const toggleIsShowPreviewBlog = (blog) => {
+        setSelectedBlog(blog);
+        setIsShowPreviewBlog(!isShowPreviewBlog);
+    }
+
+    const closeModalPreview = (e) => {
+        if (e.target === e.currentTarget) {
+            setIsShowPreviewBlog(false);
+        }
     }
 
     const handleSoftDelete = async (blog) => {
@@ -129,6 +150,14 @@ function AdminBlogPage() {
     }
 
     const BLOG_ACTIONS = [
+        {
+            icon: FaRegEye,
+            title: 'Xem trước',
+            onClick: function(blog) {
+                console.log(blog);
+                toggleIsShowPreviewBlog(blog);
+            },
+        },
         {
             icon: TiEdit,
             title: 'Chỉnh sửa',
@@ -192,18 +221,10 @@ function AdminBlogPage() {
 
                         <button
                             className={`px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 sm:text-sm ${activeButton === 'recent' ? 'bg-gray-100' : 'bg-white'}`}
-                            onClick={() => setActiveButton('recent')}
+                            onClick={() => setActiveButton('draft')}
                         >
-                            Gần đây
+                            Bản nháp
                         </button>
-
-                        {/*<button*/}
-                        {/*    className={`flex items-center gap-2 px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 sm:text-sm ${activeButton === 'trash' ? 'bg-gray-100' : 'bg-white'}`}*/}
-                        {/*    onClick={() => setActiveButton('trash')}*/}
-                        {/*>*/}
-                        {/*    <FaRegTrashAlt />*/}
-                        {/*    Thùng rác*/}
-                        {/*</button>*/}
                     </div>
 
                     <div className="relative flex items-center mt-4 md:mt-0">
@@ -248,7 +269,7 @@ function AdminBlogPage() {
                         )
                     ) : (
                         <CourseTable
-                            headers={['STT', 'Lĩnh vực', 'Tiêu đề', 'Người đăng', 'Lượt đăng ký', 'Ngày xoá']}
+                            headers={['STT', 'Tiêu đề', 'Doanh mục', 'Người đăng', 'Ngày đăng', 'Lượt xem', '']}
                             data={blogs}
                             activeButton={activeButton}
                             handleRestore={handleRestore}
@@ -307,6 +328,15 @@ function AdminBlogPage() {
             {
                 isShowDeleteBlog && (
                     <DeleteModal blog={selectedBlogDelete} toggleIsShowDeleteBlog={toggleIsShowDeleteBlog} handleSoftDelete={handleSoftDelete} />
+                )
+            }
+            {
+                isShowPreviewBlog && (
+                    <div className="fixed inset-0 bg-slate-100/75 z-30 overflow-hidden" onClick={closeModalPreview}>
+                            <div className="absolute overflow-y-auto rounded-lg drop-shadow-lg opacity-100 inset-0 mx-20 mt-20 bg-white">
+                                <DetailsBlogPage data={selectedBlog} />
+                            </div>
+                    </div>
                 )
             }
         </>

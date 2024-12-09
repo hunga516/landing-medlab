@@ -51,7 +51,7 @@ const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, b
                 {/*)}*/}
             </div>
 
-            <div className="overflow-hidden rounded-lg">
+            <div className="rounded-lg">
                 <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-slate-50 font-sans">
                         <tr>
@@ -70,7 +70,6 @@ const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, b
                     <tbody className="bg-white divide-y divide-gray-200">
                         {data.map((item, index) => (
                             <tr
-                                onClick={() => handleRedirect(item.id)}
                                 key={item.id}
                                 className={`transition ease-out duration-200 hover:bg-gray-200 hover:duration-75 even:bg-slate-50 ${itemEditedId === item._id ? 'transition ease-out duration-1000 bg-green-200' : ''}`}
                             >
@@ -90,7 +89,9 @@ const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, b
                                     </>
                                 )}
                                 <td className="px-4 py-4 text-sm whitespace-nowrap">
-                                    <h2 className="max-w-52 overflow-scroll text-ellipsis flex items-center gap-2 text-gray-800">
+                                    <h2
+                                        onClick={() => handleRedirect(item.id)}
+                                        className="max-w-52 overflow-scroll text-ellipsis flex items-center gap-2 text-gray-800">
                                         <img src={`${process.env.REACT_APP_ASP_NET_CORE_APP_URL}/${item.img}`}
                                              alt="hinh anh blog" className="w-6 h-6 rounded-lg object-cover" />
                                         {item.title}
@@ -118,7 +119,7 @@ const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, b
                                     </td>
                                 ) : (
                                     <td className="px-4 py-4 text-sm whitespace-nowrap">
-                                        <h4 className="text-gray-700 text-left">{item.updatedAt}</h4>
+                                        <h4 className="text-gray-700 text-left">{item.status}</h4>
                                     </td>
                                 )}
                                 {activeButton === 'trash' ? (
@@ -131,7 +132,7 @@ const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, b
                                     </td>
                                 ) : (
                                     <Menu items={blogActions} payload={item}>
-                                        <td className="flex justify-center px-2 py-4 text-sm whitespace-nowrap">
+                                        <td className={`flex justify-center px-2 py-4 text-sm whitespace-nowrap z-10 sticky right-0 ${index % 2 !== 0 ? "bg-slate-50" : "bg-white"}`}>
                                             <button
                                                 className="px-1 py-1 text-gray-500 transition-colors duration-200 rounded-lg hover:bg-gray-100">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

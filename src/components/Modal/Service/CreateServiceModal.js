@@ -54,97 +54,105 @@ function CreateServiceModal({ toggleIsShowCreateService }) {
         }
     };
 
-    console.log(formData);
+
+    const closeModal = (e) => {
+        if (e.target === e.currentTarget) {
+            toggleIsShowCreateService();
+        }
+    }
+
 
     return createPortal(
         <div className="relative">
             {/* Wrapper Disable */}
-            <div className="fixed h-[100vh] inset-0 bg-gray-500 opacity-75 z-20">
-            </div>
+            <div onClick={closeModal} className="fixed h-[100vh] inset-0 bg-gray-500/75 z-20">
+                <form id='createPostForm' className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center inset-0 z-20">
+                    <div className="overflow-auto overscroll-y-contain h-[80vh] w-[50vw] bg-white rounded-xl">
+                        <div className="relative px-12 py-4">
+                            <div
+                                className="back-action z-10 flex justify-between items-center gap-2 sticky top-0 h-16 w-full bg-white "
+                            >
+                                <button onClick={toggleIsShowCreateService} className="flex items-center gap-2">
+                                    <IoArrowBack />
+                                    <h2 className="text-base text-gray-700 leading-9">Trở về</h2>
+                                </button>
 
-            {/* Modal */}
-            <form id='createPostForm' className="fixed flex justify-center items-center inset-0 z-20">
-                <div className="overflow-auto overscroll-y-contain h-[80vh] w-[50vw] bg-white rounded-xl">
-                    <div className="relative px-12 py-4">
-                        <div
-                            className="back-action z-10 flex justify-between items-center gap-2 sticky top-0 h-16 w-full bg-white "
-                        >
-                            <button onClick={toggleIsShowCreateService} className="flex items-center gap-2">
-                                <IoArrowBack />
-                                <h2 className="text-base text-gray-700 leading-9">Trở về</h2>
-                            </button>
-
-                            <div className="container-action flex items-center gap-2">
-                                {isLoadingSubmit ? (
-                                    <Button
-                                        className="px-4 w-48 opacity-70" type='primary'
-                                        onClick={handleSubmit}
-                                    >
-                                        <VscLoading className='animate-spin text-lg' />
-                                        <span></span>
-                                    </Button>
-                                ) : (
-                                    <Button
-                                        className="px-4 w-48" type='primary'
-                                        onClick={handleSubmit}
-                                    >
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                        <span>Thêm dịch vụ</span>
-                                    </Button>
-                                )}
-                            </div>
-                        </div>
-                        <div class="border-b border-gray-900/10 pb-12 mt-4">
-                            <h2 class="text-base font-normal leading-7 text-gray-900">Thêm dịch vụ mới</h2>
-                            <div className='flex flex-col mt-8 gap-6'>
-                                <div className='grid grid-cols-4 gap-6'>
-                                    <div className='flex flex-col gap-2 col-span-4'>
-                                        <label htmlFor='topic' className='text-sm font-medium text-gray-900 leading-6'>Tên
-                                            dịch vụ</label>
-                                        <input
-                                            type='text'
-                                            id='ServiceName'
-                                            name='ServiceName'
-                                            className='py-1.5 text-sm font-medium leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md p-2'
-                                            placeholder={'Nhập tên dịch vụ'}
-                                            onChange={handleChange}
-                                        />
-                                    </div>
+                                <div className="container-action flex items-center gap-2">
+                                    {isLoadingSubmit ? (
+                                        <Button
+                                            className="px-4 w-48 opacity-70" type='primary'
+                                            onClick={handleSubmit}
+                                        >
+                                            <VscLoading className='animate-spin text-lg' />
+                                            <span></span>
+                                        </Button>
+                                    ) : (
+                                        <Button
+                                            className="px-4 w-48" type='primary'
+                                            onClick={handleSubmit}
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                 strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
+                                                <path strokeLinecap="round" strokeLinejoin="round"
+                                                      d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <span>Thêm dịch vụ</span>
+                                        </Button>
+                                    )}
                                 </div>
-
-                                <div className='grid grid-cols-2 gap-6'>
-                                    <div className='flex flex-1 flex-col gap-2'>
-                                        <label htmlFor='ServiceGroup'
-                                               className='text-sm font-medium text-gray-900 leading-6'>Nhóm</label>
-                                        <input
-                                            type='text'
-                                            id='ServiceGroup'
-                                            name='ServiceGroup'
-                                            className='py-1.5 text-sm font-medium leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md p-2'
-                                            placeholder={'Nhập nhóm dịch vụ'}
-                                            onChange={handleChange}
-                                        />
+                            </div>
+                            <div className="border-b border-gray-900/10 pb-12 mt-4">
+                                <h2 className="text-base font-normal leading-7 text-gray-900">Thêm dịch vụ mới</h2>
+                                <div className='flex flex-col mt-8 gap-6'>
+                                    <div className='grid grid-cols-4 gap-6'>
+                                        <div className='flex flex-col gap-2 col-span-4'>
+                                            <label htmlFor='topic'
+                                                   className='text-sm font-medium text-gray-900 leading-6'>Tên
+                                                dịch vụ</label>
+                                            <input
+                                                type='text'
+                                                id='ServiceName'
+                                                name='ServiceName'
+                                                className='py-1.5 text-sm font-medium leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md p-2'
+                                                placeholder={'Nhập tên dịch vụ'}
+                                                onChange={handleChange}
+                                            />
+                                        </div>
                                     </div>
-                                    <div className='flex flex-col gap-2'>
-                                        <label htmlFor='topic' className='text-sm font-medium text-gray-900 leading-6'>Đơn
-                                            vị</label>
-                                        <input
-                                            type='text'
-                                            id='ServiceUnit'
-                                            name='ServiceUnit'
-                                            className='py-1.5 text-sm font-medium leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md p-2'
-                                            placeholder={'Nhập đơn vị'}
-                                            onChange={handleChange}
-                                        />
+
+                                    <div className='grid grid-cols-2 gap-6'>
+                                        <div className='flex flex-1 flex-col gap-2'>
+                                            <label htmlFor='ServiceGroup'
+                                                   className='text-sm font-medium text-gray-900 leading-6'>Nhóm</label>
+                                            <input
+                                                type='text'
+                                                id='ServiceGroup'
+                                                name='ServiceGroup'
+                                                className='py-1.5 text-sm font-medium leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md p-2'
+                                                placeholder={'Nhập nhóm dịch vụ'}
+                                                onChange={handleChange}
+                                            />
+                                        </div>
+                                        <div className='flex flex-col gap-2'>
+                                            <label htmlFor='topic'
+                                                   className='text-sm font-medium text-gray-900 leading-6'>Đơn
+                                                vị</label>
+                                            <input
+                                                type='text'
+                                                id='ServiceUnit'
+                                                name='ServiceUnit'
+                                                className='py-1.5 text-sm font-medium leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md p-2'
+                                                placeholder={'Nhập đơn vị'}
+                                                onChange={handleChange}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>,
         document.body
     );

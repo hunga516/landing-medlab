@@ -14,7 +14,11 @@ function BlogPage() {
 
     const getOneBlog = async () => {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/Blog/Read?pageSize=1`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/Blog/Read?pageSize=1`,{
+                params: {
+                    status: "published",
+                }
+            });
             setOneBlog(response.data.blogs);
         } catch (e) {
             console.log(e);
@@ -27,6 +31,7 @@ function BlogPage() {
                 params: {
                     page: currentPage,
                     pageSize: 11,
+                    status: "published"
                 },
             });
             setBlogs(response.data.blogs);

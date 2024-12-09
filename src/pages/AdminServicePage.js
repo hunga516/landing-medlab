@@ -77,7 +77,7 @@ function AdminServicePage() {
                 break;
         }
 
-    }, [currentPage, activeButton, isShowCreateService, isShowEditService, isShowDeleteService]); // Theo dõi cả currentPage và activeButton
+    }, [currentPage, activeButton, isShowCreateService, isShowEditService, isShowDeleteService]);
 
     const toggleIsShowCreateService = () => {
         setIsShowCreateService(!isShowCreateService);
@@ -103,12 +103,14 @@ function AdminServicePage() {
     };
 
     const handleSearch = async (e) => {
-        try {
-            setSearchQuery(e.target.value);
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/Service/Read?title=${e.target.value}`);
-            setServices(response.data.services);
-        } catch (error) {
-            console.log(error);
+        if (e.key === 'Enter') {
+            try {
+                setSearchQuery(e.target.value);
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/Service/Read?ServiceName=${e.target.value}`);
+                setServices(response.data.services);
+            } catch (error) {
+                console.log(error);
+            }
         }
     };
 
@@ -134,7 +136,6 @@ function AdminServicePage() {
         e.preventDefault();
         const response = await axios.post(`${process.env.REACT_APP_API_URL}/services/handle-form-action`, data);
     };
-
     return (
         <>
             <div className="home-page-wrapper bg-white px-5 py-4">
@@ -197,7 +198,7 @@ function AdminServicePage() {
                             </svg>
                         </span>
 
-                        <input onChange={(e) => handleSearch(e)} type="text" placeholder="Tìm dịch vụ"
+                        <input onKeyDown={(e) => handleSearch(e)} type="text" placeholder="Tìm dịch vụ"
                                className="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg md:w-80 placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5  focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
                 </div>

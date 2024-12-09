@@ -21,6 +21,7 @@ function HomePage() {
                 params: {
                     page: 1,
                     pageSize: 6,
+                    status: "published"
                 },
             });
             setBlogs(response.data.blogs);
