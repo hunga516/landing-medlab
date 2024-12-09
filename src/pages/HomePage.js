@@ -1,13 +1,37 @@
 import images from '../assets/images';
-import { FaArrowLeftLong, FaArrowRightLong, FaRegCircleCheck } from 'react-icons/fa6';
+import { FaArrowRightLong, FaRegCircleCheck } from 'react-icons/fa6';
 import { MdOutlineSearch } from 'react-icons/md';
 import { TbCash } from 'react-icons/tb';
 import { RxPencil1 } from 'react-icons/rx';
 
 import Rating from '../components/Rating/Rating';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { renderContentWithHighlight } from '../helper/rendeContentWithHighlight';
 
 function HomePage() {
+    const [blogs, setBlogs] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(10);
+
+    const getBlogs = async () => {
+        try {
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/Blog/Read`, {
+                params: {
+                    page: 1,
+                    pageSize: 6,
+                },
+            });
+            setBlogs(response.data.blogs);
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
+    useEffect(() => {
+        getBlogs();
+    }, []);
 
     return (
         <>
@@ -56,7 +80,8 @@ function HomePage() {
                     </div>
                 </div>
 
-                <div className="absolute left-8 bottom-0 hidden md:flex items-center gap-x-8 px-8 py-4 bg-yellow-300/60 outline outline-8 outline-white rounded-2xl before:w-[25px] before:h-[25px] before:absolute before:bottom-0 before:left-[-33px] before:shadow-curve-br before:rounded-2xl after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[33px] after:rounded-2xl after:absolute after:shadow-curve-bl">
+                <div
+                    className="absolute left-8 bottom-0 hidden md:flex items-center gap-x-8 px-8 py-4 bg-yellow-300/60 outline outline-8 outline-white rounded-2xl before:w-[25px] before:h-[25px] before:absolute before:bottom-0 before:left-[-33px] before:shadow-curve-br before:rounded-2xl after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[33px] after:rounded-2xl after:absolute after:shadow-curve-bl">
                     <div className="flex flex-col items-center gap-2">
                         <p className="text-xs md:text-3xl text-nowrap text-blue-500">35.5N</p>
                         <p className="text-blue-500 text-xs md:text-sm tracking-wide text-nowrap">Khách
@@ -181,8 +206,9 @@ function HomePage() {
             <div className="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
                 <div className="">
                     <p className="text-sky-500 text-sm md:text-lg mx-auto font-sans">Dịch Vụ</p>
-                    <p className="text-slate-800 text-lg md:text-2xl font-semibold font-sans mx-auto mt-2">Doanh mục <span
-                        className="underline underline-offset-8 decoration-2 decoration-sky-500">Xét nghiệm</span> của
+                    <p className="text-slate-800 text-lg md:text-2xl font-semibold font-sans mx-auto mt-2">Doanh
+                        mục <span
+                            className="underline underline-offset-8 decoration-2 decoration-sky-500">Xét nghiệm</span> của
                         Medlab</p>
                 </div>
                 <div
@@ -246,7 +272,8 @@ function HomePage() {
             {/*Các gói xét nghiệm section*/}
             <div className="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
                 <div className="">
-                    <p className="text-slate-800 text-xl md:text-2xl font-semibold mx-auto font-sans">Các gói xét nghiệm</p>
+                    <p className="text-slate-800 text-xl md:text-2xl font-semibold mx-auto font-sans">Các gói xét
+                        nghiệm</p>
                 </div>
 
                 <div className="flex flex-col md:grid md:grid-cols-2 gap-2 mt-4 md:mt-6">
@@ -254,7 +281,8 @@ function HomePage() {
                         <div className="content col-span-2 flex flex-col ">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tổng quát</h2>
                             <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
-                            <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói xét
+                            <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
+                                xét
                                 nghiệm tổng quát giúp kiểm tra sức khỏe toàn diện, bao gồm các xét nghiệm máu, nước tiểu
                                 và chỉ số sinh hóa. Kết quả hỗ trợ phát hiện sớm các bệnh lý tiềm ẩn.</p>
                         </div>
@@ -265,7 +293,8 @@ function HomePage() {
                         <div className="content col-span-2 flex flex-col">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm NIPT</h2>
                             <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 1.200.000đ</p>
-                            <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói xét
+                            <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
+                                xét
                                 nghiệm NIPT giúp kiểm tra và phát hiện các rối loạn di truyền sớm trong thai kỳ, đảm bảo
                                 sức khỏe mẹ và bé.</p>
                         </div>
@@ -275,7 +304,8 @@ function HomePage() {
                         <div className="content col-span-2 flex flex-col">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm vi chất</h2>
                             <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 800.000đ</p>
-                            <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói xét
+                            <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
+                                xét
                                 nghiệm vi chất giúp xác định sự thiếu hụt các vitamin và khoáng chất trong cơ thể, từ đó
                                 hỗ trợ điều chỉnh chế độ dinh dưỡng phù hợp.</p>
                         </div>
@@ -285,7 +315,8 @@ function HomePage() {
                         <div className="content col-span-2 flex flex-col">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tim mạch</h2>
                             <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 1.500.000đ</p>
-                            <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói xét
+                            <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
+                                xét
                                 nghiệm tim mạch cung cấp các thông tin quan trọng về chức năng tim và các yếu tố nguy
                                 cơ, giúp phát hiện sớm và phòng ngừa các bệnh lý tim mạch.</p>
                         </div>
@@ -296,27 +327,33 @@ function HomePage() {
 
             {/*Đối tượng xét nghiệm section*/}
             <div className="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
-                <p className="text-slate-800 text-xl md:text-2xl mx-auto font-semibold font-sans">Đối tượng xét nghiệm</p>
+                <p className="text-slate-800 text-xl md:text-2xl mx-auto font-semibold font-sans">Đối tượng xét
+                    nghiệm</p>
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mt-4 md:mt-6">
                     <div className="relative h-40 md:h-52 lg:h-56 bg-blue-500 rounded-lg">
                         <p className="text-base font-bold text-blue-100 mx-auto w-fit mt-4">MẸ BẦU</p>
-                        <img src={images.mebau} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[65px] md:w-2/3 lg:w-[50%]" />
+                        <img src={images.mebau} alt=""
+                             className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[65px] md:w-2/3 lg:w-[50%]" />
                     </div>
                     <div className="relative h-40 md:h-52 lg:h-56 bg-blue-100 rounded-lg">
                         <p className="text-base font-bold text-blue-500 mx-auto w-fit mt-4">TRẺ EM</p>
-                        <img src={images.treem} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/4 lg:w-[50%]" />
+                        <img src={images.treem} alt=""
+                             className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/4 lg:w-[50%]" />
                     </div>
                     <div className="relative h-40 md:h-52 lg:h-56 bg-blue-500 rounded-lg">
                         <p className="text-base font-bold text-blue-100 mx-auto w-fit mt-4">NỮ GIỚI</p>
-                        <img src={images.nugioi} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-[45%]" />
+                        <img src={images.nugioi} alt=""
+                             className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-[45%]" />
                     </div>
                     <div className="relative h-40 md:h-52 lg:h-56 bg-blue-100 rounded-lg">
                         <p className="text-base font-bold text-blue-500 mx-auto w-fit mt-4">TIỀN HÔN NHÂN</p>
-                        <img src={images.tienhonnhan} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-[45%]" />
+                        <img src={images.tienhonnhan} alt=""
+                             className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-[45%]" />
                     </div>
                     <div className="relative h-40 md:h-52 lg:h-56 bg-blue-500 rounded-lg">
                         <p className="text-base font-bold text-blue-100 mx-auto w-fit mt-4">NAM GIỚI</p>
-                        <img src={images.namgioi} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[81px] md:w-3/4 lg:w-[55%]" />
+                        <img src={images.namgioi} alt=""
+                             className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[81px] md:w-3/4 lg:w-[55%]" />
                     </div>
                 </div>
             </div>
@@ -326,8 +363,9 @@ function HomePage() {
 
                 <div className="grid grid-cols-3 gap-2 md:gap-4">
                     <div className="col-span-3 md:col-span-1">
-                    <h2 className="text-slate-800 text-xl md:text-2xl leading-snug font-sans font-medium">Khách hàng nói gì về <span
-                            className="bg-clip-text text-transparent bg-gradient-to-br from-sky-900 to-sky-400 text-xl md:text-2xl">Medlab Vĩnh Viễn</span>
+                        <h2 className="text-slate-800 text-xl md:text-2xl leading-snug font-sans font-medium">Khách
+                            hàng nói gì về <span
+                                className="bg-clip-text text-transparent bg-gradient-to-br from-sky-900 to-sky-400 text-xl md:text-2xl">Medlab Vĩnh Viễn</span>
                         </h2>
 
                         <div className="flex flex-row items-center gap-6 mt-2">
@@ -478,124 +516,36 @@ function HomePage() {
                     </Link>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 md:grid-rows-2 gap-2 mt-4 md:mt-6">
-                    <div className="grid-item">
-                        <div className="relative">
-                            <img src={images.background3} alt="" className="rounded-md h-40 w-full object-cover" />
-                            <div
-                                className="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">Doanh
-                                mục 1
-                            </div>
-                        </div>
-                        <div className="px-2 py-4 flex flex-col gap-2">
-                            <div className="flex items-center justify-between">
-
-                                <p className="text-blue-500 text-xs">17-12-2024</p>
-                            </div>
-                            <h2 className="text-lg font-medium">Bai viet dau tien</h2>
-                            <p className="text-slate-600 h-24 overflow-hidden text-ellipsis">Day la noi dung cua blog
-                                dau
-                                tiennnnnnbnnndjgdjgjdfgijdiogjdiofgjoidjgiodfgdl;fdskfl;skfs;kfls;kfslkf;skfsl;dkf;sdf</p>
-                        </div>
-                    </div>
-                    <div className="grid-item">
-                        <div className="relative">
-                            <img src={images.background3} alt="" className="rounded-md h-40 w-full object-cover" />
-                            <div
-                                className="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">Doanh
-                                mục 1
-                            </div>
-                        </div>
-                        <div className="px-2 py-4 flex flex-col gap-2">
-                            <div className="flex items-center justify-between">
-
-                                <p className="text-blue-500 text-xs">17-12-2024</p>
-                            </div>
-                            <h2 className="text-lg font-medium">Bai viet dau tien</h2>
-                            <p className="text-slate-600 h-24 overflow-hidden text-ellipsis">Day la noi dung cua blog
-                                dau
-                                tiennnnnnbnnndjgdjgjdfgijdiogjdiofgjoidjgiodfgdl;fdskfl;skfs;kfls;kfslkf;skfsl;dkf;sdf</p>
-                        </div>
-                    </div>
-                    <div className="grid-item">
-                        <div className="relative">
-                            <img src={images.background3} alt="" className="rounded-md h-40 w-full object-cover" />
-                            <div
-                                className="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">Doanh
-                                mục 1
-                            </div>
-                        </div>
-                        <div className="px-2 py-4 flex flex-col gap-2">
-                            <div className="flex items-center justify-between">
-
-                                <p className="text-blue-500 text-xs">17-12-2024</p>
-                            </div>
-                            <h2 className="text-lg font-medium">Bai viet dau tien</h2>
-                            <p className="text-slate-600 h-24 overflow-hidden text-ellipsis">Day la noi dung cua blog
-                                dau
-                                tiennnnnnbnnndjgdjgjdfgijdiogjdiofgjoidjgiodfgdl;fdskfl;skfs;kfls;kfslkf;skfsl;dkf;sdf</p>
-                        </div>
-                    </div>
-                    <div className="grid-item">
-                        <div className="relative">
-                            <img src={images.background3} alt="" className="rounded-md h-40 w-full object-cover" />
-                            <div
-                                className="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">Doanh
-                                mục 1
-                            </div>
-                        </div>
-                        <div className="px-2 py-4 flex flex-col gap-2">
-                            <div className="flex items-center justify-between">
-
-                                <p className="text-blue-500 text-xs">17-12-2024</p>
-                            </div>
-                            <h2 className="text-lg font-medium">Bai viet dau tien</h2>
-                            <p className="text-slate-600 h-24 overflow-hidden text-ellipsis">Day la noi dung cua blog
-                                dau
-                                tiennnnnnbnnndjgdjgjdfgijdiogjdiofgjoidjgiodfgdl;fdskfl;skfs;kfls;kfslkf;skfsl;dkf;sdf</p>
-                        </div>
-                    </div>
-                    <div className="grid-item">
-                        <div className="relative">
-                            <img src={images.background3} alt="" className="rounded-md h-40 w-full object-cover" />
-                            <div
-                                className="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">Doanh
-                                mục 1
-                            </div>
-                        </div>
-                        <div className="px-2 py-4 flex flex-col gap-2">
-                            <div className="flex items-center justify-between">
-
-                                <p className="text-blue-500 text-xs">17-12-2024</p>
-                            </div>
-                            <h2 className="text-lg font-medium">Bai viet dau tien</h2>
-                            <p className="text-slate-600 h-24 overflow-hidden text-ellipsis">Day la noi dung cua blog
-                                dau
-                                tiennnnnnbnnndjgdjgjdfgijdiogjdiofgjoidjgiodfgdl;fdskfl;skfs;kfls;kfslkf;skfsl;dkf;sdf</p>
-                        </div>
-                    </div>
-                    <div className="grid-item">
-                        <div className="relative">
-                            <img src={images.background3} alt="" className="rounded-md h-40 w-full object-cover" />
-                            <div
-                                className="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">Doanh
-                                mục 1
-                            </div>
-                        </div>
-                        <div className="px-2 py-4 flex flex-col gap-2">
-                            <div className="flex items-center justify-between">
-
-                                <p className="text-blue-500 text-xs">17-12-2024</p>
-                            </div>
-                            <h2 className="text-lg font-medium">Bai viet dau tien</h2>
-                            <p className="text-slate-600 h-24 overflow-hidden text-ellipsis">Day la noi dung cua blog
-                                dau
-                                tiennnnnnbnnndjgdjgjdfgijdiogjdiofgjoidjgiodfgdl;fdskfl;skfs;kfls;kfslkf;skfsl;dkf;sdf</p>
-                        </div>
-                    </div>
+                    {blogs && blogs.length > 0 && (
+                        blogs.map((blog, index) => (
+                            <Link to={`/blog/${blog.id}`} key={index}>
+                                <div className="grid-item">
+                                    <div className="relative">
+                                        <img src={`${process.env.REACT_APP_ASP_NET_CORE_APP_URL}${blog.img}`}
+                                             alt="hinh anh tin tuc"
+                                             className="rounded-md h-40 w-full object-cover" />
+                                        <div
+                                            className="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">
+                                            {blog.category}
+                                        </div>
+                                    </div>
+                                    <div className="px-2 py-4 flex flex-col gap-1">
+                                        <div className="flex items-center justify-between">
+                                            <p className="text-blue-500 text-xs">17-12-2024</p>
+                                        </div>
+                                        <h2 className="text-lg font-medium">{blog.title}</h2>
+                                        <p className="text-slate-600 max-h-16 overflow-hidden text-ellipsis">
+                                            {renderContentWithHighlight(blog?.content)}
+                                        </p>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))
+                    )}
                 </div>
-                </div>
-            </>
-            );
-            }
+            </div>
+        </>
+    );
+}
 
-            export default HomePage;
+export default HomePage;

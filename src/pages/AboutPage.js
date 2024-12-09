@@ -173,9 +173,9 @@ function AboutPage() {
             <div className="mt-8 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
                 <div className="grid grid-cols-1 gap-2  sm:gap-16">
                     <div className="flex flex-col items-start gap-4">
-                        <h3 className="text-blue-500 text-sm md:text-lg font-medium font-sans">Dịch vụ chất
+                        <h3 className="text-sky-500 text-sm md:text-lg font-medium font-sans">Dịch vụ chất
                             lượng</h3>
-                        <h2 className="text-slate-800 text-4xl leading-10">Dịch Vụ Tốt Nhất Dành Cho Bạn</h2>
+                        <h2 className="text-slate-800 text-4xl leading-10">Tại sao nên chọn chúng tôi ?</h2>
                     </div>
                 </div>
 
@@ -186,12 +186,11 @@ function AboutPage() {
                                 <div className="p-2 rounded-full bg-slate-200">
                                     <Ri24HoursLine className="text-lg text-blue-500" />
                                 </div>
-                                <p className="text-slate-800 text-base sm:text-lg">Trực tuyến 24/7</p>
+                                <p className="text-slate-800 text-base font-medium sm:text-lg">Trực tuyến 24/7</p>
                             </div>
-                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">Đội ngũ
-                                chuyên
-                                gia y tế luôn sẵn sàng
-                                giải đáp mọi thắc mắc của bạn.</p>
+                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">
+                                Đội ngũ chuyên gia y tế giàu kinh nghiệm luôn sẵn sàng hỗ trợ, giải đáp mọi thắc mắc của bạn bất kể ngày hay đêm.
+                            </p>
                         </div>
                     </div>
                     <div className="grid-item flex flex-col items-start justify-between">
@@ -200,12 +199,12 @@ function AboutPage() {
                                 <div className="p-2 rounded-full bg-slate-200">
                                     <IoIosFlash className="text-lg text-blue-500" />
                                 </div>
-                                <p className="text-slate-800 text-base sm:text-lg">Trả kết quả nhanh
+                                <p className="text-slate-800 text-base font-medium sm:text-lg">Trả kết quả nhanh
                                 </p>
                             </div>
-                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">Cung cấp
-                                kết quả
-                                xét nghiệm chính xác và kịp thời.</p>
+                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">
+                                Cung cấp kết quả xét nghiệm trong thời gian ngắn nhất, đảm bảo độ chính xác cao và thông tin kịp thời.
+                            </p>
                         </div>
                     </div>
                     <div className="grid-item flex flex-col items-start justify-between">
@@ -214,11 +213,11 @@ function AboutPage() {
                                 <div className="p-2 rounded-full bg-slate-200">
                                     <FaRegCalendarCheck className="text-lg text-blue-500" />
                                 </div>
-                                <p className="text-slate-800 text-base sm:text-lg">Đặt lịch dễ dàng</p>
+                                <p className="text-slate-800 text-base font-medium sm:text-lg">Đặt lịch dễ dàng</p>
                             </div>
-                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">Đặt lịch
-                                xét
-                                nghiệm trực tuyến nhanh chóng, không cần chờ đợi lâu.</p>
+                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">
+                                Đặt lịch xét nghiệm dễ dàng, chỉ vài thao tác là bạn có thể chọn thời gian phù hợp mà không cần chờ đợi, tiết kiệm tối đa thời gian.
+                            </p>
                         </div>
                     </div>
                     <div className="grid-item flex flex-col items-start justify-between">
@@ -227,11 +226,11 @@ function AboutPage() {
                                 <div className="p-2 rounded-full bg-slate-200">
                                     <IoLeaf className="text-lg text-blue-500" />
                                 </div>
-                                <p className="text-slate-800 text-base sm:text-lg">Không gian thoải mái</p>
+                                <p className="text-slate-800 text-base font-medium sm:text-lg">Không gian thoải mái</p>
                             </div>
-                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">Cơ sở
-                                vật chất
-                                hiện đại, không gian sạch sẽ, thoáng mát.</p>
+                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">
+                                Cơ sở vật chất hiện đại, sạch sẽ, thoáng mát, được bố trí khoa học, tạo cảm giác dễ chịu trong suốt quá trình trải nghiệm.
+                            </p>
                         </div>
                     </div>
                     <div className="grid-item flex flex-col items-start justify-between">
@@ -240,11 +239,11 @@ function AboutPage() {
                                 <div className="p-2 rounded-full bg-slate-200">
                                     <MdSupportAgent className="text-lg text-blue-500" />
                                 </div>
-                                <p className="text-slate-800 text-base sm:text-lg">Hậu xét nghiệm</p>
+                                <p className="text-slate-800 text-base font-medium sm:text-lg">Hậu xét nghiệm</p>
                             </div>
-                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">Tư vấn
-                                chi tiết
-                                và hướng dẫn theo dõi sau xét nghiệm.</p>
+                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">
+                                Tư vấn chi tiết và hướng dẫn theo dõi sau xét nghiệm, đảm bảo bạn nhận được sự chăm sóc tốt nhất.
+                            </p>
                         </div>
                     </div>
                     <div className="grid-item flex flex-col items-start justify-between">
@@ -253,11 +252,11 @@ function AboutPage() {
                                 <div className="p-2 rounded-full bg-slate-200">
                                     <IoIosCheckbox className="text-lg text-blue-500" />
                                 </div>
-                                <p className="text-slate-800 text-base sm:text-lg">Độ chính xác cao</p>
+                                <p className="text-slate-800 text-base font-medium sm:text-lg">Độ chính xác cao</p>
                             </div>
-                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">Mỗi
-                                xét
-                                nghiệm với chúng tôi là một trách nhiệm phải hoàn thành tốt nhất</p>
+                            <p className="mt-1 sm:mt-3 text-slate-600 text-sm md:text-base leading-6 text-left">
+                                Cam kết thực hiện từng xét nghiệm với trách nhiệm cao, đảm bảo chất lượng tốt nhất, mang lại kết quả chính xác và đáng tin cậy.
+                            </p>
                         </div>
                     </div>
                 </div>

@@ -20,11 +20,6 @@ function AdminSidebarLeft({ className }) {
             to: '/admin/blog'
         },
         {
-            icon: RiUser3Line,
-            title: 'Người dùng',
-            to: '/admin/user'
-        },
-        {
             icon: MdOutlineMedicalServices,
             title: 'Dịch vụ',
             to: '/admin/service'

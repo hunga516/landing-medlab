@@ -47,48 +47,9 @@ export default function DetailsBlogPage() {
         },
     ];
 
-    const sections = [
-        'Exploring Generative AI in Content Creation',
-        'Steering Clear of Common AI Writing Pitfalls',
-        'Understanding ChatGPT Capabilities - Define Your Style',
-        'Understand Your Readers',
-        'Creating Quality AI-powered Blogs that Stand Out',
-        'Conclusion: Embracing AI in Blog Creation',
-        'Afterword: The AI Behind This Article',
-    ];
-
-    const blogSections = [
-        {
-            title: 'Exploring Generative AI in Content Creation',
-            content: [
-                'Hello there! As a marketing manager in the SaaS industry, you might be looking for innovative ways to engage your audience. I bet generative AI has crossed your mind as an option for creating content. Well, let me share from my firsthand experience.',
-                'Google encourages high-quality blogs regardless of whether they\'re written by humans or created using artificial intelligence like ChatGPT. Here\'s what matters: producing original material with expertise and trustworthiness based on Google E-E-A-T principles.',
-                'This means focusing more on people-first writing rather than primarily employing AI tools to manipulate search rankings. There comes a time when many experienced professionals want to communicate their insights but get stuck due to limited writing skills – that\'s where Generative AI can step in.',
-                'So, together, we\'re going explore how this technology could help us deliver valuable content without sounding robotic or defaulting into mere regurgitations of existing materials (spoiler alert – common pitfalls!). Hang tight - it\'ll be a fun learning journey!',
-            ],
-        },
-        {
-            title: 'Steering Clear of Common AI Writing Pitfalls',
-            content: [
-                'Jumping headfirst into using AI, like ChatGPT, without a content strategy can lead to some unfortunate results. One common pitfall I\'ve seen is people opting for quantity over quality - they churn out blogs, but each one feels robotic and soulless, reading just like countless others on the internet.',
-                'Another fault line lies in creating reproductions rather than delivering unique perspectives that offer value to readers; it often happens if you let an AI tool write your full blog unrestrained! Trust me on this – Ask any experienced marketer or writer about their takeaways from using generative AI tools. They\'ll all agree that adding a human touch and following specific guidelines are key when implementing these tech pieces.',
-                'Remember, our goal here isn\'t merely satisfying search engines but, more importantly, knowledge-hungry humans seeking reliable information online. So keep your audience\'s needs at heart while leveraging technology\'s assistance!',
-            ],
-        },
-        {
-            title: 'Understanding ChatGPT Capabilities - Define Your Style',
-            content: [
-                'Welcome to the intriguing world of ChatGPT! Its ability and potential can truly be mind-boggling. I have learned from experience how capable it is in dealing with diverse content generation tasks, only that its text sounded slightly "unnatural" in accordance with TechTarget. However, fear not – there are ways around this!',
-                'One strategic move I\'ve seen work wonders is defining your unique writing style first before handing over the reins to AI; you treat it like a canvas whereupon our vision opens up. If we clearly instruct who we\'re targeting or what tone resonates more effectively, generative AI tools such as ChatGPT will comply remarkably well.',
-                'In framing guidelines, remember to keep audience interests at heart while adopting technology\'s benefits for efficient output – trust me on this because neglecting these aspects could backfire by generating unappealing robotic-like reads.',
-                'Ultimately, aiming towards reader-focused driven creativity illuminated under authentically humanized narratives holds priority above all else when crafting blogs using auto-generation toolkits!',
-            ],
-        },
-    ];
-
     return (
         <div
-            className="flex flex-col items-start self-center mt-12 max-md:mt-10 md:px-8 lg:px-0 lg:mx-32">
+            className="flex flex-col items-start self-center mt-16 md:mt-16 md:px-8 lg:px-0 lg:mx-32">
             <div className="self-stretch mt-2 max-md:max-w-full">
                 <div className="flex gap-5 max-md:flex-col">
                     <div className="flex flex-col w-[67%] max-md:ml-0 max-md:w-full">

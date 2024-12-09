@@ -1,17 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
-import { FaRegTrashAlt } from 'react-icons/fa';
 import { TiEdit } from 'react-icons/ti';
 import { MdDeleteOutline } from 'react-icons/md';
-import { CiFolderOn } from 'react-icons/ci';
 
 import CreateBlogModal from '../components/Modal/Blog/CreateBlogModal';
-import EditCourseModal from '../components/Modal/Blog/EditBlogModal';
 import CourseTable from '../components/Table/BlogTable';
 import BlogTable from '../components/Table/BlogTable';
-import FileCourseModal from '../components/Modal/Blog/FileCourseModal';
-import Button from '../components/Button';
 import Skeleton from 'react-loading-skeleton';
 import { AuthContext } from '../context';
 import EditBlogModal from '../components/Modal/Blog/EditBlogModal';
@@ -95,10 +90,6 @@ function AdminBlogPage() {
         setIsShowEditBlog(!isShowEditBlog);
     };
 
-    const toggleIsShowFileCourse = () => {
-        setIsShowFileCourse(!isShowFileCourse);
-    };
-
     const toggleIsShowDeleteBlog = () => {
         setIsShowDeleteBlog(!isShowDeleteBlog);
     }
@@ -122,15 +113,20 @@ function AdminBlogPage() {
         }
     };
 
-    const handleSearch = async (e) => {
-        try {
-            setSearchQuery(e.target.value);
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/Blog/Read?title=${e.target.value}`);
-            setBlogs(response.data.blogs);
-        } catch (error) {
-            console.log(error);
-        }
+    const onChangeSearch = async (e) => {
+        setSearchQuery(e.target.value);
     };
+
+    const handleSearch = async (e) => {
+       if(e.key === 'Enter') {
+           try {
+               const response = await axios.get(`${process.env.REACT_APP_API_URL}/Blog/Read?title=${searchQuery}`);
+               setBlogs(response.data.blogs);
+           } catch (error) {
+               console.log(error);
+           }
+       }
+    }
 
     const BLOG_ACTIONS = [
         {
@@ -170,13 +166,6 @@ function AdminBlogPage() {
                     </div>
 
                     <div className="flex items-center mt-4 gap-x-3">
-                        <Button type="upload"
-                                onClick={toggleIsShowFileCourse}
-                        >
-                            <CiFolderOn strokeWidth="1px" className="text-base text-slate-500" />
-                            <span className="text-slate-500">Tệp</span>
-                        </Button>
-
                         <button
                             onClick={toggleIsShowCreateBlog}
                             className="flex items-center justify-center w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-blue-500 rounded-lg shrink-0 sm:w-auto gap-x-2 hover:bg-blue-600"
@@ -186,7 +175,6 @@ function AdminBlogPage() {
                                 <path strokeLinecap="round" strokeLinejoin="round"
                                       d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-
                             <span>Đăng tin tức</span>
                         </button>
                     </div>
@@ -227,8 +215,12 @@ function AdminBlogPage() {
                             </svg>
                         </span>
 
-                        <input onChange={(e) => handleSearch(e)} type="text" placeholder="Tìm tin tức"
-                               className="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg md:w-80 placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5  focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+                        <input
+                            onChange={(e) => onChangeSearch(e)}
+                            onKeyDown={handleSearch}
+                            type="text"
+                            placeholder="Tìm tin tức"
+                            className="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg md:w-80 placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5  focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
                     </div>
                 </div>
 
@@ -310,11 +302,6 @@ function AdminBlogPage() {
             {
                 isShowEditBlog && (
                     <EditBlogModal blog={selectedBlog} toggleIsShowEditBlog={toggleIsShowEditBlog} />
-                )
-            }
-            {
-                isShowFileCourse && (
-                    <FileCourseModal toggleIsShowFileCourse={toggleIsShowFileCourse} />
                 )
             }
             {

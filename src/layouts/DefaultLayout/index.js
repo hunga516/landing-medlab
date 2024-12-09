@@ -32,7 +32,7 @@ function DefaultLayout({ children }) {
     return (
         <div className="bg-slate-100/30 relative">
             <Header />
-            <div className="wrapper mx-auto flex justify-center max-w-screen-xl">
+            <div className="wrapper flex max-w-screen-2xl">
                 <div className="content w-full mt-20 md:mt-28 px-4 md:px-0">
                     {children}
                     <div className="mt-12 md:mt-32">

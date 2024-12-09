@@ -9,6 +9,8 @@ import { renderContentWithHighlight } from '../helper/rendeContentWithHighlight'
 function BlogPage() {
     const [blogs, setBlogs] = useState([]);
     const [oneBlog, setOneBlog] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(10);
 
     const getOneBlog = async () => {
         try {
@@ -21,8 +23,16 @@ function BlogPage() {
 
     const getBlogs = async () => {
         try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/Blog/Read`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/Blog/Read`, {
+                params: {
+                    page: currentPage,
+                    pageSize: 11,
+                },
+            });
             setBlogs(response.data.blogs);
+            setTotalPages((response.data.totalPages))
+
+            console.log(response.data.blogs);
         } catch (e) {
             console.log(e);
         }
@@ -31,7 +41,7 @@ function BlogPage() {
     useEffect(() => {
         getBlogs();
         getOneBlog();
-    }, []);
+    }, [currentPage]);
 
 
     return (
@@ -43,48 +53,7 @@ function BlogPage() {
                        placeholder="Tìm bài viết bằng tên hoặc chủ đề" />
                 <HiSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-xl" />
             </div>
-            <div className="flex items-center flex-wrap justify-center mt-1 md:px-8 lg:px-0 lg:mx-32">
-                <Link to={`/blog?cat`}
-                      className="flex items-center justify-center px-4 py-2 rounded-md gap-2 hover:bg-slate-100 text-sm">
-                    Tim mạch
-                </Link>
-                <Link to={`/blog?cat`}
-                      className="flex items-center justify-center px-4 py-2 rounded-md gap-2 hover:bg-slate-100 text-sm">
-                    Gan
-                </Link>
-                <Link to={`/blog?cat`}
-                      className="flex items-center justify-center px-4 py-2 rounded-md gap-2 hover:bg-slate-100 text-sm">
-                    Ung thư
-                </Link>
-                <Link to={`/blog?cat`}
-                      className="flex items-center justify-center px-4 py-2 rounded-md gap-2 hover:bg-slate-100 text-sm">
-                    Nữ khoa
-                </Link>
-                <Link to={`/blog?cat`}
-                      className="flex items-center justify-center px-4 py-2 rounded-md gap-2 hover:bg-slate-100 text-sm">
-                    Thận
-                </Link>
-                <Link to={`/blog?cat`}
-                      className="flex items-center justify-center px-4 py-2 rounded-md gap-2 hover:bg-slate-100 text-sm">
-                    Ký sinh trùng
-                </Link>
-                <Link to={`/blog?cat`}
-                      className="flex items-center justify-center px-4 py-2 rounded-md gap-2 hover:bg-slate-100 text-sm">
-                    Dinh dưỡng
-                </Link>
-                <Link to={`/blog?cat`}
-                      className="flex items-center justify-center px-4 py-2 rounded-md gap-2 hover:bg-slate-100 text-sm">
-                    Dị ứng
-                </Link>
-                <Link to={`/blog?cat`}
-                      className="flex items-center justify-center px-4 py-2 rounded-md gap-2 hover:bg-slate-100 text-sm">
-                    Nam khoa
-                </Link>
-                <Link to={`/blog?cat`}
-                      className="flex items-center justify-center px-4 py-2 rounded-md gap-2 hover:bg-slate-100 text-sm">
-                    Phụ sản
-                </Link>
-            </div>
+
 
             {/*Hero blog section*/}
             <div className="grid grid-cols-3 gap-6 mt-8 md:px-8 lg:px-0 lg:mx-32">
@@ -126,7 +95,7 @@ function BlogPage() {
                                 {blogs.map((blog, index) => (
                                     <div key={index} className="blog-item flex flex-col gap-2">
                                         <div
-                                            className="px-4 py-2 bg-yellow-500 text-white text-[10px] rounded-lg w-fit"
+                                            className="px-2 py-1 bg-yellow-500 text-white text-[10px] rounded-lg w-fit"
                                         >
                                             {blog.category}
                                         </div>
@@ -157,7 +126,7 @@ function BlogPage() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4 md:mt-6 ">
                     {blogs && blogs.length > 0 ? (
                         blogs.map((blog, index) => (
-                            <Link to={`/blog/${blog.id}`} className={`grid-item ${index % 5 === 0 ? "col-span-2" : "col-span-1"}`}>
+                            <Link to={`/blog/${blog.id}`} className={`grid-item ${index === 0 ? "col-span-2" : "col-span-1"}`}>
                             <div key={index} >
                                 <div className="relative">
                                     <img src={`${process.env.REACT_APP_ASP_NET_CORE_APP_URL}${blog.img}`} alt="hinh anh tin tuc"
@@ -185,7 +154,9 @@ function BlogPage() {
                     )}
                 </div>
                 <div className="flex items-center justify-between mt-6">
-                    <a href="#"
+                    <button
+                        onClick={() => setCurrentPage(currentPage - 1)}
+                        disabled={currentPage === 1}
                        className="flex items-center px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                              stroke="currentColor" className="w-5 h-5 rtl:-scale-x-100">
@@ -196,37 +167,29 @@ function BlogPage() {
                         <span className="text-sm">
                     Trước
             </span>
-                    </a>
+                    </button>
 
                     <div className="items-center hidden md:flex gap-x-3">
-                        <a href="#"
-                           className="px-2 py-1 text-sm text-blue-500 rounded-md dark:bg-gray-800 bg-blue-100/60">1</a>
-                        <a href="#"
-                           className="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">2</a>
-                        <a href="#"
-                           className="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">3</a>
-                        <a href="#"
-                           className="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">...</a>
-                        <a href="#"
-                           className="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">12</a>
-                        <a href="#"
-                           className="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">13</a>
-                        <a href="#"
-                           className="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">14</a>
+                        <div className="text-sm text-gray-500">
+                            Trang <span className="font-medium text-gray-700">{currentPage} / {totalPages}</span>
+                        </div>
                     </div>
 
-                    <a href="#"
-                       className="flex items-center px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
-           <span className="text-sm">
-                    Kế tiếp
-            </span>
+                    <button
+                        disabled={currentPage === totalPages}
+                        onClick={() => setCurrentPage(currentPage + 1)}
+                        className="flex items-center px-4 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800"
+                    >
+                               <span className="text-sm">
+                                        Kế tiếp
+                                </span>
 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                              stroke="currentColor" className="w-5 h-5 rtl:-scale-x-100">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                   d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                         </svg>
-                    </a>
+                    </button>
                 </div>
             </div>
 
