@@ -5,6 +5,7 @@ import { FaArrowRightLong } from 'react-icons/fa6';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { renderContentWithHighlight } from '../helper/rendeContentWithHighlight';
+import formateDDMMYYYY from '../helper/formateDDMMYYYY';
 
 function BlogPage() {
     const [blogs, setBlogs] = useState([]);
@@ -144,7 +145,7 @@ function BlogPage() {
                                 <div className="px-2 py-4 flex flex-col gap-2">
                                     <div className="flex items-center justify-between">
 
-                                        <p className="text-blue-500 text-xs">17-12-2024</p>
+                                        <p className="text-blue-500 text-xs">{formateDDMMYYYY(blog.createdAt)}</p>
                                     </div>
                                     <h2 className="text-lg font-medium h-8 overflow-hidden text-ellipsis">{blog.title}</h2>
                                     <p className="text-slate-600 max-h-14 overflow-hidden text-ellipsis">

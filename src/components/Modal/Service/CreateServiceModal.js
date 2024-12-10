@@ -10,6 +10,7 @@ import { RiDraftLine } from "react-icons/ri";
 import Button from '../../Button';
 import { AuthContext } from '../../../context/AuthContext';
 import SearchUserResult from '../../Popper/Menu/SearchUserResult';
+import formateDDMMYYYY from '../../../helper/formateDDMMYYYY';
 
 
 function CreateServiceModal({ toggleIsShowCreateService }) {
@@ -22,7 +23,7 @@ function CreateServiceModal({ toggleIsShowCreateService }) {
         ServiceName: "",
         ServiceGroup: "",
         ServiceUnit: "",
-        CreatedAt: "2024-01-01",
+        CreatedAt: formateDDMMYYYY(new Date()),
     });
     const [isLoadingSubmit, setIsLoadingSubmit] = useState(false)
     const editorRef = useRef(null);

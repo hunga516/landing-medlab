@@ -9,6 +9,7 @@ import Menu from "../Popper/Menu";
 import Button from '../Button';
 import axios from 'axios';
 import images from '../../assets/images';
+import formateDDMMYYYY from '../../helper/formateDDMMYYYY';
 
 
 const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, blogActions, handleActionForm }) => {
@@ -108,7 +109,7 @@ const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, b
                                     </div>
                                 </td>
                                 <td className="px-4 py-4 text-sm whitespace-nowrap">
-                                    <h4 className="text-gray-700">{item.createdAt}</h4>
+                                    <h4 className="text-gray-700">{formateDDMMYYYY(item.createdAt)}</h4>
                                 </td>
                                 <td className="px-4 py-4 text-sm whitespace-nowrap">
                                     <h4 className="text-gray-700">{item.viewCount}</h4>

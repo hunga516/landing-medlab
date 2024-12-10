@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { renderContentWithHighlight } from '../helper/rendeContentWithHighlight';
+import formateDDMMYYYY from '../helper/formateDDMMYYYY';
 
 function HomePage() {
     const [blogs, setBlogs] = useState([]);
@@ -532,7 +533,7 @@ function HomePage() {
                                     </div>
                                     <div className="px-2 py-4 flex flex-col gap-1">
                                         <div className="flex items-center justify-between">
-                                            <p className="text-blue-500 text-xs">17-12-2024</p>
+                                            <p className="text-blue-500 text-xs">{formateDDMMYYYY(blog.createdAt)}</p>
                                         </div>
                                         <h2 className="text-lg font-medium">{blog.title}</h2>
                                         <p className="text-slate-600 max-h-16 overflow-hidden text-ellipsis">

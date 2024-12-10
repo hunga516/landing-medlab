@@ -10,6 +10,7 @@ import { RiDraftLine } from "react-icons/ri";
 import Button from '../../Button';
 import { AuthContext } from '../../../context/AuthContext';
 import SearchUserResult from '../../Popper/Menu/SearchUserResult';
+import formateDDMMYYYY from '../../../helper/formateDDMMYYYY';
 
 
 function CreateBlogModal({ toggleIsShowCreateBlog }) {
@@ -21,7 +22,7 @@ function CreateBlogModal({ toggleIsShowCreateBlog }) {
         Id: "0",
         Title: "",
         Category: "",
-        CreatedAt: "2024-01-01",
+        CreatedAt: formateDDMMYYYY(new Date()),
         ImageFile: ""
     });
     const [isLoadingSubmit, setIsLoadingSubmit] = useState(false)
