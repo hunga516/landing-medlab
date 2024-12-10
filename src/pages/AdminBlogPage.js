@@ -183,7 +183,7 @@ function AdminBlogPage() {
     return (
         <>
             <div className="home-page-wrapper bg-white px-5 py-4">
-                <div className="sm:flex sm:items-center sm:justify-between">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                     <div>
                         <div className="flex items-center gap-x-3">
                             <h2 className="text-lg font-medium text-gray-800">Tin tức</h2>
@@ -194,10 +194,9 @@ function AdminBlogPage() {
                         <p className="mt-1 text-sm text-gray-500">Quản lý các tin tức</p>
                     </div>
 
-                    <div className="flex items-center mt-4 gap-x-3">
                         <button
                             onClick={toggleIsShowCreateBlog}
-                            className="flex items-center justify-center w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-blue-500 rounded-lg shrink-0 sm:w-auto gap-x-2 hover:bg-blue-600"
+                            className="flex w-full items-center text-nowrap justify-center px-6 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-blue-500 rounded-lg shrink-0 sm:w-auto gap-x-2 hover:bg-blue-600"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                                  stroke="currentColor" className="w-5 h-5">
@@ -206,7 +205,6 @@ function AdminBlogPage() {
                             </svg>
                             <span>Đăng tin tức</span>
                         </button>
-                    </div>
                 </div>
 
                 <div className="mt-6 md:flex md:items-center md:justify-between drop-shadow-md">

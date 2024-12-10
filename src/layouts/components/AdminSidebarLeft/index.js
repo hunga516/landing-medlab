@@ -28,14 +28,14 @@ function AdminSidebarLeft({ className }) {
 
     return (
         <aside
-            className={`${className} flex flex-col drop-shadow-md box-border`}
+            className={`${className} sticky top-[61px] flex flex-col drop-shadow-md box-border`}
             style={{
                 height: 'calc(100vh - 61px)',
                 // backgroundImage: `url(${images.background})`
             }}
         >
-            <div className="flex flex-col justify-between flex-1 pt-5 px-5 pb-4 border-r-[1px] border-gray-400/30">
-                <nav className="-mx-3 space-y-3 ">
+            <div className="flex flex-col justify-between gap-8 md:gap-0 flex-1 pt-5 px-5 pb-4 border-r-[1px] border-gray-400/30">
+                <nav className="-mx-3 space-y-3 max-sm:flex max-sm:flex-col max-sm:gap-4">
                     {LoadingContextValue ? (
                         <>
                             <Skeleton width={200} height={24} />
@@ -55,7 +55,7 @@ function AdminSidebarLeft({ className }) {
                                     className={`${location.pathname === item.to
                                         ? 'bg-gray-200 before:absolute before:right-[-9px] before:h-8 before:w-[2px] before:bg-bluePrimary'
                                         : ''
-                                    } flex items-center justify-center px-3 py-2 text-gray-600 transition-color rounded-lg relative `}
+                                    } flex items-center justify-center md:px-3 md:py-2 text-gray-600 transition-color rounded-lg relative `}
                                 >
                                     <item.icon size="25px" className="text-gray-600" />
                                 </Link>

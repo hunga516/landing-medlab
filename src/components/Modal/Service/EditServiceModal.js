@@ -68,11 +68,11 @@ function EditServiceModal({service, toggleIsShowEditService}) {
             {/* Wrapper Disable */}
             <div onClick={closeModal} className="fixed h-[100vh] inset-0 bg-gray-500/75 z-20">
                 {/* Modal */}
-                <form id='createPostForm' className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center z-20">
-                    <div className="overflow-auto overscroll-y-contain h-[80vh] w-[50vw] bg-white rounded-xl">
-                        <div className="relative px-12 py-4">
+                <form id='createPostForm' className="absolute inset-x-2 md:inset-x-auto md:left-1/2 top-1/2 md:-translate-x-1/2 -translate-y-1/2 flex justify-center items-center z-20">
+                    <div className="overflow-auto overscroll-y-contain h-[80vh] w-[100vw] md:w-[50vw] bg-white rounded-xl">
+                        <div className="relative px-4 md:px-12 py-4">
                             <div
-                                className="back-action z-10 flex justify-between items-center gap-2 sticky top-0 h-16 w-full bg-white "
+                                className="back-action w-full z-10 flex flex-col md:flex-row justify-between md:items-center gap-2 sticky top-0 py-2 bg-white "
                             >
                                 <button onClick={toggleIsShowEditService} className="flex items-center gap-2">
                                     <IoArrowBack />
@@ -82,7 +82,7 @@ function EditServiceModal({service, toggleIsShowEditService}) {
                                 <div className="container-action flex items-center gap-2">
                                     {isLoadingSubmit ? (
                                         <Button
-                                            className="px-4 w-48 opacity-70" type='primary'
+                                            className="px-4 w-full opacity-70" type='primary'
                                             onClick={handleSubmit}
                                         >
                                             <VscLoading className='animate-spin text-lg' />
@@ -90,7 +90,7 @@ function EditServiceModal({service, toggleIsShowEditService}) {
                                         </Button>
                                     ) : (
                                         <Button
-                                            className="px-4 w-48" type='primary'
+                                            className="px-4 w-full" type='primary'
                                             onClick={handleSubmit}
                                         >
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">

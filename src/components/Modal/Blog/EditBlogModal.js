@@ -95,24 +95,24 @@ function EditBlogModal({blog, toggleIsShowEditBlog}) {
             <div onClick={closeModal} className="fixed h-[100vh] inset-0 bg-gray-500/75 z-20">
                 {/* Modal */}
                 <form id='createPostForm' className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center z-20">
-                    <div className="overflow-auto overscroll-y-contain h-[80vh] w-[50vw] bg-white rounded-xl">
+                    <div className="overflow-auto overscroll-y-contain h-[80vh] w-[100vw] md:w-[80vw] bg-white rounded-xl">
                         <div className="relative px-12 py-4">
                             <div
-                                className="back-action z-10 flex justify-between items-center gap-2 sticky top-0 h-16 w-full bg-white "
+                                className="back-action z-10 flex flex-col md:flex-row justify-between md:items-center gap-2 sticky top-0 py-2 w-full bg-white "
                             >
                                 <button onClick={toggleIsShowEditBlog} className="flex items-center gap-2">
                                     <IoArrowBack />
                                     <h2 className="text-base text-gray-700 leading-9">Trở về</h2>
                                 </button>
 
-                                <div className="container-action flex items-center gap-2">
-                                    <Button onClick={handleSaveDraf} size='medium' type='upload'>
+                                <div className="container-action flex flex-col md:flex-row items-center gap-2">
+                                    <Button className="w-full" onClick={handleSaveDraf} size='medium' type='upload'>
                                         <RiDraftLine />
                                         Lưu nháp
                                     </Button>
                                     {isLoadingSubmit ? (
                                         <Button
-                                            className="px-4 w-48 opacity-70" type='primary'
+                                            className="px-4 opacity-70 w-full" type='primary'
                                             onClick={handleSubmit}
                                         >
                                             <VscLoading className='animate-spin text-lg' />
@@ -120,7 +120,7 @@ function EditBlogModal({blog, toggleIsShowEditBlog}) {
                                         </Button>
                                     ) : (
                                         <Button
-                                            className="px-4 w-48" type='primary'
+                                            className="px-4 w-full" type='primary'
                                             onClick={handleSubmit}
                                         >
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
@@ -135,7 +135,7 @@ function EditBlogModal({blog, toggleIsShowEditBlog}) {
                                 <h2 class="text-base font-normal leading-7 text-gray-900">Đăng tin tức</h2>
                                 <div className='flex flex-col mt-8 gap-6'>
                                     <div className='grid grid-cols-4 gap-6'>
-                                        <div className='flex flex-col gap-2 col-span-2'>
+                                        <div className='flex flex-col gap-2 col-span-4 md:col-span-2'>
                                             <label htmlFor='topic' className='text-sm font-medium text-gray-900 leading-6'>Tiêu đề</label>
                                             <input
                                                 value={formData.Title}
@@ -147,7 +147,7 @@ function EditBlogModal({blog, toggleIsShowEditBlog}) {
                                                 onChange={handleChange}
                                             />
                                         </div>
-                                        <div className='flex flex-1 flex-col gap-2 col-span-2'>
+                                        <div className='flex flex-1 flex-col gap-2 col-span-4 md:col-span-2'>
                                             <label htmlFor='Category' className='text-sm font-medium text-gray-900 leading-6'>Doanh mục</label>
                                             <input
                                                 value={formData.Category}

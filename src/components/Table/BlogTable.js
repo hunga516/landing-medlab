@@ -30,28 +30,6 @@ const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, b
 
     return (
         <div className="inline-block min-w-full py-2 align-middle">
-            <div className='flex justify-end h-10'>
-                {/*{isSelectAction && (*/}
-                {/*    <>*/}
-                {/*        {activeButton === 'trash' ? (*/}
-                {/*            <Button onClick={handleRestoreFormAction} className={"flex text-sm w-[200px] text-bluePrimary "} size='medium'>*/}
-                {/*                <FaRegTrashAlt />*/}
-                {/*                Khôi phục*/}
-                {/*            </Button>*/}
-                {/*        ) : (*/}
-                {/*            <Button onClick={handleSoftDeleteFormAction} className={"flex text-sm w-[200px] text-bluePrimary "} size='medium'>*/}
-                {/*                <FaRegTrashAlt />*/}
-                {/*                Chuyển vào thùng rác*/}
-                {/*            </Button>*/}
-                {/*        )}*/}
-                {/*        <Button className={"flex text-sm w-[120px] text-bluePrimary "} size='medium'>*/}
-                {/*            <TiEdit className='text-[16px]' />*/}
-                {/*            Chỉnh sửa*/}
-                {/*        </Button>*/}
-                {/*    </>*/}
-                {/*)}*/}
-            </div>
-
             <div className="rounded-lg">
                 <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-slate-50 font-sans">
@@ -92,7 +70,7 @@ const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, b
                                 <td className="px-4 py-4 text-sm whitespace-nowrap">
                                     <h2
                                         onClick={() => handleRedirect(item.id)}
-                                        className="max-w-52 overflow-scroll text-ellipsis flex items-center gap-2 text-gray-800">
+                                        className="max-w-52 overflow-scroll hover:cursor-pointer hover:text-blue-600 duration-300 text-ellipsis flex items-center gap-2 text-gray-800">
                                         <img src={`${process.env.REACT_APP_ASP_NET_CORE_APP_URL}/${item.img}`}
                                              alt="hinh anh blog" className="w-6 h-6 rounded-lg object-cover" />
                                         {item.title}
@@ -114,18 +92,18 @@ const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, b
                                 <td className="px-4 py-4 text-sm whitespace-nowrap">
                                     <h4 className="text-gray-700">{item.viewCount}</h4>
                                 </td>
-                                {activeButton === 'trash' ? (
+                                {item.status ? (
                                     <td className="px-4 py-4 text-sm whitespace-nowrap">
-                                        <h4 className="text-gray-700 text-left">{item.deletedAt}</h4>
+                                        <h4 className="text-left text-yellow-500 rounded-full ring-1 ring-inset ring-yellow-500 px-2 py-0.5">{item.status}</h4>
                                     </td>
                                 ) : (
                                     <td className="px-4 py-4 text-sm whitespace-nowrap">
-                                        <h4 className="text-gray-700 text-left">{item.status}</h4>
+                                        <h4 className="text-left"></h4>
                                     </td>
                                 )}
                                 {activeButton === 'trash' ? (
-                                    <td className=''>
-                                        <Button className='text-sm px-[-2] hover:bg-gray-200 hover:duration-200'
+                                    <td className="">
+                                        <Button className="text-sm px-[-2] hover:bg-gray-200 hover:duration-200"
                                                 onClick={() => handleRestore(item)}>
                                             <LuArchiveRestore />
                                             Khôi phục

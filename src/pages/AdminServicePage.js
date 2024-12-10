@@ -139,7 +139,7 @@ function AdminServicePage() {
     return (
         <>
             <div className="home-page-wrapper bg-white px-5 py-4">
-                <div className="sm:flex sm:items-center sm:justify-between">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <div className="flex items-center gap-x-3">
                             <h2 className="text-lg font-medium text-gray-800">Dịch vụ</h2>
@@ -148,10 +148,9 @@ function AdminServicePage() {
                         <p className="mt-1 text-sm text-gray-500">Quản lý các dịch vụ</p>
                     </div>
 
-                    <div className="flex items-center mt-4 gap-x-3">
                         <button
                             onClick={toggleIsShowCreateService}
-                            className="flex items-center justify-center w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-blue-500 rounded-lg shrink-0 sm:w-auto gap-x-2 hover:bg-blue-600"
+                            className="flex items-center justify-center text-nowrap w-full px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-blue-500 rounded-lg shrink-0 sm:w-auto gap-x-2 hover:bg-blue-600"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                                  stroke="currentColor" className="w-5 h-5">
@@ -160,7 +159,6 @@ function AdminServicePage() {
                             </svg>
                             <span>Thêm dịch vụ</span>
                         </button>
-                    </div>
                 </div>
 
                 <div className="mt-6 md:flex md:items-center md:justify-between drop-shadow-md">
@@ -214,7 +212,7 @@ function AdminServicePage() {
                                 handleActionForm={handleActionForm}
                             />
                         ) : (
-                            <div className="flex flex-col gap-1 justify-center mt-10">
+                            <div className="flex flex-col gap-1 justify-center">
                                 <Skeleton height={100} width={796} />
                                 <Skeleton height={100} width={796} />
                                 <Skeleton height={100} width={796} />
@@ -248,7 +246,7 @@ function AdminServicePage() {
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                       d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
                             </svg>
-                            <span>
+                            <span className="text-nowrap">
                                 Trước
                             </span>
                         </button>
@@ -258,7 +256,7 @@ function AdminServicePage() {
                             class="flex items-center justify-center w-1/2 px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md sm:w-auto gap-x-2 hover:bg-gray-100-800"
                             disabled={currentPage === totalPages}
                         >
-                            <span>
+                            <span className="text-nowrap">
                                 Kế tiếp
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

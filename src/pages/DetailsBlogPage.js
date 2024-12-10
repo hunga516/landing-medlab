@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import { renderContentWithHighlight } from '../helper/rendeContentWithHighlight';
+import formateDDMMYYYY from '../helper/formateDDMMYYYY';
 
 export default function DetailsBlogPage({data}) {
     const [blog, setBlog] = useState(data);
@@ -60,26 +61,35 @@ export default function DetailsBlogPage({data}) {
 
     return (
         <div
-            className="flex flex-col items-start self-center mt-16 md:mt-16 md:px-8 lg:px-0 lg:mx-32">
+            className="flex flex-col items-start self-center mt-16 md:mt-16 md:px-8 lg:px-0 lg:mx-20">
             <div className="self-stretch mt-2 max-md:max-w-full">
                 <div className="flex gap-5 max-md:flex-col">
                     <div className="flex flex-col w-[67%] max-md:ml-0 max-md:w-full">
                         <div
                             className="flex overflow-hidden flex-col grow w-full rounded-xl bg-zinc-900 max-md:mt-8 max-md:max-w-full">
                             <div className="flex relative flex-col pt-9 w-full min-h-[350px] max-md:max-w-full">
-                                <img
-                                    loading="lazy"
-                                    src={`${process.env.REACT_APP_ASP_NET_CORE_APP_URL}/${blog?.img}`}
-                                    alt="Main article featured image"
-                                    className="object-cover absolute inset-0 size-full"
-                                />
+                                {data && data.imgAddress ? (
+                                    <img
+                                        loading="lazy"
+                                        src={data.imgAddress}
+                                        alt="Main article featured image"
+                                        className="object-cover absolute inset-0 size-full"
+                                    />
+                                ) : (
+                                    <img
+                                        loading="lazy"
+                                        src={`${process.env.REACT_APP_ASP_NET_CORE_APP_URL}/${blog?.img}`}
+                                        alt="Main article featured image"
+                                        className="object-cover absolute inset-0 size-full"
+                                    />
+                                )}
                                 <div
                                     className="flex relative z-10 shrink-0 mb-0 h-[300px] max-md:mb-2.5 max-md:max-w-full" />
                             </div>
                         </div>
                     </div>
                     <div className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-                        <div className="flex flex-col grow max-md:mt-8">
+                    <div className="flex flex-col grow max-md:mt-8">
                             {/*<AuthorCard />*/}
                             <div
                                 className="flex overflow-hidden flex-col items-center bg-slate-100 rounded-xl">
@@ -118,8 +128,8 @@ export default function DetailsBlogPage({data}) {
                                         className="object-cover absolute inset-0 size-full"
                                     />
                                     <div className="flex relative flex-col">
-                                        <div className="text-base font-semibold text-white font-sans">
-                                            Chia sẻ đến mạng xã hội của bạn
+                                        <div className="text-sm font-semibold text-white font-sans md:text-base">
+                                            Chia sẻ đến mạng xã hội
                                         </div>
                                         <div className="flex gap-5 items-start self-start mt-2.5">
                                             {socialIcons.map((icon, index) => (
@@ -148,7 +158,11 @@ export default function DetailsBlogPage({data}) {
             <div className="self-stretch mt-8 max-md:max-w-full">
                 <div className="flex gap-5 max-md:flex-col">
                     <div className="flex flex-col w-[67%] max-md:ml-0 max-md:w-full">
-                        <h1 className="text-xl font-medium">{blog?.title}</h1>
+                        <div className="flex items-center justify-between">
+                            <div className="bg-yellow-500 text-white text-sm px-3 py-1 rounded-lg">{blog?.category}</div>
+                            <p className="text-slate-600 text-xs">{formateDDMMYYYY(blog?.createdAt)}</p>
+                        </div>
+                        <h1 className="text-xl font-medium mt-4">{blog?.title}</h1>
                         <p className="text-lg font-light text-slate-800 mt-4">
                             {renderContentWithHighlight(blog?.content)}
                         </p>

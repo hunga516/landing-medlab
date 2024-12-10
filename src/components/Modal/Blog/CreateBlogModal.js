@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import axios from 'axios';
 import { Editor } from '@tinymce/tinymce-react';
@@ -11,13 +11,24 @@ import Button from '../../Button';
 import { AuthContext } from '../../../context/AuthContext';
 import SearchUserResult from '../../Popper/Menu/SearchUserResult';
 import formateDDMMYYYY from '../../../helper/formateDDMMYYYY';
+import PreviewBlogModal from './PreviewBlogModal';
 
 
 function CreateBlogModal({ toggleIsShowCreateBlog }) {
+    const [isLoadingSubmit, setIsLoadingSubmit] = useState(false)
+    const editorRef = useRef(null);
     const { userId } = useContext(AuthContext)
     const [images, setImages] = useState()
+    const [isShowPreviewBlogModal, setIsShowPreviewBlogModal] = useState(false);
     const [searchedUsers, setSearchedUsers] = useState([])
     const [errors, setErrors] = useState({});
+    const [formPreview, setFormPreview] = useState({
+        id: "0",
+        title: "",
+        category: "",
+        createdAt: formateDDMMYYYY(new Date()),
+        img: ""
+    });
     const [formData, setFormData] = useState({
         Id: "0",
         Title: "",
@@ -25,8 +36,9 @@ function CreateBlogModal({ toggleIsShowCreateBlog }) {
         CreatedAt: formateDDMMYYYY(new Date()),
         ImageFile: ""
     });
-    const [isLoadingSubmit, setIsLoadingSubmit] = useState(false)
-    const editorRef = useRef(null);
+
+    console.log(formPreview);
+
 
     const handleChange = (e) => {
         if (e.target.name === 'ImageFile' && e.target.files[0].size > 0) {
@@ -57,7 +69,7 @@ function CreateBlogModal({ toggleIsShowCreateBlog }) {
         }
     };
 
-    const handleSaveDraf = async (e) => {
+    const handleSaveDraft = async (e) => {
         e.preventDefault();
         setIsLoadingSubmit(true)
 
@@ -89,30 +101,50 @@ function CreateBlogModal({ toggleIsShowCreateBlog }) {
         }
     }
 
+    const toggleIsShowPreviewBlogModal = (e) => {
+        setFormPreview(prev => {
+            return {
+                id: formData.Id,
+                title: formData.Title,
+                category: formData.Category,
+                createdAt: formateDDMMYYYY(new Date()),
+                imgAddress: images,
+                content: editorRef.current?.getContent()
+            }
+        })
+        e.preventDefault();
+        setIsShowPreviewBlogModal(!isShowPreviewBlogModal);
+    }
+
 
     return createPortal(
         <div className="relative">
             {/* Wrapper Disable */}
             <div onClick={closeModal} className="fixed h-[100vh] inset-0 bg-gray-500/75 z-20">
-                <form id='createPostForm' className="absolute flex justify-center items-center left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-                    <div className="overflow-auto overscroll-y-contain h-[80vh] w-[80vw] bg-white rounded-xl">
-                        <div className="relative px-12 py-4">
+                <form id='createPostForm' className="absolute flex justify-center items-center inset-x-4 md:inset-x-auto md:left-1/2 top-1/2 md:-translate-x-1/2 -translate-y-1/2 z-20">
+                    <div className="overflow-auto overscroll-y-contain h-[80vh] md:w-[80vw] bg-white rounded-xl">
+                        <div className="relative px-4 md:px-12 py-4">
                             <div
-                                className="back-action z-10 flex justify-between items-center gap-2 sticky top-0 h-16 w-full bg-white "
+                                className="back-action z-10 flex flex-col md:flex-row md:justify-between md:items-center gap-2 sticky top-0 w-full bg-white "
                             >
                                 <button onClick={toggleIsShowCreateBlog} className="flex items-center gap-2">
                                     <IoArrowBack />
                                     <h2 className="text-base text-gray-700 leading-9 text-nowrap">Trở về</h2>
                                 </button>
 
-                                <div className="container-action flex items-center gap-2">
-                                    <Button onClick={handleSaveDraf} size='medium' type='upload'>
+                                <div className="container-action grid grid-cols-1 md:grid-cols-3 gap-2">
+
+                                    <Button className="w-full" onClick={handleSaveDraft} size='medium' type='upload'>
                                         <RiDraftLine />
                                         Lưu nháp
                                     </Button>
+                                    <Button className="w-full" onClick={toggleIsShowPreviewBlogModal} type='upload'>
+                                        <RiDraftLine />
+                                        Xem trước
+                                    </Button>
                                     {isLoadingSubmit ? (
                                         <Button
-                                            className="px-4 w-48 opacity-70" type='primary'
+                                            className="px-4 opacity-70" type='primary'
                                             onClick={handleSubmit}
                                         >
                                             <VscLoading className='animate-spin text-lg' />
@@ -120,7 +152,7 @@ function CreateBlogModal({ toggleIsShowCreateBlog }) {
                                         </Button>
                                     ) : (
                                         <Button
-                                            className="px-4 w-48" type='primary'
+                                            className="px-4" type='primary'
                                             onClick={handleSubmit}
                                         >
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -137,7 +169,7 @@ function CreateBlogModal({ toggleIsShowCreateBlog }) {
                                 <h2 className="text-base font-normal leading-7 text-gray-900">Đăng tin tức</h2>
                                 <div className='flex flex-col mt-8 gap-6'>
                                     <div className='grid grid-cols-4 gap-6'>
-                                        <div className='flex flex-col gap-2 col-span-2'>
+                                        <div className='flex flex-col gap-2 col-span-4 md:col-span-2'>
                                             <label htmlFor='topic'
                                                    className='text-sm font-medium text-gray-900 leading-6'>Tiêu
                                                 đề</label>
@@ -150,7 +182,7 @@ function CreateBlogModal({ toggleIsShowCreateBlog }) {
                                                 onChange={handleChange}
                                             />
                                         </div>
-                                        <div className='flex flex-1 flex-col gap-2 col-span-2'>
+                                        <div className='flex flex-1 flex-col gap-2 col-span-4 md:col-span-2'>
                                             <label htmlFor='Category'
                                                    className='text-sm font-medium text-gray-900 leading-6'>Doanh
                                                 mục</label>
@@ -248,7 +280,18 @@ function CreateBlogModal({ toggleIsShowCreateBlog }) {
                     </div>
                 </form>
             </div>
-        </div>,
+            {isShowPreviewBlogModal && (
+                <PreviewBlogModal
+                    data={formPreview}
+                    toggleIsShowPreviewBlogModal={toggleIsShowPreviewBlogModal}
+                    handleSubmit={handleSubmit}
+                    handleSaveDraft={handleSaveDraft}
+                    isLoadingSubmit={isLoadingSubmit}
+                    toggleIsShowCreateBlog={toggleIsShowCreateBlog}
+                />
+            )}
+        </div>
+        ,
         document.body
     );
 }
