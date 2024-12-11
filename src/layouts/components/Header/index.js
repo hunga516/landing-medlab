@@ -59,11 +59,11 @@ function Header() {
                             Vĩnh Viễn</p>
                     </Link>
                     <div className="flex items-center gap-4">
-                        <button
+                        <Link to="/tra-cuu"
                             className="flex items-center gap-2 text-lg font-medium rounded-lg leading-4 pl-6 py-4 pr-6 text-pink-600 font-sans ring-2 ring-pink-600/70">
                             <TbTestPipe />
                             Tra cứu kết quả xét nghiệm
-                        </button>
+                        </Link>
                         <button
                             className="flex items-center gap-2 text-lg font-medium rounded-lg leading-4 pl-6 py-4 pr-6 text-pink-600 font-sans  ring-2 ring-pink-600/70">
                             <FiPhone />
@@ -86,8 +86,8 @@ function Header() {
                             <Link to={'/'}
                                   className={`${location.pathname === '/' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>TRANG
                                 CHỦ</Link>
-                            <Link to="/price"
-                                  className={`${location.pathname === '/price' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>DỊCH
+                            <Link to="/dich-vu"
+                                  className={`${location.pathname === '/bang-gia-dich-vu' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>DỊCH
                                 VỤ</Link>
                             <Tippy
                                 interactive={true}
@@ -118,16 +118,16 @@ function Header() {
                                     </Wrapper>
                                 )}
                             >
-                                <Link className={`text-slate-500 text-lg font-medium flex items-center gap-1 font-sans`}>
-                                    GÓI XÉT NGHIỆM
-                                    <IoIosArrowDown className="text-sky-600" />
-                                </Link>
+                                {/*<Link className={`text-slate-500 text-lg font-medium flex items-center gap-1 font-sans`}>*/}
+                                {/*    GÓI XÉT NGHIỆM*/}
+                                {/*    <IoIosArrowDown className="text-sky-600" />*/}
+                                {/*</Link>*/}
                             </Tippy>
-                            <Link to={'/about'}
-                                  className={`${location.pathname === '/about' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>VỀ
+                            <Link to={'/ve-medlab-vinh-vien'}
+                                  className={`${location.pathname === '/ve-medlab-vinh-vien' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>VỀ
                                 CHÚNG TÔI</Link>
-                            <Link to="/blog"
-                                  className={`${location.pathname === '/blog' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>
+                            <Link to="/tin-tuc"
+                                  className={`${location.pathname === '/tin-tuc' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>
                                 TIN TỨC
                             </Link>
                         </div>
