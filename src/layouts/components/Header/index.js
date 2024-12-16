@@ -96,32 +96,34 @@ function Header() {
                                     <Wrapper {...attrs}>
                                         <div
                                             className="flex flex-col items-start ring-1 ring-slate-200/70 drop-shadow-lg rounded-lg">
-                                            <Link to="/combo/:id"
-                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200 rounded-lg">Tất
+                                            <Link to="/tat-ca-goi-xet-nghiem"
+                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white w-full px-4 py-3 duration-200 rounded-lg">Tất
                                                 cả gói xét nghiệm</Link>
-                                            <Link to="/combo/:id"
-                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
-                                                xét nghiệm 1</Link>
-                                            <Link to="/combo/:id"
-                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
-                                                xét nghiệm dành cho nữ giới</Link>
-                                            <Link to="/combo/:id"
-                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
-                                                xét nghiệm dành cho nam giới</Link>
-                                            <Link to="/combo/:id"
-                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
-                                                xét nghiệm dành cho trẻ em</Link>
-                                            <Link to="/combo/:id"
-                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 py-3 duration-200">Gói
-                                                xét nghiệm dành cho tiền hôn nhân</Link>
+                                            <Link to="/goi-xet-nghiem-nipt"
+                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">
+                                                    Gói xét nghiệm NIPT
+                                            </Link>
+                                            <Link to="/goi-xet-nghiem-vi-chat"
+                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">
+                                                Gói xét nghiệm vi chất
+                                            </Link>
+                                            <Link to="/goi-xet-nghiem-tim-mach"
+                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">Gói
+                                                xét nghiệm tim mạch</Link>
+                                            <Link to="/goi-xet-nghiem-adn-huyet-thong"
+                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">Gói
+                                                xét nghiệm ADN huyết thống</Link>
+                                            <Link to="/goi-xet-nghiem-tien-hon-nhan"
+                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">Gói
+                                                xét nghiệm tiền hôn nhân</Link>
                                         </div>
                                     </Wrapper>
                                 )}
                             >
-                                {/*<Link className={`text-slate-500 text-lg font-medium flex items-center gap-1 font-sans`}>*/}
-                                {/*    GÓI XÉT NGHIỆM*/}
-                                {/*    <IoIosArrowDown className="text-sky-600" />*/}
-                                {/*</Link>*/}
+                                <Link className={`text-slate-500 text-lg font-medium flex items-center gap-1 font-sans`}>
+                                    GÓI XÉT NGHIỆM
+                                    <IoIosArrowDown className="text-sky-600" />
+                                </Link>
                             </Tippy>
                             <Link to={'/ve-medlab-vinh-vien'}
                                   className={`${location.pathname === '/ve-medlab-vinh-vien' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>VỀ

@@ -46,6 +46,7 @@ const images = {
     tienhonnhan: require('./img/tienhonnhan.png'),
     contact: require('./img/contact.png'),
     phone: require('./img/phone.png'),
+    checkmark: require('./img/check-mark-icon-png.webp'),
 }
 
 export default images;
