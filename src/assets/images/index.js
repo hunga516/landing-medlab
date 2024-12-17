@@ -47,6 +47,12 @@ const images = {
     contact: require('./img/contact.png'),
     phone: require('./img/phone.png'),
     checkmark: require('./img/check-mark-icon-png.webp'),
+    bannertongquat: require('./img/banner-tongquat.png'),
+    bannernipt: require('./img/banner-nipt.jpg'),
+    bannertienhonnhan: require('./img/banner-tienhonnhan.jpg'),
+    banneradnhuyetthong: require('./img/banner-and-huyetthong.jpg'),
+    bannertimmach: require('./img/banner-timmach.jpg'),
+    bannervichat: require('./img/banner-vichat.png'),
 }
 
 export default images;

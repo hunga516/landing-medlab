@@ -21,12 +21,12 @@ function UnitLookUpPage() {
 
                 <div className="type grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                     <Link to="/tra-cuu"
-                          className={`rounded px-4 py-2 text-base md:text-lg text-center ${location.pathname === '/tra-cuu' ? ' text-white bg-sky-500' : 'text-sky-500 bg-white ring-1 ring-blue-500'}`}>
+                          className={`rounded px-4 py-2 text-base md:text-lg text-center ${location.pathname === '/tra-cuu' ? ' text-white bg-sky-500' : 'text-sky-500 bg-white ring-1 ring-blue-500 ring-inset'}`}>
                         Khách hàng
                     </Link>
 
                     <Link to="/don-vi-tra-cuu"
-                          className={`rounded-md px-4 py-2 text-base md:text-lg text-center ${location.pathname === '/don-vi-tra-cuu' ? ' text-white bg-sky-500' : 'text-sky-500 bg-white ring-1 ring-blue-500'}`}>
+                          className={`rounded-md px-4 py-2 text-base md:text-lg text-center ${location.pathname === '/don-vi-tra-cuu' ? ' text-white bg-sky-500' : 'text-sky-500 bg-white ring-1 ring-blue-500 ring-inset'}`}>
                         Đơn vị gửi mẫu
                     </Link>
                     <button onClick={scrollToDocs} className="md:hidden text-slate-600 flex items-center gap-2">
@@ -37,46 +37,31 @@ function UnitLookUpPage() {
 
                 <div className="flex flex-col gap-6 mt-6">
                     <div className="flex flex-col gap-1">
-                        <label htmlFor="topic" className="text-sm font-medium text-gray-900 leading-6">Mã xét
-                            nghiệm</label>
+                        <label htmlFor="topic" className="text-sm font-medium text-gray-900 leading-6">Tài khoản</label>
                         <input
                             // value={formData.ServiceName}
                             type="text"
                             id="ServiceName"
                             name="ServiceName"
-                            className="py-1.5 text-sm font-medium leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md p-2"
-                            placeholder={'Nhập tên dịch vụ'}
+                            className="py-1.5 text-sm font-medium leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md p-2 placeholder:font-sans"
+                            placeholder={'Nhập tài khoản đơn vị'}
                             // onChange={handleChange}
                         />
                     </div>
                     <div className="flex flex-col gap-1">
-                        <label htmlFor="topic" className="text-sm font-medium text-gray-900 leading-6">Mã đơn vị</label>
+                        <label htmlFor="topic" className="text-sm font-medium text-gray-900 leading-6">Mật khẩu</label>
                         <input
                             // value={formData.ServiceName}
                             type="text"
                             id="ServiceName"
                             name="ServiceName"
                             className="py-1.5 text-sm font-medium leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md p-2"
-                            placeholder={'Nhập tên dịch vụ'}
-                            // onChange={handleChange}
-                        />
-                    </div>
-                    <div className="flex flex-col gap-1">
-                        <label htmlFor="topic" className="text-sm font-medium text-gray-900 leading-6">Tên dịch
-                            vụ</label>
-                        <input
-                            // value={formData.ServiceName}
-                            type="text"
-                            id="ServiceName"
-                            name="ServiceName"
-                            className="py-1.5 text-sm font-medium leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md p-2"
-                            placeholder={'Nhập tên dịch vụ'}
                             // onChange={handleChange}
                         />
                     </div>
                     <div className="text-right">
                         <button className="px-4 py-1 bg-sky-500 rounded-md text-white">
-                            Tra cứu
+                            Đăng nhập
                         </button>
                     </div>
                 </div>

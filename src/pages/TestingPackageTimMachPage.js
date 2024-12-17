@@ -51,7 +51,7 @@ function TestingPackageTimMachPage() {
                     </div>
                 </div>
                 <div className="banner max-md:col-span-2">
-                    <img src={images.background1} alt="hinh anh xet nghiem tong quat"
+                    <img src={images.bannertimmach} alt="hinh anh xet nghiem tong quat"
                          className="h-full object-cover rounded-md" />
                 </div>
             </div>

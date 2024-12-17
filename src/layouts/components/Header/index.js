@@ -99,6 +99,10 @@ function Header() {
                                             <Link to="/tat-ca-goi-xet-nghiem"
                                                   className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white w-full px-4 py-3 duration-200 rounded-lg">Tất
                                                 cả gói xét nghiệm</Link>
+                                            <Link to="/goi-xet-nghiem-tong-quat"
+                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">
+                                                Gói xét nghiệm tổng quát
+                                            </Link>
                                             <Link to="/goi-xet-nghiem-nipt"
                                                   className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">
                                                     Gói xét nghiệm NIPT

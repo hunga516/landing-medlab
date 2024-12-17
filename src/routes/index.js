@@ -16,6 +16,9 @@ import TestingPackageViChatPageJs from '../pages/TestingPackageViChatPage.js';
 import TestingPackageTimMachPage from '../pages/TestingPackageTimMachPage';
 import TestingPackageADNPage from '../pages/TestingPackageADNPage';
 import TestingPackageTienHonNhanPage from '../pages/TestingPackageTienHonNhanPage';
+import AllTestingPackagePage from '../pages/AllTestingPackagePage';
+import UnitAdminPage from '../pages/UnitAdminPage';
+import UnitAdminLayout from '../layouts/UnitAdminLayout';
 
 export const publicRoute = [
     { path: '/', element: HomePage, layout: DefautLayout },
@@ -28,10 +31,12 @@ export const publicRoute = [
     { path: '/don-vi-tra-cuu', element: UnitLookUpPage, layout: DefaultLayout },
     { path: '/admin/blog', element: AdminBlogPage, layout: AdminLayout },
     { path: '/admin/service', element: AdminServicePage, layout: AdminLayout },
-    { path: '/tat-ca-goi-xet-nghiem', element: TestingPackagePage, layout: DefaultLayout },
+    { path: '/tat-ca-goi-xet-nghiem', element: AllTestingPackagePage, layout: DefaultLayout },
+    { path: '/goi-xet-nghiem-tong-quat', element: TestingPackagePage, layout: DefaultLayout },
     { path: '/goi-xet-nghiem-nipt', element: TestingPackageNIPTPage, layout: DefaultLayout },
     { path: '/goi-xet-nghiem-vi-chat', element: TestingPackageViChatPageJs , layout: DefaultLayout },
     { path: '/goi-xet-nghiem-tim-mach', element: TestingPackageTimMachPage, layout: DefaultLayout },
     { path: '/goi-xet-nghiem-adn-huyet-thong', element: TestingPackageADNPage, layout: DefaultLayout },
     { path: '/goi-xet-nghiem-tien-hon-nhan', element: TestingPackageTienHonNhanPage, layout: DefaultLayout },
+    { path: '/:unit/admin', element: UnitAdminPage, layout: UnitAdminLayout },
 ]
