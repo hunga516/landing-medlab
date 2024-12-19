@@ -14,11 +14,11 @@ function AllTestingPackagePage() {
                 Tất cả gói xét nghiệm
             </h1>
 
-            <div className="grid grid-cols-3 gap-16 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mt-8">
                 <Link to="/goi-xet-nghiem-tong-quat" className="relative w-full">
                     <img src={images.bannertongquat} alt="" className="" />
                     <div
-                        className="absolute w-3/4 -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-md p-4 drop-shadow-md">
+                        className="absolute w-3/4 -bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-md p-4 drop-shadow-md">
                         <div
                             className="absolute -top-8 left-4 bg-blue-500 text-white font-medium px-3 py-2 rounded-lg">Từ
                             799.000 vnđ
@@ -42,7 +42,7 @@ function AllTestingPackagePage() {
                 <Link to="/goi-xet-nghiem-nipt" className="relative w-full">
                     <img src={images.bannernipt} alt="" className="" />
                     <div
-                        className="absolute w-3/4 -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-md p-4 drop-shadow-md">
+                        className="absolute w-3/4 -bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-md p-4 drop-shadow-md">
                         <div
                             className="absolute -top-8 left-4 bg-blue-500 text-white font-medium px-3 py-2 rounded-lg">Từ
                             1.800.000 vnđ
@@ -54,7 +54,7 @@ function AllTestingPackagePage() {
                         <div className="flex items-center justify-between text-[12px] mt-4">
                             <div className="flex items-center gap-1">
                                 <TbRating18Plus className="text-lg" />
-                                Phụ nữ mang thai từ tuần 10
+                                Từ tuần thai 10
                             </div>
                             <div className="flex items-center gap-1">
                                 <IoLocationSharp className="text-base" />
@@ -66,7 +66,7 @@ function AllTestingPackagePage() {
                 <Link to="/goi-xet-nghiem-vi-chat" className="relative w-full">
                     <img src={images.bannervichat} alt="" className="" />
                     <div
-                        className="absolute w-3/4 -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-md p-4 drop-shadow-md">
+                        className="absolute w-3/4 -bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-md p-4 drop-shadow-md">
                         <div
                             className="absolute -top-8 left-4 bg-blue-500 text-white font-medium px-3 py-2 rounded-lg">Từ
                             1.000.000 vnđ
@@ -90,7 +90,7 @@ function AllTestingPackagePage() {
                 <Link to="/goi-xet-nghiem-tim-mach" className="relative w-full">
                     <img src={images.bannertimmach} alt="" className="" />
                     <div
-                        className="absolute w-3/4 -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-md p-4 drop-shadow-md">
+                        className="absolute w-3/4 -bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-md p-4 drop-shadow-md">
                         <div
                             className="absolute -top-8 left-4 bg-blue-500 text-white font-medium px-3 py-2 rounded-lg">Từ
                             499.000 vnđ
@@ -114,7 +114,7 @@ function AllTestingPackagePage() {
                 <Link to="/goi-xet-nghiem-tien-hon-nhan" className="relative w-full">
                     <img src={images.bannertienhonnhan} alt="" className="" />
                     <div
-                        className="absolute w-3/4 -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-md p-4 drop-shadow-md">
+                        className="absolute w-3/4 -bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-md p-4 drop-shadow-md">
                         <div
                             className="absolute -top-8 left-4 bg-blue-500 text-white font-medium px-3 py-2 rounded-lg">Từ
                             990.000 vnđ
@@ -138,7 +138,7 @@ function AllTestingPackagePage() {
                 <Link to="/goi-xet-nghiem-adn-huyet-thong" className="relative w-full">
                     <img src={images.banneradnhuyetthong} alt="" className="" />
                     <div
-                        className="absolute w-3/4 -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-md p-4 drop-shadow-md">
+                        className="absolute w-3/4 -bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-md p-4 drop-shadow-md">
                         <div
                             className="absolute -top-8 left-4 bg-blue-500 text-white font-medium px-3 py-2 rounded-lg">Từ
                             1.990.000 vnđ

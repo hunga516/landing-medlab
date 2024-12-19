@@ -72,7 +72,7 @@ function UnitAdminPage() {
                         </span>
 
                         <input
-                            type="text"
+                            type="date"
                             placeholder="Tìm tin tức"
                             className="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg md:w-80 placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5  focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                         />
@@ -80,7 +80,7 @@ function UnitAdminPage() {
                 </div>
 
                 {/*Pdf section*/}
-                <div className="mt-12">
+                <div className="mt-12 h-80 rounded-md overflow-hidden">
                     <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
                         <Viewer
                             fileUrl='https://pdfobject.com/pdf/sample.pdf'
@@ -90,7 +90,6 @@ function UnitAdminPage() {
                             ]}
                         />
                     </Worker>
-
                 </div>
             </div>
         </>

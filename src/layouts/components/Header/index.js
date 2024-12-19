@@ -64,11 +64,11 @@ function Header() {
                             <TbTestPipe />
                             Tra cứu kết quả xét nghiệm
                         </Link>
-                        <button
+                        <a href="tel:+0909636293"
                             className="flex items-center gap-2 text-lg font-medium rounded-lg leading-4 pl-6 py-4 pr-6 text-pink-600 font-sans  ring-2 ring-pink-600/70">
                             <FiPhone />
                             0909 636293
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div className={`${isHidden ? "mt-0 md:-mt-28" : "md:mt-0"} flex justify-between mx-4 md:mx-0 items-center duration-300`}>
@@ -138,9 +138,9 @@ function Header() {
                             </Link>
                         </div>
                         <div>
-                            <button className="hidden lg:block px-4 py-1.5 text-lg rounded-md text-white bg-sky-600">
+                            <a href="tel:+0909636293" className="hidden lg:block px-4 py-1.5 text-lg rounded-md text-white bg-sky-600">
                                 ĐĂNG KÝ TƯ VẤN
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>

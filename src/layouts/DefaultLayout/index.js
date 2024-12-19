@@ -32,7 +32,7 @@ function DefaultLayout({ children }) {
     return (
         <div className="bg-slate-100/30 relative">
             <Header />
-            <div className="wrapper flex max-w-screen-2xl">
+            <div className="wrapper flex">
                 <div className="content w-full mt-20 md:mt-28 px-4 md:px-0">
                     {children}
                     <div className="mt-12 md:mt-32">
@@ -55,11 +55,11 @@ function DefaultLayout({ children }) {
                              className="absolute z-10 w-12 h-12 rounded-full object-cover" />
                         <p className="w-12 h-12 rounded-full bg-blue-700 animate-ping delay-150 ease-in-out"></p>
                     </a>
-                    <div className="relative">
+                    <a href="tel:+0909636293" className="relative">
                         <img src={images.phone} alt="phone contact"
                              className="absolute z-10 w-12 h-12 rounded-full object-cover" />
                         <p className="w-12 h-12 rounded-full bg-sky-600 animate-ping"></p>
-                    </div>
+                    </a>
                     <div className="relative">
                         <img src={images.zalo} alt="zalo contact"
                              className="absolute z-10 w-12 h-12 rounded-full object-cover" />
@@ -73,9 +73,9 @@ function DefaultLayout({ children }) {
                     <a href="" className="p-4 flex items-center justify-center">
                         <img src={images.zalo} alt="zalo contact" className="w-10 h-10" />
                     </a>
-                    <div className="p-4 flex items-center justify-center">
+                    <a href="tel:+0909636293" className="p-4 flex items-center justify-center">
                         <img src={images.phone} alt="zalo contact" className="w-10 h-10" />
-                    </div>
+                    </a>
                     <a href="https://www.facebook.com/vinhvien.medlab/" target="_blank" className="p-4 flex items-center justify-center">
                         <img src={images.facebook} alt="zalo contact" className="w-10 h-10" />
                     </a>

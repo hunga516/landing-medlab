@@ -1,13 +1,13 @@
 import images from '../assets/images';
 import { MdOutlineEditCalendar, MdSupportAgent } from 'react-icons/md';
-import { FaPhoneAlt, FaRegCalendarCheck } from 'react-icons/fa';
+import { FaMinusCircle, FaPhoneAlt, FaRegCalendarCheck } from 'react-icons/fa';
 import BookingModal from '../components/Modal/BookingModal';
 import { useModal } from '../context/ModalContext';
 import { Ri24HoursLine } from 'react-icons/ri';
 import { IoIosCheckbox, IoIosFlash } from 'react-icons/io';
 import { IoLeaf } from 'react-icons/io5';
 import { useState } from 'react';
-import { FiPlusCircle } from 'react-icons/fi';
+import { FiMinusCircle, FiPlusCircle } from 'react-icons/fi';
 
 function AboutPage() {
     const { bookingModal, toggleModal } = useModal();
@@ -279,8 +279,13 @@ function AboutPage() {
                                 <div className="flex justify-between gap-2">
                                     <h3 className="text-sm sm:text-base text-slate-800 tracking-wide font-medium">MedLab
                                         cung cấp những
-                                        loại xét nghiệm nào?</h3>
-                                    <FiPlusCircle className="text-blue-500 text-2xl" />
+                                        loại xét nghiệm nào?
+                                    </h3>
+                                    {isOpen[`accordion1`] ? (
+                                        <FiMinusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    ) : (
+                                        <FiPlusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    )}
                                 </div>
                                 <div
                                     className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen[`accordion1`] ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
@@ -302,7 +307,11 @@ function AboutPage() {
                                     <h3 className="text-sm sm:text-base text-slate-800 tracking-wide font-medium">Tôi có
                                         thể
                                         đặt lịch xét nghiệm như thế nào?</h3>
-                                    <FiPlusCircle className="text-blue-500 text-2xl" />
+                                    {isOpen[`accordion2`] ? (
+                                        <FiMinusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    ) : (
+                                        <FiPlusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    )}
                                 </div>
                                 <div
                                     className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen[`accordion2`] ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
@@ -322,7 +331,11 @@ function AboutPage() {
                                     <h3 className="text-sm sm:text-base text-slate-800 tracking-wide font-medium">Kết
                                         quả
                                         xét nghiệm có thể nhận được trong bao lâu?</h3>
-                                    <FiPlusCircle className="text-blue-500 text-2xl" />
+                                    {isOpen[`accordion3`] ? (
+                                        <FiMinusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    ) : (
+                                        <FiPlusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    )}
                                 </div>
                                 <div
                                     className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen[`accordion3`] ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
@@ -343,7 +356,11 @@ function AboutPage() {
                                     <h3 className="text-sm sm:text-base text-slate-800 tracking-wide font-medium">Tôi có
                                         cần
                                         nhịn ăn trước khi làm xét nghiệm không?</h3>
-                                    <FiPlusCircle className="text-blue-500 text-2xl" />
+                                    {isOpen[`accordion4`] ? (
+                                        <FiMinusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    ) : (
+                                        <FiPlusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    )}
                                 </div>
                                 <div
                                     className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen[`accordion4`] ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
@@ -366,7 +383,11 @@ function AboutPage() {
                                     <h3 className="text-sm sm:text-base text-slate-800 tracking-wide font-medium">MedLab
                                         có
                                         cung cấp dịch vụ xét nghiệm tại nhà không?</h3>
-                                    <FiPlusCircle className="text-blue-500 text-2xl" />
+                                    {isOpen[`accordion5`] ? (
+                                        <FiMinusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    ) : (
+                                        <FiPlusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    )}
                                 </div>
                                 <div
                                     className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen[`accordion5`] ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
@@ -387,7 +408,11 @@ function AboutPage() {
                                     <h3 className="text-sm sm:text-base text-slate-800 tracking-wide font-medium">Chi
                                         phí
                                         xét nghiệm tại MedLab là bao nhiêu?</h3>
-                                    <FiPlusCircle className="text-blue-500 text-2xl" />
+                                    {isOpen[`accordion6`] ? (
+                                        <FiMinusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    ) : (
+                                        <FiPlusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    )}
                                 </div>
                                 <div
                                     className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen[`accordion6`] ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
@@ -408,7 +433,11 @@ function AboutPage() {
                                     <h3 className="text-sm sm:text-base text-slate-800 tracking-wide font-medium">Tôi
                                         cần
                                         làm gì nếu phát hiện kết quả bất thường?</h3>
-                                    <FiPlusCircle className="text-blue-500 text-2xl" />
+                                    {isOpen[`accordion7`] ? (
+                                        <FiMinusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    ) : (
+                                        <FiPlusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    )}
                                 </div>
                                 <div
                                     className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen[`accordion7`] ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
@@ -428,7 +457,11 @@ function AboutPage() {
                                     <h3 className="text-sm sm:text-base text-slate-800 tracking-wide font-medium">MedLab
                                         có
                                         hỗ trợ bảo hiểm y tế không?</h3>
-                                    <FiPlusCircle className="text-blue-500 text-2xl" />
+                                    {isOpen[`accordion8`] ? (
+                                        <FiMinusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    ) : (
+                                        <FiPlusCircle className="text-blue-500 text-2xl flex-shrink-0 " />
+                                    )}
                                 </div>
                                 <div
                                     className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen[`accordion8`] ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>

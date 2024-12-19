@@ -273,57 +273,58 @@ function HomePage() {
 
             {/*Các gói xét nghiệm section*/}
             <div className="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
-                <div className="">
-                    <p className="text-slate-800 text-xl md:text-2xl font-semibold mx-auto font-sans">Các gói xét
+                <div className="flex items-center justify-between">
+                    <p className="text-slate-800 text-xl md:text-2xl font-semibold font-sans">Các gói xét
                         nghiệm</p>
+                    <Link
+                        to="/tat-ca-goi-xet-nghiem" className="flex items-center gap-2 px-4 py-1 bg-blue-100 text-blue-600 rounded-lg">
+                        <FaArrowRightLong />
+                        Xem tất cả
+                    </Link>
                 </div>
 
                 <div className="flex flex-col md:grid md:grid-cols-2 gap-2 mt-4 md:mt-6">
-                    <div className="bg-blue-100 p-4 rounded-md flex items-start gap-4">
+                    <Link to="/goi-xet-nghiem-tong-quat" className="bg-blue-100 p-4 rounded-md grid grid-cols-3 gap-4">
                         <div className="content col-span-2 flex flex-col ">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tổng quát</h2>
-                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 499.000đ</p>
                             <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
                                 xét
                                 nghiệm tổng quát giúp kiểm tra sức khỏe toàn diện, bao gồm các xét nghiệm máu, nước tiểu
                                 và chỉ số sinh hóa. Kết quả hỗ trợ phát hiện sớm các bệnh lý tiềm ẩn.</p>
                         </div>
-                        <img src={images.tongquat} alt="Hình ảnh gói xét nghiệm tổng quát"
-                             className="rounded-lg w-24" />
-                    </div>
-                    <div className="bg-blue-100 p-4 rounded-md flex items-start gap-4">
+                        <img src={images.bannertongquat} alt="Hình ảnh gói xét nghiệm tổng quát"
+                             className="rounded-lg h-full" />
+                    </Link>
+                    <Link to="/goi-xet-nghiem-nipt" className="bg-blue-100 p-4 rounded-md grid grid-cols-3 gap-4">
                         <div className="content col-span-2 flex flex-col">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm NIPT</h2>
-                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 1.200.000đ</p>
                             <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
                                 xét
                                 nghiệm NIPT giúp kiểm tra và phát hiện các rối loạn di truyền sớm trong thai kỳ, đảm bảo
                                 sức khỏe mẹ và bé.</p>
                         </div>
-                        <img src={images.nipt} alt="Hình ảnh gói xét nghiệm NIPT" className="rounded-lg w-24" />
-                    </div>
-                    <div className="bg-blue-100 p-4 rounded-md flex items-start gap-4">
+                        <img src={images.bannernipt} alt="Hình ảnh gói xét nghiệm NIPT" className="rounded-lg h-full" />
+                    </Link>
+                    <Link to="/goi-xet-nghiem-vi-chat" className="bg-blue-100 p-4 rounded-md grid grid-cols-3 gap-4">
                         <div className="content col-span-2 flex flex-col">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm vi chất</h2>
-                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 800.000đ</p>
                             <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
                                 xét
                                 nghiệm vi chất giúp xác định sự thiếu hụt các vitamin và khoáng chất trong cơ thể, từ đó
                                 hỗ trợ điều chỉnh chế độ dinh dưỡng phù hợp.</p>
                         </div>
-                        <img src={images.vichat} alt="Hình ảnh gói xét nghiệm vi chất" className="rounded-lg w-24" />
-                    </div>
-                    <div className="bg-blue-100 p-4 rounded-md flex items-start gap-4">
+                        <img src={images.bannervichat} alt="Hình ảnh gói xét nghiệm vi chất" className="rounded-lg h-full" />
+                    </Link>
+                    <Link to="/goi-xet-nghiem-tim-mach" className="bg-blue-100 p-4 rounded-md grid grid-cols-3 gap-4">
                         <div className="content col-span-2 flex flex-col">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tim mạch</h2>
-                            <p className="text-sm md:text-base text-sky-600 font-medium">Giá chỉ từ 1.500.000đ</p>
                             <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
                                 xét
                                 nghiệm tim mạch cung cấp các thông tin quan trọng về chức năng tim và các yếu tố nguy
                                 cơ, giúp phát hiện sớm và phòng ngừa các bệnh lý tim mạch.</p>
                         </div>
-                        <img src={images.timmach} alt="Hình ảnh gói xét nghiệm tim mạch" className="rounded-lg w-24" />
-                    </div>
+                        <img src={images.bannertimmach} alt="Hình ảnh gói xét nghiệm tim mạch" className="rounded-lg h-full" />
+                    </Link>
                 </div>
             </div>
 
@@ -362,21 +363,12 @@ function HomePage() {
 
             {/*Đánh giá section*/}
             <div className="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
-
                 <div className="grid grid-cols-3 gap-2 md:gap-4">
                     <div className="col-span-3 md:col-span-1">
                         <h2 className="text-slate-800 text-xl md:text-2xl leading-snug font-sans font-medium">Khách
                             hàng nói gì về <span
                                 className="bg-clip-text text-transparent bg-gradient-to-br from-sky-900 to-sky-400 text-xl md:text-2xl">Medlab Vĩnh Viễn</span>
                         </h2>
-
-                        <div className="flex flex-row items-center gap-6 mt-2">
-                            <button
-                                className="flex items-center gap-2 px-2 py-0.5 md:px-4 md:py-1 text-white font-semibold rounded-lg text-xs md:text-sm bg-gradient-to-tl from-amber-500 to-yellow-400/70">
-                                Để lại đánh giá
-                                <RxPencil1 />
-                            </button>
-                        </div>
                     </div>
                     <div className="col-span-3 md:col-span-2 grid grid-cols-2 gap-4 mt-2 md:mt-0">
                         <div className="bg-slate-100 p-2 md:p-4 rounded-lg ">
@@ -512,7 +504,7 @@ function HomePage() {
                 <div className="flex items-center justify-between">
                     <p className="text-slate-800 text-xl md:text-2xl font-semibold">Tin tức về y khoa</p>
                     <Link
-                        to="/blog" className="flex items-center gap-2 px-4 py-1 bg-blue-100 text-blue-600 rounded-lg">
+                        to="/tin-tuc" className="flex items-center gap-2 px-4 py-1 bg-blue-100 text-blue-600 rounded-lg">
                         <FaArrowRightLong />
                         Xem tất cả
                     </Link>

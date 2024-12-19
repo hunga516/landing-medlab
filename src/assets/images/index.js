@@ -53,6 +53,7 @@ const images = {
     banneradnhuyetthong: require('./img/banner-and-huyetthong.jpg'),
     bannertimmach: require('./img/banner-timmach.jpg'),
     bannervichat: require('./img/banner-vichat.png'),
+    hdkhachhang: require('./img/hd-khachhang.jpg'),
 }
 
 export default images;

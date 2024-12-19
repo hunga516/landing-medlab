@@ -19,6 +19,7 @@ import TestingPackageTienHonNhanPage from '../pages/TestingPackageTienHonNhanPag
 import AllTestingPackagePage from '../pages/AllTestingPackagePage';
 import UnitAdminPage from '../pages/UnitAdminPage';
 import UnitAdminLayout from '../layouts/UnitAdminLayout';
+import ResultLookUpPage from '../pages/ResultLookUpPage';
 
 export const publicRoute = [
     { path: '/', element: HomePage, layout: DefautLayout },
@@ -28,6 +29,7 @@ export const publicRoute = [
     { path: '/dich-vu', element: PricePage, layout: DefaultLayout },
     { path: '/ve-medlab-vinh-vien', element: AboutPage, layout: DefaultLayout },
     { path: '/tra-cuu', element: LookUpPage, layout: DefaultLayout },
+    { path: '/ket-qua-tra-cuu', element: ResultLookUpPage, layout: DefaultLayout },
     { path: '/don-vi-tra-cuu', element: UnitLookUpPage, layout: DefaultLayout },
     { path: '/admin/blog', element: AdminBlogPage, layout: AdminLayout },
     { path: '/admin/service', element: AdminServicePage, layout: AdminLayout },
