@@ -6,6 +6,7 @@ import PricePage from '../pages/PricePage';
 import BlogPage from '../pages/BlogPage';
 import AdminBlogPage from '../pages/AdminBlogPage';
 import AdminLayout from '../layouts/AdminLayout';
+import AdminBookingPage from '../pages/AdminBookingPage.js'
 import AdminServicePage from '../pages/AdminServicePage';
 import DetailsBlogPage from '../pages/DetailsBlogPage';
 import LookUpPage from '../pages/LookUpPage';
@@ -31,6 +32,7 @@ export const publicRoute = [
     { path: '/don-vi-tra-cuu', element: UnitLookUpPage, layout: DefaultLayout },
     { path: '/admin/blog', element: AdminBlogPage, layout: AdminLayout },
     { path: '/admin/service', element: AdminServicePage, layout: AdminLayout },
+    { path: '/admin/booking', element: AdminBookingPage, layout: AdminLayout },
     { path: '/tat-ca-goi-xet-nghiem', element: AllTestingPackagePage, layout: DefaultLayout },
     { path: '/goi-xet-nghiem-tong-quat', element: TestingPackagePage, layout: DefaultLayout },
     { path: '/goi-xet-nghiem-nipt', element: TestingPackageNIPTPage, layout: DefaultLayout },

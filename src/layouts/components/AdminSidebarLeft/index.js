@@ -6,6 +6,7 @@ import { LoadingContext } from "../../../context";
 import { RiUser3Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { MdOutlineMedicalServices } from 'react-icons/md';
+import { MdEditCalendar } from "react-icons/md";
 import { BsFilePost } from 'react-icons/bs';
 
 function AdminSidebarLeft({ className }) {
@@ -23,6 +24,12 @@ function AdminSidebarLeft({ className }) {
             icon: MdOutlineMedicalServices,
             title: 'Dịch vụ',
             to: '/admin/service'
+        },
+        {
+            icon : MdEditCalendar  ,
+            title: '',
+            to:'/admin/booking'
+
         },
     ]
 
@@ -58,6 +65,8 @@ function AdminSidebarLeft({ className }) {
                                     } flex items-center justify-center md:px-3 md:py-2 text-gray-600 transition-color rounded-lg relative `}
                                 >
                                     <item.icon size="25px" className="text-gray-600" />
+                                   
+                                    
                                 </Link>
                             ))}
                         </>
