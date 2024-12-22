@@ -40,5 +40,5 @@ export const publicRoute = [
     { path: '/goi-xet-nghiem-tim-mach', element: TestingPackageTimMachPage, layout: DefaultLayout },
     { path: '/goi-xet-nghiem-adn-huyet-thong', element: TestingPackageADNPage, layout: DefaultLayout },
     { path: '/goi-xet-nghiem-tien-hon-nhan', element: TestingPackageTienHonNhanPage, layout: DefaultLayout },
-    { path: '/:unit/admin', element: UnitAdminPage, layout: UnitAdminLayout },
+    { path: '/:unit/admin/pdf', element: UnitAdminPage, layout: UnitAdminLayout },
 ]

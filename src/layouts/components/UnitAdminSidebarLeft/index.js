@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from 'react-router-dom';
 import Skeleton from "react-loading-skeleton";
 
 import { LoadingContext } from "../../../context";
@@ -7,22 +7,23 @@ import { RiUser3Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { MdOutlineMedicalServices } from 'react-icons/md';
 import { BsFilePost } from 'react-icons/bs';
+import { FaRegFilePdf } from 'react-icons/fa';
 
 function UnitAdminSidebarLeft({ className }) {
     const LoadingContextValue = useContext(LoadingContext);
     const location = useLocation();
+    const parmas = useParams()
 
     const NAV_ITEMS = [
         {
-            icon: BsFilePost,
-            title: 'Blog',
-            descriptio: 'Beta',
-            to: '/admin/blog'
+            icon: FaRegFilePdf,
+            title: 'PDF',
+            to: `/${parmas.unit}/admin/pdf`
         },
         {
             icon: MdOutlineMedicalServices,
             title: 'Dịch vụ',
-            to: '/admin/service'
+            to: `/${parmas.unit}/admin/test`
         },
     ]
 

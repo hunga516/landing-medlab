@@ -16,10 +16,15 @@ function UnitAdminPage() {
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
     const [numPages, setNumPages] = useState();
     const [pageNumber, setPageNumber] = useState(1);
+    const [date, setDate] = useState();
 
 
     function onDocumentLoadSuccess({ numPages }) {
         setNumPages(numPages);
+    }
+
+    const handleOnChange = (e) => {
+        console.log(e.target.value);
     }
 
     return (
@@ -72,6 +77,8 @@ function UnitAdminPage() {
                         </span>
 
                         <input
+                            onChange={handleOnChange}
+                            name="date"
                             type="date"
                             placeholder="Tìm tin tức"
                             className="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg md:w-80 placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5  focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
