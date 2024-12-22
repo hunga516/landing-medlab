@@ -20,6 +20,9 @@ import AllTestingPackagePage from '../pages/AllTestingPackagePage';
 import UnitAdminPage from '../pages/UnitAdminPage';
 import UnitAdminLayout from '../layouts/UnitAdminLayout';
 import ResultLookUpPage from '../pages/ResultLookUpPage';
+import UnitAdminLookupPage from '../pages/UnitAdminLookupPage';
+import UnitAdminListPatients from '../pages/UnitAdminListPatients';
+import AdminBookingPage from '../pages/AdminBookingPage';
 
 export const publicRoute = [
     { path: '/', element: HomePage, layout: DefautLayout },
@@ -33,6 +36,7 @@ export const publicRoute = [
     { path: '/don-vi-tra-cuu', element: UnitLookUpPage, layout: DefaultLayout },
     { path: '/admin/blog', element: AdminBlogPage, layout: AdminLayout },
     { path: '/admin/service', element: AdminServicePage, layout: AdminLayout },
+    { path: '/admin/booking', element: AdminBookingPage, layout: AdminLayout },
     { path: '/tat-ca-goi-xet-nghiem', element: AllTestingPackagePage, layout: DefaultLayout },
     { path: '/goi-xet-nghiem-tong-quat', element: TestingPackagePage, layout: DefaultLayout },
     { path: '/goi-xet-nghiem-nipt', element: TestingPackageNIPTPage, layout: DefaultLayout },
@@ -41,4 +45,6 @@ export const publicRoute = [
     { path: '/goi-xet-nghiem-adn-huyet-thong', element: TestingPackageADNPage, layout: DefaultLayout },
     { path: '/goi-xet-nghiem-tien-hon-nhan', element: TestingPackageTienHonNhanPage, layout: DefaultLayout },
     { path: '/:unit/admin/pdf', element: UnitAdminPage, layout: UnitAdminLayout },
+    { path: '/:unit/admin/tra-cuu', element: UnitAdminLookupPage, layout: UnitAdminLayout },
+    { path: '/:unit/admin/danh-sach-benh-nhan', element: UnitAdminListPatients, layout: UnitAdminLayout },
 ]

@@ -13,8 +13,6 @@ function LookUpPage() {
     const [formData, setFormData] = useState({
         MaTraCuu: "",
         SoDienThoai: "",
-        TaiKhoan: "",
-        MatKhau: ""
     });
     const [errorMessage, setErrorMessage] = useState({});
     const navigate = useNavigate();
@@ -45,7 +43,7 @@ function LookUpPage() {
 
         try {
             const response = await axios.post(
-                `${process.env.REACT_APP_BACKEND_API}/tra-cuu-ket-qua`,
+                `${process.env.REACT_APP_BACKEND_API}/TraCuuKetQua/khach-hang/tra-cuu-ket-qua`,
                 formData,
                 { responseType: 'blob' }
             );

@@ -5,7 +5,7 @@ import Skeleton from "react-loading-skeleton";
 import { LoadingContext } from "../../../context";
 import { RiUser3Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { MdOutlineMedicalServices } from 'react-icons/md';
+import { MdEditCalendar, MdOutlineMedicalServices } from 'react-icons/md';
 import { BsFilePost } from 'react-icons/bs';
 
 function AdminSidebarLeft({ className }) {
@@ -23,6 +23,11 @@ function AdminSidebarLeft({ className }) {
             icon: MdOutlineMedicalServices,
             title: 'Dịch vụ',
             to: '/admin/service'
+        },
+        {
+            icon : MdEditCalendar  ,
+            title: '',
+            to:'/admin/booking'
         },
     ]
 

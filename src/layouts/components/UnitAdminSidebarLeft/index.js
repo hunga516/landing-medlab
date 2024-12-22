@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { MdOutlineMedicalServices } from 'react-icons/md';
 import { BsFilePost } from 'react-icons/bs';
 import { FaRegFilePdf } from 'react-icons/fa';
+import { GoSearch } from 'react-icons/go';
+import { HiUsers } from 'react-icons/hi';
 
 function UnitAdminSidebarLeft({ className }) {
     const LoadingContextValue = useContext(LoadingContext);
@@ -16,14 +18,14 @@ function UnitAdminSidebarLeft({ className }) {
 
     const NAV_ITEMS = [
         {
-            icon: FaRegFilePdf,
-            title: 'PDF',
-            to: `/${parmas.unit}/admin/pdf`
+            icon: GoSearch,
+            title: 'Tra cứu',
+            to: `/${parmas.unit}/admin/tra-cuu`
         },
         {
-            icon: MdOutlineMedicalServices,
-            title: 'Dịch vụ',
-            to: `/${parmas.unit}/admin/test`
+            icon: HiUsers,
+            title: 'Danh sách bệnh nhân',
+            to: `/${parmas.unit}/admin/danh-sach-benh-nhan`
         },
     ]
 

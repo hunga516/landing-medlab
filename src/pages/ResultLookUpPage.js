@@ -14,7 +14,6 @@ function ResultLookUpPage() {
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
     const location = useLocation();
     const data = location.state
-    console.log(data);
 
     return (
         <div className="md:px-8 lg:px-0 lg:mx-32 md:mt-20">
