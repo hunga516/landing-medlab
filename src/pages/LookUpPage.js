@@ -35,7 +35,7 @@ function LookUpPage() {
             return;
         }
         if (!formData.MaTraCuu.trim()) {
-            setErrorMessage(prevState => ({...errorMessage, 'SoDienThoai': "Mã tra cứu không được để trống."}));
+            setErrorMessage(prevState => ({...errorMessage, 'MaTraCuu': "Mã tra cứu không được để trống."}));
             return;
         }
 
@@ -43,7 +43,7 @@ function LookUpPage() {
 
         try {
             const response = await axios.post(
-                `${process.env.REACT_APP_BACKEND_API}/TraCuuKetQua/khach-hang/tra-cuu-ket-qua`,
+                `${process.env.REACT_APP_BACKEND_API}/api/TraCuuKetQua/khach-hang/tra-cuu-ket-qua`,
                 formData,
                 { responseType: 'blob' }
             );

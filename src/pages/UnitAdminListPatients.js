@@ -15,6 +15,9 @@ import CourseTable from '../components/Table/BlogTable';
 import PatientTable from '../components/Table/PatientTable';
 import axios from 'axios';
 import formateDDMMYYYY from '../helper/formateDDMMYYYY';
+import ResultPDFModal from '../components/Modal/ResultPDFModal';
+import { FaFilePdf } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -23,209 +26,57 @@ function UnitAdminListPatients() {
     const [numPages, setNumPages] = useState();
     const [pageNumber, setPageNumber] = useState(1);
     const [date, setDate] = useState();
-    const [daysHaveResult, setDaysHaveResult] = useState([
-        "2024-11-30",
-        "2024-12-14",
-        "2024-12-15",
-        "2024-12-16"
-    ]);
-    const [patients, setPatients] = useState([
-        {
-
-            "id": 525,
-
-            "macn": "01",
-
-            "idhopDong": 4,
-
-            "idbacSiChiDinh": null,
-
-            "idnoiChiDinh": null,
-
-            "code": "00224",
-
-            "maBenhNhan": "BN2411260001-YY",
-
-            "tenBenhNhan": "Lê Thị Bảo Yến",
-
-            "ngaySinh": "2001-04-10T00:00:00",
-
-            "namsinh": 2001,
-
-            "gioiTinh": "Nữ",
-
-            "idgt": 2,
-
-            "idtinh": 42,
-
-            "idquan": null,
-
-            "idpx": null,
-
-            "diaChi": "Đắk Lắk",
-
-            "dienthoai": "0393352523",
-
-            "email": null,
-
-            "iddt": 1,
-
-            "idnn": null,
-
-            "idqg": 190,
-
-            "cccd": "066301001234",
-
-            "ngayCap": null,
-
-            "noiCap": null,
-
-            "boPhan": null,
-
-            "taiKhoan": null,
-
-            "matKhau": null,
-
-            "ngayThem": "2024-11-26T00:00:00",
-
-            "cskcbmaBn": "BN-241125001",
-
-            "cskcbmaLk": "VV-241125001",
-
-            "ghiChu": null,
-
-            "maTraCuu": "10042001",
-
-            "clsPhieuXns": [],
-
-            "filesBenhNhans": [],
-
-            "idbacSiChiDinhNavigation": null,
-
-            "idgtNavigation": null,
-
-            "idhopDongNavigation": null,
-
-            "idnoiChiDinhNavigation": null,
-
-            "qlChiDinhs": []
-
-        },
-
-        {
-
-            "id": 536,
-
-            "macn": "01",
-
-            "idhopDong": 4,
-
-            "idbacSiChiDinh": null,
-
-            "idnoiChiDinh": null,
-
-            "code": "00237",
-
-            "maBenhNhan": "BN2411270002-YY",
-
-            "tenBenhNhan": "Test Hợp Đồng lúc lưu B\"'xN\\n\\t",
-
-            "ngaySinh": "2004-09-06T00:00:00",
-
-            "namsinh": 2004,
-
-            "gioiTinh": "Nam",
-
-            "idgt": 1,
-
-            "idtinh": 52,
-
-            "idquan": 595,
-
-            "idpx": 9339,
-
-            "diaChi": "Long Bình, Gò Công Tây, Tiền Giang",
-
-            "dienthoai": "0987612344",
-
-            "email": "maianhkha@hotmail.com",
-
-            "iddt": 1,
-
-            "idnn": 182,
-
-            "idqg": 190,
-
-            "cccd": "082204011900",
-
-            "ngayCap": null,
-
-            "noiCap": null,
-
-            "boPhan": "Bộ phận test",
-
-            "taiKhoan": null,
-
-            "matKhau": null,
-
-            "ngayThem": "2024-11-28T00:00:00",
-
-            "cskcbmaBn": "123",
-
-            "cskcbmaLk": "321",
-
-            "ghiChu": "ghi chú test",
-
-            "maTraCuu": null,
-
-            "clsPhieuXns": [],
-
-            "filesBenhNhans": [],
-
-            "idbacSiChiDinhNavigation": null,
-
-            "idgtNavigation": null,
-
-            "idhopDongNavigation": null,
-
-            "idnoiChiDinhNavigation": null,
-
-            "qlChiDinhs": []
-
+    const [daysHaveResult, setDaysHaveResult] = useState([]);
+    const [patients, setPatients] = useState();
+    const [daySelected, setDaySelected] = useState();
+    const [results, setResults] = useState();
+    const [isShowResultModal, setIsShowResultModal] = useState(false);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const getDaysHaveResult = async () => {
+
+            try {
+                const token = localStorage.getItem("token");
+                console.log(token);
+                const response = await axios.post(`${process.env.REACT_APP_BACKEND_API}/api/TraCuuKetQua/doi-tac/lay-dsngaykq`,{}, {
+                    headers: {
+                        Authorization : `Bearer ${token}`
+                    }
+                })
+                setDaysHaveResult(response.data);
+            }
+            catch (e) {
+                console.log(e);
+            }
         }
-    ]);
-    const token = localStorage.getItem("token");
 
-    // useEffect(() => {
-    //     const getDaysHaveResult = async () => {
-    //         try {
-    //             const response = await axios.get(`${process.env.REACT_APP_BACKEND_API}/TraCuuKetQua/doi-tac/lay-dsngaykq`, {
-    //                 headers: {
-    //                     Authorization : `Bearer ${token}`
-    //                 }
-    //             })
-    //             setDaysHaveResult(response.data);
-    //         }
-    //         catch (e) {
-    //             console.log(e);
-    //         }
-    //     }
-    //
-    //     getDaysHaveResult();
-    // }, [])
+        getDaysHaveResult();
+    }, [])
+
+    useEffect(() => {
+        if (daysHaveResult.length > 0) {
+            getPatientsByDay(daysHaveResult[0])
+        } else{
+            return;
+        }
+
+    }, [daysHaveResult])
 
     function onDocumentLoadSuccess({ numPages }) {
         setNumPages(numPages);
     }
 
-    const handleOnChange = (e) => {
+    const handleOnChange = async (e) => {
         try {
-            // const response = await axios.get(`${process.env.REACT_APP_BACKEND_API}/TraCuuKetQua/doi-tac/lay-dsbn-theo-ngay?ngayKetQua=${e.target.value}`,{
-            //                     headers: {
-            //                         Authorization : `Bearer ${token}`
-            //                     }
-            //                 })
-            // setPatients(response.data)
+            const token = localStorage.getItem("token");
+            console.log(token);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_API}/api/TraCuuKetQua/doi-tac/lay-dsbn-theo-ngay?ngayKetQua=${e.target.value}`,{},{
+                                headers: {
+                                    Authorization : `Bearer ${token}`
+                                }
+                            })
+            setPatients(response.data)
             console.log(e.target.value);
         }
         catch (e) {
@@ -234,15 +85,65 @@ function UnitAdminListPatients() {
     }
 
     const getPatientsByDay = async (day) => {
+        setPatients(null)
         try {
-            // const response = await axios.get(`${process.env.REACT_APP_BACKEND_API}/TraCuuKetQua/doi-tac/lay-dsbn-theo-ngay?ngayKetQua=${e.target.value}`,{
-            //                     headers: {
-            //                         Authorization : `Bearer ${token}`
-            //                     }
-            //                 })
-            // setPatients(response.data)
+            const token = localStorage.getItem("token");
+            console.log(token);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_API}/api/TraCuuKetQua/doi-tac/lay-dsbn-theo-ngay?ngayKetQua=${day}`,{},{
+                                headers: {
+                                    Authorization : `Bearer ${token}`
+                                }
+                            })
+            setPatients(response.data)
+            setDaySelected(day)
             console.log(day);
         } catch (e) {
+            console.log(e);
+        }
+    }
+
+    const handleShowResult = async (patient) => {
+        try {
+            const token = localStorage.getItem('token');
+            console.log(token);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_API}/api/TraCuuKetQua/doi-tac/tra-cuu-ket-qua-bn?ngayKetQua=${daySelected}&idbenhNhan=${patient.id}`, {},{
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                responseType: 'blob',
+            });
+
+            const blog = new Blob([response.data], {type: "application/pdf"});
+            const fileUrl = URL.createObjectURL(blog);
+            setResults(fileUrl);
+            toggleIsShowResultModal()
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    const toggleIsShowResultModal = () => {
+        setIsShowResultModal(!isShowResultModal);
+    }
+
+    const handleExportPDF = async () => {
+        try {
+            const token = localStorage.getItem("token");
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_API}/api/TraCuuKetQua/doi-tac/xuat-dskq-theo-ngay?ngayKetQua=${daySelected}`, {},{
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                responseType: 'blob',
+            });
+
+            const blob = new Blob([response.data], {type: "application/pdf"});
+            const fileurl = URL.createObjectURL(blob);
+
+            console.log(fileurl);
+
+            window.open(`${fileurl}`, '_blank');
+        }
+        catch (e) {
             console.log(e);
         }
     }
@@ -258,6 +159,14 @@ function UnitAdminListPatients() {
 
                         <p className="mt-1 text-sm text-gray-500">Danh sách tất cả bệnh nhân của đơn vị</p>
                     </div>
+
+                    <button
+                        onClick={handleExportPDF}
+                        className="flex w-full items-center text-nowrap justify-center px-6 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-blue-500 rounded-lg shrink-0 sm:w-auto gap-x-2 hover:bg-blue-600"
+                    >
+                        <FaFilePdf />
+                        <span>Xuất PDF</span>
+                    </button>
                 </div>
 
                 <h3 className="mt-6 text-sm font-medium text-slate-800">Các ngày có kết quả</h3>
@@ -269,7 +178,7 @@ function UnitAdminListPatients() {
                             daysHaveResult.map((day, index) => (
                                 <button
                                     key={index}
-                                    className={`px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 sm:text-sm`}
+                                    className={`${daySelected === day ? 'bg-slate-200' : ''} px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 sm:text-sm`}
                                     onClick={() => getPatientsByDay(day)}
                                 >
                                     {formateDDMMYYYY(day)}
@@ -291,12 +200,29 @@ function UnitAdminListPatients() {
 
 
                 <div className="table max-w-full flex flex-col w-full mt-6 drop-shadow-md">
-                            <PatientTable
-                                headers={['Mã bệnh nhân', 'Tên bệnh nhân', 'Năm sinh', 'Địa chỉ', 'Số điện thoại', '']}
-                                data={patients}
-                            />
+                    {patients ? (
+                        <PatientTable
+                            headers={['Mã bệnh nhân', 'Tên bệnh nhân', 'Năm sinh', 'Địa chỉ', 'Số điện thoại', '']}
+                            data={patients}
+                            handleShowResult={handleShowResult}
+                        />
+                    ) : (
+                        <div className="flex flex-col gap-1">
+                            <Skeleton className="w-full h-20" />
+                            <Skeleton className="w-full h-20" />
+                            <Skeleton className="w-full h-20" />
+                            <Skeleton className="w-full h-20" />
+                            <Skeleton className="w-full h-20" />
+                            <Skeleton className="w-full h-20" />
+                            <Skeleton className="w-full h-20" />
+                            <Skeleton className="w-full h-20" />
+                        </div>
+                    )}
                 </div>
             </div>
+            {isShowResultModal && (
+                <ResultPDFModal results={results} handleShowResult={handleShowResult} toggleIsShowResultModal={toggleIsShowResultModal} />
+            )}
         </>
     )
 }

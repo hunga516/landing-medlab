@@ -44,13 +44,15 @@ function UnitLookUpPage() {
         setIsLoadingSubmit(true);
 
         try {
-            // const response = await axios.post(
-            //     `${process.env.REACT_APP_BACKEND_API}/TraCuuKetQua/khach-hang/tra-cuu-ket-qua`, formData
-            // );
+            const response = await axios.post(
+                `${process.env.REACT_APP_BACKEND_API}/api/TraCuuKetQua/doi-tac/dang-nhap`, formData
+            );
 
-            if (LOGIN_STATUS.statusCode === 200) { //thay = response.data.statusCode
-                localStorage.setItem('token', LOGIN_STATUS.token); //thay = response.data.token
-                navigate(`/${formData.TaiKhoan}/admin/pdf`);
+            if (response.data.statusCode === 200) {
+                localStorage.setItem('token', response.data.token);
+                navigate(`/${formData.TaiKhoan}/admin/danh-sach-benh-nhan`);
+            } else {
+                setErrorMessage(prevState => ({...prevState, 'loginError': response.data.message}));
             }
         } catch (error) {
             console.error(error);
@@ -116,6 +118,9 @@ function UnitLookUpPage() {
                         />
                         {errorMessage.TaiKhoan && (
                             <p className="italic text-xs text-red-500 font-sans font-medium">{errorMessage.TaiKhoan}</p>
+                        )}
+                        {errorMessage.loginError && (
+                            <p className="italic text-xs text-red-500 font-sans font-medium">{errorMessage.loginError}</p>
                         )}
                     </div>
                     <div className="text-right">

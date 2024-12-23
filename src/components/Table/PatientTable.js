@@ -14,7 +14,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import formateYYYYMMDD from '../../helper/formateYYYYMMDD';
 
 
-const PatientTable = ({ headers, data }) => {
+const PatientTable = ({ headers, data, handleShowResult }) => {
     const [isSelectAction, setIsSelectAtion] = useState(false)
     const navigate = useNavigate();
     const params = useParams();
@@ -58,7 +58,7 @@ const PatientTable = ({ headers, data }) => {
                     <tbody className="bg-white divide-y divide-gray-200">
                         {data.map((item, index) => (
                             <tr
-                                onClick={() => handleRedirect(item)}
+                                onClick={() => handleShowResult(item)}
                                 key={item.maBenhNhan}
                                 className={`transition ease-out duration-200 hover:bg-gray-200 hover:duration-75 even:bg-slate-50`}
                             >

@@ -43,13 +43,13 @@ function AdminSidebarLeft({ className }) {
                 <nav className="-mx-3 space-y-3 max-sm:flex max-sm:flex-col max-sm:gap-4">
                     {LoadingContextValue ? (
                         <>
-                            <Skeleton width={200} height={24} />
-                            <Skeleton width={200} height={24} />
-                            <Skeleton width={200} height={24} />
-                            <Skeleton width={200} height={24} />
-                            <Skeleton width={200} height={24} />
-                            <Skeleton width={200} height={24} />
-                            <Skeleton width={200} height={24} />
+                            <Skeleton className="w-full h-16" />
+                            <Skeleton className="w-full h-16" />
+                            <Skeleton className="w-full h-16" />
+                            <Skeleton className="w-full h-16" />
+                            <Skeleton className="w-full h-16" />
+                            <Skeleton className="w-full h-16" />
+                            <Skeleton className="w-full h-16" />
                         </>
                     ) : (
                         <>

@@ -213,11 +213,11 @@ function AdminServicePage() {
                             />
                         ) : (
                             <div className="flex flex-col gap-1 justify-center">
-                                <Skeleton height={100} width={796} />
-                                <Skeleton height={100} width={796} />
-                                <Skeleton height={100} width={796} />
-                                <Skeleton height={100} width={796} />
-                                <Skeleton height={100} width={796} />
+                                <Skeleton className="w-full h-20" />
+                                <Skeleton className="w-full h-20" />
+                                <Skeleton className="w-full h-20" />
+                                <Skeleton className="w-full h-20" />
+                                <Skeleton className="w-full h-20" />
                             </div>
 
                         )

@@ -136,6 +136,10 @@ function Header() {
                                   className={`${location.pathname === '/tin-tuc' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>
                                 TIN TỨC
                             </Link>
+                            <Link to="/tu-van"
+                                  className={`${location.pathname === '/tu-van' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>
+                                TƯ VẤN
+                            </Link>
                         </div>
                         <div>
                             <a href="tel:+0909636293" className="hidden lg:block px-4 py-1.5 text-lg rounded-md text-white bg-sky-600">

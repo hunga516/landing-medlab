@@ -10,6 +10,7 @@ import { BsFilePost } from 'react-icons/bs';
 import { FaRegFilePdf } from 'react-icons/fa';
 import { GoSearch } from 'react-icons/go';
 import { HiUsers } from 'react-icons/hi';
+import { IoIosKey } from 'react-icons/io';
 
 function UnitAdminSidebarLeft({ className }) {
     const LoadingContextValue = useContext(LoadingContext);
@@ -18,15 +19,15 @@ function UnitAdminSidebarLeft({ className }) {
 
     const NAV_ITEMS = [
         {
-            icon: GoSearch,
-            title: 'Tra cứu',
-            to: `/${parmas.unit}/admin/tra-cuu`
-        },
-        {
             icon: HiUsers,
             title: 'Danh sách bệnh nhân',
             to: `/${parmas.unit}/admin/danh-sach-benh-nhan`
         },
+        {
+            icon: IoIosKey,
+            title: 'Đổi mật khẩu',
+            to: `/${parmas.unit}/admin/doi-mat-khau`
+        }
     ]
 
     return (
