@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 
 import { LuArchiveRestore } from "react-icons/lu";
 import { IoIosOptions } from "react-icons/io";
-import { FaRegTrashAlt } from "react-icons/fa";
-import { TiEdit } from 'react-icons/ti';
+import { CgSpinner } from "react-icons/cg";
 
 import Menu from "../Popper/Menu";
 import Button from '../Button';
@@ -12,7 +11,7 @@ import images from '../../assets/images';
 
 
 
-const BookingTable = ({ headers, data, activeButton, handleRestore, itemEditedId, bookingActions, handleActionForm }) => {
+const BookingTable = ({ headers, data, activeButton, handleRestore, itemEditedId, bookingActions, isSending, handleActionForm }) => {
     const [isSelectAction, setIsSelectAtion] = useState(false)
     const [courseIds, setCourseIds] = useState([])
 
@@ -56,7 +55,7 @@ const BookingTable = ({ headers, data, activeButton, handleRestore, itemEditedId
                                     <>
                                         <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
                                             <input type='checkbox' name='courseId' value={item.id}
-                                                   onChange={handleChangeCheckbox}
+                                                onChange={handleChangeCheckbox}
                                             />
                                         </td>
                                     </>
@@ -82,37 +81,56 @@ const BookingTable = ({ headers, data, activeButton, handleRestore, itemEditedId
                                     <div
                                         className="max-w-36 text-sm overflow-scroll py-1 rounded-full">{item.email}</div>
                                 </td>
-                                {item.status ? (
+                                {item.status === "Đã gửi" ? (
                                     <td className="px-4 py-4 text-sm whitespace-nowrap">
-                                        <h4 className="text-center text-yellow-500 rounded-full ring-1  ring-inset ring-yellow-500 px-2 py-0.5">{item.status}</h4>
+                                        <h4 className="text-center text-green-500 rounded-full ring-1 ring-inset ring-green-500 px-2 py-0.5">
+                                            Đã gửi
+                                        </h4>
                                     </td>
                                 ) : (
                                     <td className="px-4 py-4 text-sm whitespace-nowrap">
-                                        <h4 className="text-left"></h4>
+                                        <h4 className="text-center text-yellow-500 rounded-full ring-1 ring-inset ring-yellow-500 px-2 py-0.5">
+                                            Chưa gửi
+                                        </h4>
                                     </td>
                                 )}
+
                                 {activeButton === 'trash' ? (
                                     <td className="">
                                         <Button className="text-sm px-[-2] hover:bg-gray-200 hover:duration-200"
-                                                onClick={() => handleRestore(item)}>
+                                            onClick={() => handleRestore(item)}>
                                             <LuArchiveRestore />
                                             Khôi phục
                                         </Button>
                                     </td>
                                 ) : (
-                                    <Menu items={bookingActions} payload={item}>
-                                        <td className={`flex justify-center px-2 py-4 text-sm whitespace-nowrap z-10 sticky right-0 ${index % 2 !== 0 ? "bg-slate-50" : "bg-white"}`}>
-                                            <button
-                                                className="px-1 py-1 text-gray-500 transition-colors duration-200 rounded-lg hover:bg-gray-100">
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                     strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                                                    <path strokeLinecap="round" strokeLinejoin="round"
-                                                          d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
-                                                </svg>
-                                            </button>
-                                        </td>
-                                    </Menu>
+                                    !isSending && item.status !== "Đã gửi" ? (  // Chỉ hiển thị menu nếu chưa gửi email và không đang gửi email
+                                        <Menu items={bookingActions} payload={item}>
+                                            <td className={`flex justify-center px-2 py-4 text-sm whitespace-nowrap z-10 sticky right-0 ${index % 2 !== 0 ? "bg-slate-50" : "bg-white"}`}>
+                                                <button
+                                                    className="px-1 py-1 text-gray-500 transition-colors duration-200 rounded-lg hover:bg-gray-100">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                        strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                                        <path strokeLinecap="round" strokeLinejoin="round"
+                                                            d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                                                    </svg>
+                                                </button>
+                                            </td>
+                                        </Menu>
+                                    ) : (
+                                        item.status !== "Đã gửi" && isSending ? (  // Hiển thị spinner khi đang gửi mail và booking chưa gửi email
+                                            <Menu>
+                                                <td className={`flex justify-center px-2 py-4 text-sm whitespace-nowrap z-10 sticky right-0 ${index % 2 !== 0 ? "bg-slate-50" : "bg-white"}`}>
+                                                    <button
+                                                        className="px-1 py-1 animate-spin opacity-80 text-gray-500 transition-colors duration-200 rounded-lg hover:bg-gray-100">
+                                                        <CgSpinner />
+                                                    </button>
+                                                </td>
+                                            </Menu>
+                                        ) : null
+                                    )
                                 )}
+                            
                             </tr>
                         ))}
                     </tbody>
