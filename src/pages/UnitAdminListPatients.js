@@ -162,10 +162,10 @@ function UnitAdminListPatients() {
 
                     <button
                         onClick={handleExportPDF}
-                        className="flex w-full items-center text-nowrap justify-center px-6 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-blue-500 rounded-lg shrink-0 sm:w-auto gap-x-2 hover:bg-blue-600"
+                        className="flex w-full items-baseline text-nowrap justify-center px-6 pt-2 pb-1.5 text-sm tracking-wide text-white transition-colors duration-200 bg-blue-500 rounded-lg shrink-0 sm:w-auto gap-x-2 hover:bg-blue-600"
                     >
                         <FaFilePdf />
-                        <span>Xuất PDF</span>
+                        Xuất PDF
                     </button>
                 </div>
 

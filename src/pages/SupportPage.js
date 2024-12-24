@@ -70,7 +70,7 @@ function SupportPage() {
                 {/*Contact section*/}
                 <div className="mt-12 md:mt-16 md:px-8 lg:px-0 lg:mx-32">
                     <div className="">
-                        <div className="grid grid-cols-3 p-4 mx-auto md:p-8 bg-slate-100 rounded-md">
+                        <div className="grid grid-cols-3 p-4 mx-auto md:px-8 md:py-20 bg-slate-100 rounded-md">
                             <div className="col-span-3 md:col-span-2 px-20">
                                 <h2 className="text-slate-800 text-xl font-medium">Bạn cần hỗ trợ?</h2>
                                 <p className="text-slate-600 leading-5 text-sm mt-2">Medlab rất hân hạnh được hỗ trợ bạn,
@@ -111,7 +111,7 @@ function SupportPage() {
                                         />
                                     </div>
                                     <button type="submit" onClick={handleSubmit}
-                                            className="col-span-2 mt-2 bg-sky-600 rounded-lg text-white px-12 py-1.5">
+                                            className="col-span-2 mt-2 bg-blue-600 rounded-lg text-white px-12 py-1.5">
                                         GỬI
                                     </button>
                                     {message && <p style={{ color: message.includes("thành công") ? "green" : "red" }}>{message}</p>}

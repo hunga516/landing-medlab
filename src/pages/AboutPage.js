@@ -35,7 +35,7 @@ function AboutPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                     <div className="row-span-2 flex flex-col justify-center gap-4 md:gap-8 items-start">
                         <h1 className="text-bold text-xl md:text-4xl leading-6 md:leading-10"><span
-                            className="text-sky-600">Sức khỏe</span> của bạn là <span className="text-orange-500">trách nghiệm</span> của
+                            className="text-blue-600">Sức khỏe</span> của bạn là <span className="text-orange-500">trách nghiệm</span> của
                             Medlab Vĩnh Viễn</h1>
                         <p className="inline md:hidden text-slate-600 md:text-lg">Medlab tận tâm mang đến giải pháp y tế
                             hiện
@@ -45,7 +45,7 @@ function AboutPage() {
                             sức khỏe, giúp bạn sống khỏe mạnh, vui vẻ và hạnh phúc hơn mỗi ngày.</p>
                         <button
                             onClick={() => toggleModal('bookingModal')}
-                            className="flex items-center justify-center md:justify-normal gap-2 text-sm md:text-sm w-full md:w-auto font-medium bg-sky-600 hover:bg-sky-700 duration-300 rounded-lg leading-4 pl-2 md:pl-4 py-2 md:py-1.5 pr-1.5 md:pr-3.5 text-white">
+                            className="flex items-center justify-center md:justify-normal gap-2 text-sm md:text-sm w-full md:w-auto font-medium bg-blue-600 hover:bg-blue-700 duration-300 rounded-lg leading-4 pl-2 md:pl-4 py-2 md:py-1.5 pr-1.5 md:pr-3.5 text-white">
                             <MdOutlineEditCalendar className="text-sm md:text-lg" />
                             Đặt lịch xét nghiệm
                         </button>
@@ -57,24 +57,24 @@ function AboutPage() {
 
                 <div className="grid grid-cols-2 md:grid-cols-5 rounded-lg mt-8 md:mt-16 gap-2 md:gap-4">
                     <div className="bg-slate-100 p-4 flex flex-col gap-2 items-center justify-center rounded-2xl">
-                        <h2 className="text-lg md:text-2xl font-medium text-sky-600">35.5k</h2>
+                        <h2 className="text-lg md:text-2xl font-medium text-blue-600">35.5k</h2>
                         <p className="text-sm md:text-base text-nowrap font-semibold text-slate-800">Khách hàng</p>
                     </div>
                     <div className="bg-slate-100 p-4 flex flex-col gap-2 items-center justify-center rounded-2xl">
-                        <h2 className="text-lg md:text-2xl font-medium text-sky-600">10+</h2>
+                        <h2 className="text-lg md:text-2xl font-medium text-blue-600">10+</h2>
                         <p className="text-sm md:text-base text-nowrap font-semibold text-slate-800">Dịch vụ</p>
                     </div>
                     <div className="bg-slate-100 p-4 flex flex-col gap-2 items-center justify-center rounded-2xl">
-                        <h2 className="text-lg md:text-2xl font-medium text-sky-600">8+</h2>
+                        <h2 className="text-lg md:text-2xl font-medium text-blue-600">8+</h2>
                         <p className="text-sm md:text-base text-nowrap font-semibold text-slate-800">Năm kinh nghiệm</p>
                     </div>
                     <div className="bg-slate-100 p-4 flex flex-col gap-2 items-center justify-center rounded-2xl">
-                        <h2 className="text-lg md:text-2xl font-medium text-sky-600">15+</h2>
+                        <h2 className="text-lg md:text-2xl font-medium text-blue-600">15+</h2>
                         <p className="text-sm md:text-base text-nowrap font-semibold text-slate-800">Đối tác</p>
                     </div>
                     <div
                         className="col-span-2 md:col-span-1 bg-slate-100 p-4 flex flex-col gap-2 items-center justify-center rounded-2xl">
-                        <h2 className="text-lg md:text-2xl font-medium text-sky-600">95%</h2>
+                        <h2 className="text-lg md:text-2xl font-medium text-blue-600">95%</h2>
                         <p className="text-sm md:text-base text-nowrap font-semibold text-slate-800">Khách hàng quay
                             lại</p>
                     </div>
@@ -100,7 +100,7 @@ function AboutPage() {
                         <div>
                             <div className="w-full text-center mt-2 md:mt-8">
                                 <h2 className="text-black md:text-xl">Nguyễn Trường Vũ</h2>
-                                <p className="text-sky-600 text-sm font-semibold tracking-wider">Bác sĩ</p>
+                                <p className="text-blue-600 text-sm font-semibold tracking-wider">Bác sĩ</p>
                             </div>
                             <img
                                 src={images.doctor2}
@@ -119,7 +119,7 @@ function AboutPage() {
                         <div>
                             <div className="w-full text-center mt-2 md:mt-8">
                                 <h2 className="text-black md:text-xl">Nguyễn Trường Vũ</h2>
-                                <p className="text-sky-600 text-sm font-semibold tracking-wider">Bác sĩ</p>
+                                <p className="text-blue-600 text-sm font-semibold tracking-wider">Bác sĩ</p>
                             </div>
                             <img
                                 src={images.doctor2}
@@ -138,7 +138,7 @@ function AboutPage() {
                         <div>
                             <div className="w-full text-center mt-2 md:mt-8">
                                 <h2 className="text-black md:text-xl">Nguyễn Trường Vũ</h2>
-                                <p className="text-sky-600 text-sm font-semibold tracking-wider">Bác sĩ</p>
+                                <p className="text-blue-600 text-sm font-semibold tracking-wider">Bác sĩ</p>
                             </div>
                             <img
                                 src={images.doctor2}
@@ -157,7 +157,7 @@ function AboutPage() {
                         <div>
                             <div className="w-full text-center mt-2 md:mt-8">
                                 <h2 className="text-black md:text-xl">Nguyễn Trường Vũ</h2>
-                                <p className="text-sky-600 text-sm font-semibold tracking-wider">Bác sĩ</p>
+                                <p className="text-blue-600 text-sm font-semibold tracking-wider">Bác sĩ</p>
                             </div>
                             <img
                                 src={images.doctor2}

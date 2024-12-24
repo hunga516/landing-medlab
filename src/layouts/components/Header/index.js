@@ -84,10 +84,10 @@ function Header() {
                     <div className="hidden md:flex w-full items-center py-1 justify-between">
                         <div className="flex items-center gap-8">
                             <Link to={'/'}
-                                  className={`${location.pathname === '/' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>TRANG
+                                  className={`${location.pathname === '/' ? 'text-white bg-blue-600' : 'text-slate-500'} text-lg hover:bg-blue-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>TRANG
                                 CHỦ</Link>
                             <Link to="/dich-vu"
-                                  className={`${location.pathname === '/bang-gia-dich-vu' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>DỊCH
+                                  className={`${location.pathname === '/bang-gia-dich-vu' ? 'text-white bg-blue-600' : 'text-slate-500'} text-lg hover:bg-blue-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>DỊCH
                                 VỤ</Link>
                             <Tippy
                                 interactive={true}
@@ -97,28 +97,28 @@ function Header() {
                                         <div
                                             className="flex flex-col items-start ring-1 ring-slate-200/70 drop-shadow-lg rounded-lg">
                                             <Link to="/tat-ca-goi-xet-nghiem"
-                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white w-full px-4 py-3 duration-200 rounded-lg">Tất
+                                                  className="text-slate-600 text-sm font-medium hover:bg-blue-600 hover:text-white w-full px-4 py-3 duration-200 rounded-lg">Tất
                                                 cả gói xét nghiệm</Link>
                                             <Link to="/goi-xet-nghiem-tong-quat"
-                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">
+                                                  className="text-slate-600 text-sm font-medium hover:bg-blue-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">
                                                 Gói xét nghiệm tổng quát
                                             </Link>
                                             <Link to="/goi-xet-nghiem-nipt"
-                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">
+                                                  className="text-slate-600 text-sm font-medium hover:bg-blue-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">
                                                     Gói xét nghiệm NIPT
                                             </Link>
                                             <Link to="/goi-xet-nghiem-vi-chat"
-                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">
+                                                  className="text-slate-600 text-sm font-medium hover:bg-blue-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">
                                                 Gói xét nghiệm vi chất
                                             </Link>
                                             <Link to="/goi-xet-nghiem-tim-mach"
-                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">Gói
+                                                  className="text-slate-600 text-sm font-medium hover:bg-blue-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">Gói
                                                 xét nghiệm tim mạch</Link>
                                             <Link to="/goi-xet-nghiem-adn-huyet-thong"
-                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">Gói
+                                                  className="text-slate-600 text-sm font-medium hover:bg-blue-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">Gói
                                                 xét nghiệm ADN huyết thống</Link>
                                             <Link to="/goi-xet-nghiem-tien-hon-nhan"
-                                                  className="text-slate-600 text-sm font-medium hover:bg-sky-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">Gói
+                                                  className="text-slate-600 text-sm font-medium hover:bg-blue-600 hover:text-white px-4 w-full rounded-lg py-3 duration-200">Gói
                                                 xét nghiệm tiền hôn nhân</Link>
                                         </div>
                                     </Wrapper>
@@ -130,21 +130,21 @@ function Header() {
                                 </Link>
                             </Tippy>
                             <Link to={'/ve-medlab-vinh-vien'}
-                                  className={`${location.pathname === '/ve-medlab-vinh-vien' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>VỀ
+                                  className={`${location.pathname === '/ve-medlab-vinh-vien' ? 'text-white bg-blue-600' : 'text-slate-500'} text-lg hover:bg-blue-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans`}>VỀ
                                 CHÚNG TÔI</Link>
                             <Link to="/tin-tuc"
-                                  className={`${location.pathname === '/tin-tuc' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>
+                                  className={`${location.pathname === '/tin-tuc' ? 'text-white bg-blue-600' : 'text-slate-500'} text-lg hover:bg-blue-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>
                                 TIN TỨC
                             </Link>
                             <Link to="/tu-van"
-                                  className={`${location.pathname === '/tu-van' ? 'text-white bg-sky-600' : 'text-slate-500'} text-lg hover:bg-sky-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>
+                                  className={`${location.pathname === '/tu-van' ? 'text-white bg-blue-600' : 'text-slate-500'} text-lg hover:bg-blue-600 hover:text-white duration-200 px-2 py-1 rounded-lg  font-medium font-sans`}>
                                 TƯ VẤN
                             </Link>
                         </div>
                         <div>
-                            <a href="tel:+0909636293" className="hidden lg:block px-4 py-1.5 text-lg rounded-md text-white bg-sky-600">
+                            <Link to="/tu-van" className="hidden lg:block px-4 py-1.5 text-lg rounded-md text-white bg-blue-600">
                                 ĐĂNG KÝ TƯ VẤN
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
