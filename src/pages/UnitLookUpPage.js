@@ -143,7 +143,7 @@ function UnitLookUpPage() {
 
             <div ref={docsRef} className="overflow-hidden rounded-lg">
                 <img
-                    src={images.hdkhachhang}
+                    src={images.hddonvi}
                     alt="" />
             </div>
         </section>
