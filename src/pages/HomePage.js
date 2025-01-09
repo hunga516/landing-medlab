@@ -49,7 +49,7 @@ function HomePage() {
                 <div className="grid md:grid-cols-2 grid-cols-3 p-6 md:p-8 h-full">
                     <div className="flex flex-col gap-2 md:gap-6 col-span-2 md:col-span-1 md:mt-24">
                         <div className="title">
-                            <h1 className="font-bold max-h-[110px] md:max-h-screen text-2xl md:text-4xl lg:text-5xl leading-7 md:leading-[40px] lg:leading-[50px] xl:leading-[50px] text-left tracking-wide">Xét
+                            <h1 className="font-bold text-blue-600 max-h-[110px] md:max-h-screen text-2xl md:text-4xl lg:text-5xl leading-7 md:leading-[40px] lg:leading-[50px] xl:leading-[50px] text-left tracking-wide">Xét
                                 nghiệm chính xác, sức khoẻ an tâm
                             </h1>
                             <p className="hidden md:block text-slate-600 text-sm md:text-base mt-4 overflow-hidden">
