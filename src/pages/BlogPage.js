@@ -69,19 +69,19 @@ function BlogPage() {
                             {oneBlog && oneBlog.length > 0 ? (
                                 oneBlog.map((blog, index) => (
                                     <>
-                                        <div key={index} className="flex flex-col items-start gap-4">
+                                        <Link to={`/tin-tuc/${blog.id}`} key={index} className="flex flex-col items-start gap-4">
                                             <div
                                                 className="p-2 bg-yellow-500 text-white text-xs rounded-lg">{blog.category}</div>
                                             <h3 className="text-lg font-medium leading-5">{blog.title}</h3>
                                             <p className="text-slate-600 h-40 overflow-hidden text-ellipsis">
                                                 {renderContentWithHighlight(blog?.content)}
                                             </p>
-                                            <Link to="/blog/:id"
+                                            <Link to="/tin-tuc/:id"
                                                   className="px-4 py-2 rounded-2xl ring-1 ring-slate-600 text-slate-800"
                                             >
                                                 Đọc tiếp
                                             </Link>
-                                        </div>
+                                        </>
                                         <img src={`${process.env.REACT_APP_ASP_NET_CORE_APP_URL}${blog.img}`} alt=""
                                              className="rounded-xl h-full object-cover" />
                                     </>
@@ -99,7 +99,7 @@ function BlogPage() {
                             </div>
                             <div className="flex flex-col gap-4 mt-4 max-h-[350px] overflow-scroll">
                                 {blogs.map((blog, index) => (
-                                    <div key={index} className="blog-item flex flex-col gap-2">
+                                    <Link to={`/tin-tuc/${blog.id}`} key={index} className="blog-item flex flex-col gap-2">
                                         <div
                                             className="px-2 py-1 bg-yellow-500 text-white text-[10px] rounded-lg w-fit"
                                         >
@@ -114,7 +114,7 @@ function BlogPage() {
                                             </span>
                                         </div>
                                         <span className="border-b-[0.5px] border-slate-300 mt-2"></span>
-                                    </div>
+                                    </>
                                 ))}
                             </div>
                         </div>
