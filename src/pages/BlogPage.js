@@ -44,6 +44,23 @@ function BlogPage() {
         }
     };
 
+    const handleSearch = async (e) => {
+        try {
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/Blog/Read?title=${e.target.value}`, {
+                params: {
+                    page: currentPage,
+                    pageSize: 11,
+                    status: "published"
+                },
+            });
+            setBlogs(response.data.blogs)
+            setTotalPages((response.data.totalPages))
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }
+
     useEffect(() => {
         getBlogs();
         getOneBlog();
@@ -54,7 +71,9 @@ function BlogPage() {
         <>
             {/*Tìm kiếm section*/}
             <div className="relative mt-8 flex items-center gap-2 md:px-8 lg:px-0 lg:mx-32 md:mt-20">
-                <input type="text"
+                <input
+                    onChange={handleSearch}
+                    type="text"
                        className="flex-1 px-4 py-2 ring-1 ring-slate-400/60 rounded-lg placeholder:text-slate-600 outline-none"
                        placeholder="Tìm bài viết bằng tên hoặc chủ đề" />
                 <HiSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-xl" />
