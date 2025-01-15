@@ -512,7 +512,7 @@ function HomePage() {
                 <div className="grid grid-cols-2 md:grid-cols-3 md:grid-rows-2 gap-2 mt-4 md:mt-6">
                     {blogs && blogs.length > 0 && (
                         blogs.map((blog, index) => (
-                            <Link to={`/blog/${blog.id}`} key={index}>
+                            <Link to={`/tin-tuc/${blog.id}`} key={index}>
                                 <div className="grid-item">
                                     <div className="relative">
                                         <img src={`${process.env.REACT_APP_ASP_NET_CORE_APP_URL}${blog.img}`}
