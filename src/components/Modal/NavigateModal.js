@@ -16,7 +16,7 @@ function NavigateModal({toggleIsShowNavigateModal}) {
     }
 
     return (
-        <div className="modal fixed inset-0 bg-slate-100/50 z-20 mt-11" onClick={closeModal}>
+        <div className="modal fixed inset-0 bg-slate-100/50 z-20 mt-10" onClick={closeModal}>
             <div className="absolute flex flex-col justify-between top-0 bottom-0 left-0 w-52 md:w-80 bg-white py-4 md:py-8 px-2">
                 <div>
                     <Link to="/" onClick={() => toggleIsShowNavigateModal()}
