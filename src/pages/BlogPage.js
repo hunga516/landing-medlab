@@ -90,7 +90,8 @@ function BlogPage() {
                                     <>
                                         <Link to={`/tin-tuc/${blog.id}`} key={index} className="flex flex-col items-start gap-4">
                                             <div
-                                                className="p-2 bg-yellow-500 text-white text-xs rounded-lg">{blog.category}</div>
+                                                className="p-2 bg-yellow-500 text-white text-xs rounded-lg">{blog.category}
+                                            </div>
                                             <h3 className="text-lg font-medium leading-5">{blog.title}</h3>
                                             <p className="text-slate-600 h-40 overflow-hidden text-ellipsis">
                                                 {renderContentWithHighlight(blog?.content)}
@@ -100,7 +101,7 @@ function BlogPage() {
                                             >
                                                 Đọc tiếp
                                             </Link>
-                                        </>
+                                        </Link>
                                         <img src={`${process.env.REACT_APP_ASP_NET_CORE_APP_URL}${blog.img}`} alt=""
                                              className="rounded-xl h-full object-cover" />
                                     </>
@@ -133,7 +134,7 @@ function BlogPage() {
                                             </span>
                                         </div>
                                         <span className="border-b-[0.5px] border-slate-300 mt-2"></span>
-                                    </>
+                                    </Link>
                                 ))}
                             </div>
                         </div>

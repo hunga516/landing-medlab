@@ -285,7 +285,7 @@ function HomePage() {
 
                 <div className="flex flex-col md:grid md:grid-cols-2 gap-2 mt-4 md:mt-6">
                     <Link to="/goi-xet-nghiem-tong-quat" className="bg-blue-100 p-4 rounded-md grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        <div className="content sm:col-span-2 flex flex-col ">
+                        <div className="content col-span-2 sm:col-span-2 flex flex-col ">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tổng quát</h2>
                             <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
                                 xét
@@ -293,37 +293,37 @@ function HomePage() {
                                 và chỉ số sinh hóa. Kết quả hỗ trợ phát hiện sớm các bệnh lý tiềm ẩn.</p>
                         </div>
                         <img src={images.bannertongquat} alt="Hình ảnh gói xét nghiệm tổng quát"
-                             className="rounded-lg h-full object-cover" />
+                             className="max-sm:col-span-2 rounded-lg h-full object-cover" />
                     </Link>
                     <Link to="/goi-xet-nghiem-nipt" className="bg-blue-100 p-4 rounded-md grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        <div className="content sm:col-span-2 flex flex-col">
+                        <div className="content col-span-2  sm:col-span-2 flex flex-col">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm NIPT</h2>
                             <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
                                 xét
                                 nghiệm NIPT giúp kiểm tra và phát hiện các rối loạn di truyền sớm trong thai kỳ, đảm bảo
                                 sức khỏe mẹ và bé.</p>
                         </div>
-                        <img src={images.bannernipt} alt="Hình ảnh gói xét nghiệm NIPT" className="rounded-lg h-full object-cover" />
+                        <img src={images.bannernipt} alt="Hình ảnh gói xét nghiệm NIPT" className="rounded-lg max-sm:col-span-2 h-full object-cover" />
                     </Link>
                     <Link to="/goi-xet-nghiem-vi-chat" className="bg-blue-100 p-4 rounded-md grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        <div className="content sm:col-span-2 flex flex-col">
+                        <div className="content col-span-2  sm:col-span-2 flex flex-col">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm vi chất</h2>
                             <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
                                 xét
                                 nghiệm vi chất giúp xác định sự thiếu hụt các vitamin và khoáng chất trong cơ thể, từ đó
                                 hỗ trợ điều chỉnh chế độ dinh dưỡng phù hợp.</p>
                         </div>
-                        <img src={images.bannervichat} alt="Hình ảnh gói xét nghiệm vi chất" className="rounded-lg h-full object-cover" />
+                        <img src={images.bannervichat} alt="Hình ảnh gói xét nghiệm vi chất" className="rounded-lg max-sm:col-span-2 h-full object-cover" />
                     </Link>
                     <Link to="/goi-xet-nghiem-tim-mach" className="bg-blue-100 p-4 rounded-md grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        <div className="content sm:col-span-2 flex flex-col">
+                        <div className="content col-span-2  sm:col-span-2 flex flex-col">
                             <h2 className="text-base md:text-lg font-medium">Gói xét nghiệm tim mạch</h2>
                             <p className="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
                                 xét
                                 nghiệm tim mạch cung cấp các thông tin quan trọng về chức năng tim và các yếu tố nguy
                                 cơ, giúp phát hiện sớm và phòng ngừa các bệnh lý tim mạch.</p>
                         </div>
-                        <img src={images.bannertimmach} alt="Hình ảnh gói xét nghiệm tim mạch" className="rounded-lg h-full object-cover" />
+                        <img src={images.bannertimmach} alt="Hình ảnh gói xét nghiệm tim mạch" className="rounded-lg max-sm:col-span-2 h-full object-cover" />
                     </Link>
                 </div>
             </div>

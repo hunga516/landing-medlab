@@ -27,11 +27,15 @@ function NavigateModal({toggleIsShowNavigateModal}) {
                           className={`mt-2 flex items-center gap-2 text-sm md:text-lg font-medium ${location.pathname === "/price" ? 'bg-slate-100' : ""} px-4 py-2 rounded-lg`}>Dịch
                         vụ
                     </Link>
+                    <Link to="/tat-ca-goi-xet-nghiem" onClick={() => toggleIsShowNavigateModal()}
+                          className={`mt-2 flex items-center gap-2 text-sm md:text-lg font-medium ${location.pathname === "//tat-ca-goi-xet-nghiem" ? 'bg-slate-100' : ""} px-4 py-2 rounded-lg`}>
+                        Tất cả gói xét nghiệm
+                    </Link>
                     <Link to="/ve-medlab-vinh-vien" onClick={() => toggleIsShowNavigateModal()}
                           className={`mt-2 flex items-center gap-2 text-sm md:text-lg font-medium ${location.pathname === "/about" ? 'bg-slate-100' : ""} px-4 py-2 rounded-lg`}>Về
                         chúng tôi
                     </Link>
-                    <Link to="/ho-tro" onClick={() => toggleIsShowNavigateModal()}
+                    <Link to="/tu-van" onClick={() => toggleIsShowNavigateModal()}
                           className={`mt-2 flex items-center gap-2 text-sm md:text-lg font-medium ${location.pathname === "/support" ? 'bg-slate-100' : ""} px-4 py-2 rounded-lg`}>Tư
                         vấn
                     </Link>
