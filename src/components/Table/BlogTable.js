@@ -17,7 +17,7 @@ const BlogTable = ({ headers, data, activeButton, handleRestore, itemEditedId, b
     const [courseIds, setCourseIds] = useState([])
 
     const handleRedirect = (id) => {
-        window.location.href = `/blog/${id}`;
+        window.location.href = `/tin-tuc/${id}`;
     };
 
     const handleChangeCheckbox = (e) => {
