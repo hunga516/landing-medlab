@@ -63,14 +63,14 @@ function HomePage() {
                             </p>
                         </div>
                         <div className="flex items-center gap-4">
-                            <button
+                            <Link to="/tu-van"
                                 className="hidden md:flex items-center gap-1 bg-blue-600 px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-nowrap md:text-lg rounded-md text-[14px]">
                                 Đặt lịch xét nghiệm
-                            </button>
-                            <button className="hidden md:flex items-center gap-2 text-sm text-nowrap">
+                            </Link>
+                            <Link to="/ve-medlab-vinh-vien" className="hidden md:flex items-center gap-2 text-sm text-nowrap">
                                 Tìm hiểu thêm
                                 <FaArrowRightLong className="text-xs" />
-                            </button>
+                            </Link>
                         </div>
                         <div className="search-mobile">
                             <button
