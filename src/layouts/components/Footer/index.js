@@ -82,7 +82,7 @@ function Footer() {
                         <h2 className="text-[10px] sm:text-sm text-sky-600 font-bold">LIÊN KẾT <span
                             className="hidden md:inline">XÃ HỘI</span></h2>
                         <div className="flex mt-2.5 items-center gap-1 md:gap-3">
-                            <a href="https://www.facebook.com/vinhvien.medlab/">
+                            <a href="https://www.facebook.com/vinhvien.medlab/" target="_blank">
                                 <img src={images.facebook} alt="facebook logo" className="w-4 h-4 md:w-6 md:h-6" />
                             </a>
                             <a href="">
