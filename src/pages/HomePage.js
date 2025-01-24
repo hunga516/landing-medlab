@@ -207,7 +207,7 @@ function HomePage() {
             {/*Dịch vụ section*/}
             <div className="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
                 <div className="">
-                    <p className="text-sky-500 text-sm md:text-lg mx-auto font-sans">Dịch Vụ</p>
+                    <p className="text-sky-500 text-sm md:text-lg mx-auto font-sans font-semibold">Dịch Vụ</p>
                     <p className="text-slate-800 text-lg md:text-2xl font-semibold font-sans mx-auto mt-2">Doanh
                         mục <span
                             className="underline underline-offset-8 decoration-2 decoration-sky-500">Xét nghiệm</span> của
