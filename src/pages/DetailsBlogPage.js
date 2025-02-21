@@ -174,7 +174,7 @@ export default function DetailsBlogPage({data}) {
                             <div className="flex flex-col gap-6 mt-5 w-full text-base max-w-[341px]">
                                 {blogs && blogs?.length > 0 && (
                                     blogs.map((blog, index) => (
-                                        <Link to={`/blog/${blog.id}`} key={index}
+                                        <Link to={`/tin-tuc/${blog.id}`} key={index}
                                               className="blog-item flex flex-col gap-2">
                                             <div className="flex flex-col gap-1">
                                                 <div

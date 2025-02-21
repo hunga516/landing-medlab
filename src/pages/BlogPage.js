@@ -84,7 +84,7 @@ function BlogPage() {
             <div className="grid grid-cols-3 gap-6 mt-8 md:px-8 lg:px-0 lg:mx-32">
                 {blogs && blogs.length > 0 ? (
                     <>
-                        <div className="grid grid-cols-2 gap-16 col-span-2 bg-slate-100/60 rounded-lg p-8">
+                        <div className="grid md:grid-cols-2 gap-16 col-span-3 md:col-span-2 bg-slate-100/60 rounded-lg p-8">
                             {oneBlog && oneBlog.length > 0 ? (
                                 oneBlog.map((blog, index) => (
                                     <>
@@ -110,7 +110,7 @@ function BlogPage() {
                                 <div>blog loading</div>
                             )}
                         </div>
-                        <div className="">
+                        <div className="col-span-3 md:col-span-1">
                             <div className="flex items-center ring-1 ring-slate-100/60 rounded-full grid grid-cols-2">
                                 <button className="text-sm px-4 py-2 rounded-full bg-slate-200/70 text-black">Mới nhất
                                 </button>
