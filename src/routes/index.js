@@ -27,6 +27,7 @@ import UnitAdminChangePassword from '../pages/UnitAdminChangePassword';
 
 export const publicRoute = [
     { path: '/', element: HomePage, layout: DefautLayout },
+    // { path: '/login', element: LoginPage, layout: NoneLayout }, //
     { path: '/tin-tuc/:id', element: DetailsBlogPage, layout: DefautLayout },
     { path: '/tin-tuc', element: BlogPage, layout: DefautLayout },
     { path: '/dich-vu', element: PricePage, layout: DefaultLayout },
